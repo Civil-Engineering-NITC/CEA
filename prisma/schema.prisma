@@ -1,0 +1,26 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  relationMode = "prisma"
+}
+
+model InterviewExp {
+  id  String  @id @default(uuid())  
+  name  String
+  rollno  String
+  email String  
+  phone String
+  company String
+  desc  String
+  companyLogo  String
+  photo String
+  rating  Int
+  linkedin  String
+}
