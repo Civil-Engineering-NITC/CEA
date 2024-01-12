@@ -24,3 +24,57 @@ model InterviewExp {
   rating  Int
   linkedin  String
 }
+
+model ClassNotes{
+  id String @id @default(uuid())
+  subject String
+  download  Link[]  @relation("ClassNotesToLink")
+}
+
+model Coding{
+  id String @id @default(uuid())
+  topic String
+  desc  String
+  link  Link[]  @relation("CodingToLink")  
+  sheet String
+}
+
+model Resources{
+  id  String  @id @default(uuid())
+  topic String
+  link  Link[]  @relation("ResourcesToLink")
+}
+
+model Events{
+  id  String @id  @default(uuid())
+  regLink String
+  photo String
+  socialMedia String
+  desc  String
+}
+
+model CompetitiveExam{
+  id  String  @id @default(uuid())
+  name  String
+  desc  String
+  regLink String
+  link  Link[]  @relation("CompetitiveExamToLink")
+}
+
+model Link{
+  id  String  @id @default(uuid())
+  link  String
+  codingId  String
+  coding  Coding  @relation("CodingToLink", fields: [codingId], references: [id])
+  resourcesId String
+  resources Resources @relation("ResourcesToLink", fields: [resourcesId], references: [id])
+  competitiveExamId String
+  competitiveExam CompetitiveExam @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id])
+  classNotesId String
+  classNotes ClassNotes @relation("ClassNotesToLink", fields: [classNotesId], references: [id])
+
+  @@index([codingId])
+  @@index([resourcesId])
+  @@index([competitiveExamId])
+  @@index([classNotesId])
+}
