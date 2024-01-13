@@ -36,7 +36,6 @@ model Coding{
   topic String
   desc  String
   link  Link[]  @relation("CodingToLink")  
-  sheet String
 }
 
 model Resources{
@@ -48,8 +47,7 @@ model Resources{
 model Events{
   id  String @id  @default(uuid())
   regLink String
-  photo String
-  socialMedia String
+  link Link[] @relation("EventsToLink")
   desc  String
 }
 
@@ -57,7 +55,6 @@ model CompetitiveExam{
   id  String  @id @default(uuid())
   name  String
   desc  String
-  regLink String
   link  Link[]  @relation("CompetitiveExamToLink")
 }
 
@@ -72,9 +69,13 @@ model Link{
   competitiveExam CompetitiveExam @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id])
   classNotesId String
   classNotes ClassNotes @relation("ClassNotesToLink", fields: [classNotesId], references: [id])
+  eventId String
+  events Events @relation("EventsToLink", fields: [eventId], references: [id])
+
 
   @@index([codingId])
   @@index([resourcesId])
   @@index([competitiveExamId])
   @@index([classNotesId])
+  @@index([eventId])
 }
