@@ -17,7 +17,7 @@ interface IndexDataProps {
   linkedin: string;
 }
 
-function InterviewCard(data : IndexDataProps) {
+function InterviewCard(data: IndexDataProps) {
   return (
     <>
       {/* <div className={styles.cardMainDiv}> */}
@@ -37,24 +37,24 @@ function InterviewCard(data : IndexDataProps) {
           </div>
           <h1>Interview Experience</h1>
           <h3>* * * * *</h3>
-          <ul className={styles.cardlist}>
-            <li className={styles.cardlistli}>
+          <ul>
+            <li>
               Please write comments if you find any bug in the above programs or
               other ways to solve the same problem.
             </li>
-            <li className={styles.cardlistli}>
+            <li>
               Please write comments if you find any bug in the above programs or
               other ways to solve the same problem.
             </li>
-            <li className={styles.cardlistli}>
+            <li>
               Please write comments if you find any bug in the above programs or
               other ways to solve the same problem.
             </li>
           </ul>
         </div>
         <div className={styles.cardfooter}>
-          <h4 className={styles.cardname}>{data.name}</h4>
-          <p className={styles.cardname}>{data.rollno}</p>
+          <h4>{data.name}</h4>
+          <p>{data.rollno}</p>
         </div>
       </div>
       {/* </div> */}

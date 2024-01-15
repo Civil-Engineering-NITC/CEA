@@ -19,10 +19,15 @@
   z-index: -1;
   width: 142px;
   height: 142px;
-  box-shadow: 0px -20px 150px 10px #9633dd;
+  box-shadow: 0px -20px 150px 1px #804ced, 0px -20px 150px 1px #f48fd0;
 }
 .cardPrimary {
   padding: 0.62rem 2.12rem 1.5rem;
+  border-radius: 9.5px;
+}
+.cardPrimary h1 {
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 .profilePic {
   display: flex;
@@ -41,15 +46,17 @@
   display: flex;
   justify-content: flex-end;
 }
-.cardlist {
+.cardPrimary ul {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-left: 1.5rem;
+  margin-top: 1rem;
+  min-height: 5rem;
 }
-.cardlistli {
+.cardPrimary ul li {
   font-weight: 400;
-  font-size: large;
+  font-size: 0.875rem;
 }
 .cardfooter {
   display: flex;
@@ -60,9 +67,19 @@
   padding-bottom: 2.12rem;
   width: inherit;
   gap: 0.5rem;
+  border-bottom-right-radius: 9.5px;
+  border-bottom-left-radius: 9.5px;
+  border-top: 1.19px solid #6b6b6b;
 }
-.cardname {
+.cardfooter h4 {
   background-color: #373737;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.cardfooter p {
+  background-color: #373737;
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 @media (max-width: 1366px) {
 }

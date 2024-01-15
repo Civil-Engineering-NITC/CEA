@@ -17,6 +17,10 @@ interface IndexDataProps {
 }
 
 function InterviewExp() {
+  const sortedData = datas.sort(
+    (a, b) => parseFloat(b.package) - parseFloat(a.package)
+  );
+  const displayedData = sortedData.slice(0, 2);
   return (
     <>
       <div className={styles.maindiv}>
@@ -25,10 +29,8 @@ function InterviewExp() {
           <h3 className={styles.subhead}>EXPERIENCES.</h3>
         </div>
         <div className={styles.cardholder}>
-          {datas.map((data: IndexDataProps) => (
-            <InterviewCard
-              {...data}
-            />
+          {displayedData.map((data: IndexDataProps) => (
+            <InterviewCard {...data} />
           ))}
         </div>
         <p className={styles.loadmore}>Load More</p>
