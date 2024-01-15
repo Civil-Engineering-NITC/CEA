@@ -4,25 +4,27 @@ import icon from "../public/Frame 55.svg";
 import Image from "next/image";
 import profilePic from "../public/bg.jpg";
 
-function InterviewCard({
-  name,
-  rollno,
-  linkedin,
-  rating,
-  photo,
-  companyLogo,
-  desc,
-  company,
-  phone,
-  email,
-}) {
+interface IndexDataProps {
+  name: string;
+  rollno: string;
+  email: string;
+  phone: string;
+  company: string;
+  desc: string;
+  companyLogo: any;
+  photo: any;
+  rating: number;
+  linkedin: string;
+}
+
+function InterviewCard(data : IndexDataProps) {
   return (
     <>
       {/* <div className={styles.cardMainDiv}> */}
       <div className={styles.cardDiv}>
         <div className={styles.profilePic}>
           <Image
-            src={photo}
+            src={data.photo}
             alt=""
             style={{ maxWidth: "100%", height: "100%", borderRadius: "50%" }}
             objectFit="cover"
@@ -31,7 +33,7 @@ function InterviewCard({
         </div>
         <div className={styles.cardPrimary}>
           <div className={styles.cardImg}>
-            <Image src={companyLogo} alt="My SVG" />
+            <Image src={data.companyLogo} alt="My SVG" />
           </div>
           <h1>Interview Experience</h1>
           <h3>* * * * *</h3>
@@ -51,8 +53,8 @@ function InterviewCard({
           </ul>
         </div>
         <div className={styles.cardfooter}>
-          <h4 className={styles.cardname}>{name}</h4>
-          <p className={styles.cardname}>{rollno}</p>
+          <h4 className={styles.cardname}>{data.name}</h4>
+          <p className={styles.cardname}>{data.rollno}</p>
         </div>
       </div>
       {/* </div> */}

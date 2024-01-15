@@ -1,6 +1,6 @@
 import rias from "../public/bg.jpg";
 import logo from "../public/Frame 55.svg";
-export const data = [
+export const datas = [
   {
     name: "light",
     rollno: "123456",
