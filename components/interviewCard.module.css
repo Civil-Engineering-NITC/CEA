@@ -1,0 +1,111 @@
+.cardDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 31.87rem;
+  border-radius: 9.5px;
+  color: white;
+  box-shadow: -2.371764659881592px -2.371764659881592px 0px 0px #6b6b6b;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.cardDiv::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: -17%;
+  left: 36%;
+  z-index: -1;
+  width: 142px;
+  height: 142px;
+  box-shadow: 0px -20px 150px 10px #9633dd;
+}
+.cardPrimary {
+  padding: 0.62rem 2.12rem 1.5rem;
+}
+.profilePic {
+  display: flex;
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 142px;
+  height: 142px;
+  /* overflow: hidden; */
+  justify-content: center;
+  top: calc((-10rem) / 2);
+  background: linear-gradient(to right, #804ced, #f48fd0);
+  z-index: 0;
+}
+.cardImg {
+  display: flex;
+  justify-content: flex-end;
+}
+.cardlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1.5rem;
+}
+.cardlistli {
+  font-weight: 400;
+  font-size: large;
+}
+.cardfooter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #373737;
+  padding-top: 1.62rem;
+  padding-bottom: 2.12rem;
+  width: inherit;
+  gap: 0.5rem;
+}
+.cardname {
+  background-color: #373737;
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1200px) {
+  .cardDiv {
+    width: 29rem;
+  }
+  .cardDiv::before {
+    top: -16%;
+    left: 35%;
+  }
+}
+@media (max-width: 1024px) {
+  .cardDiv {
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+  .cardDiv {
+    width: 27.75rem;
+  }
+  .cardDiv::before {
+    top: -16%;
+    left: 34%;
+  }
+}
+@media (max-width: 550px) {
+  .cardDiv {
+    width: 23.75rem;
+  }
+  .cardDiv::before {
+    top: -16%;
+    left: 31%;
+  }
+}
+@media (max-width: 400px) {
+  .cardDiv {
+    width: 21rem;
+  }
+  .cardDiv::before {
+    top: -13%;
+    left: 29%;
+  }
+}

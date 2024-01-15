@@ -21,10 +21,10 @@ export default function RootLayout({
 
 
       <html lang="en">
-        <ToastProvider/>
+        {/* <ToastProvider/> */}
         <body>{children}</body>
       </html>
-    
+      
     </ClerkProvider>
   )
 }
