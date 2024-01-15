@@ -1,5 +1,6 @@
 "use client"
 
+import InterviewExp from "@/components/sections/InterviewExp";
 import { UserButton, useUser } from "@clerk/nextjs";
  
 export default function Home() {
@@ -13,8 +14,9 @@ export default function Home() {
   if (isSignedIn) {
     return(
       <> 
-      <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/>
+      {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+      <UserButton afterSignOutUrl="/"/> */}
+      <InterviewExp/>
       </>
     ) 
   }
