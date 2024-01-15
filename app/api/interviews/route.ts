@@ -27,7 +27,7 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { name, rollno, phone, company, desc, companylogo, photo, rating, linkedin} = body;
+        const { name, rollno, phone, company, packages, desc, rating} = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
@@ -44,20 +44,14 @@ export async function POST(
         if(!company){
             return new NextResponse("company is required", {status: 400});
         }
+        if(!packages){
+            return new NextResponse("package is required", {status: 400});
+        }
         if(!desc){
             return new NextResponse("desc is required", {status: 400});
         }
-        if(!companylogo){
-            return new NextResponse("companylogo is required", {status: 400});
-        }
-        if(!photo){
-            return new NextResponse("photo is required", {status: 400});
-        }
         if(!rating){
             return new NextResponse("rating is required", {status: 400});
-        }
-        if(!linkedin){
-            return new NextResponse("linkedin is required", {status: 400});
         }
 
         const interview = await prismadb.interviewExp.create({
@@ -66,12 +60,10 @@ export async function POST(
                 rollno: rollno, 
                 email: "vg7134@gmail.com", 
                 phone: phone, 
-                company: company, 
-                desc: desc, 
-                companyLogo: companylogo, 
-                photo: photo, 
+                company: company,
+                package: packages, 
+                desc: desc,  
                 rating: rating, 
-                linkedin: linkedin
             }
         })
         

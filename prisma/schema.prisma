@@ -18,11 +18,10 @@ model InterviewExp {
   email String  
   phone String
   company String
+  package String
   desc  String
-  companyLogo  String
-  photo String
+  link Link[] @relation("InterviewExpToLink")
   rating  Int
-  linkedin  String
 }
 
 model ClassNotes{
@@ -60,17 +59,20 @@ model CompetitiveExam{
 
 model Link{
   id  String  @id @default(uuid())
+  name  String
   link  String
-  codingId  String
-  coding  Coding  @relation("CodingToLink", fields: [codingId], references: [id])
-  resourcesId String
-  resources Resources @relation("ResourcesToLink", fields: [resourcesId], references: [id])
-  competitiveExamId String
-  competitiveExam CompetitiveExam @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id])
-  classNotesId String
-  classNotes ClassNotes @relation("ClassNotesToLink", fields: [classNotesId], references: [id])
-  eventId String
-  events Events @relation("EventsToLink", fields: [eventId], references: [id])
+  codingId  String?
+  coding  Coding?  @relation("CodingToLink", fields: [codingId], references: [id])
+  resourcesId String?
+  resources Resources? @relation("ResourcesToLink", fields: [resourcesId], references: [id])
+  competitiveExamId String?
+  competitiveExam CompetitiveExam? @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id])
+  classNotesId String?
+  classNotes ClassNotes? @relation("ClassNotesToLink", fields: [classNotesId], references: [id])
+  eventId String?
+  events Events? @relation("EventsToLink", fields: [eventId], references: [id])
+  interviewExpId String?
+  interviewExp InterviewExp? @relation("InterviewExpToLink", fields: [interviewExpId], references: [id])
 
 
   @@index([codingId])
@@ -78,4 +80,5 @@ model Link{
   @@index([competitiveExamId])
   @@index([classNotesId])
   @@index([eventId])
+  @@index([interviewExpId])
 }
