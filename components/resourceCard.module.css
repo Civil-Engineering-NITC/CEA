@@ -1,0 +1,267 @@
+.borderDiv {
+  background: linear-gradient(to right, #804ced, #f48fd0);
+  border-radius: 1rem;
+  padding: 1px;
+  width: 39.25rem;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 2.125rem 3rem;
+}
+.cardHeading {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+}
+.cardHeading h2 {
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: #afafaf;
+}
+.cardHeading h3 {
+  color: #afafaf;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.cardMainHeading {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+.cardMainHeading h1 {
+  font-weight: 700;
+  font-size: 7.5rem;
+}
+.cardMainHeading h2 {
+  font-weight: 500;
+  font-size: 4rem;
+}
+.cardMainHeading a {
+  color: black;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.showMore {
+  color: white;
+  margin-top: 4rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+@media (max-width: 1440px) {
+  .borderDiv {
+    width: 35rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 6.5rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 3.5rem;
+  }
+  .cardMainHeading a {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1366px) {
+  .borderDiv {
+    width: 33rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 6.2rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 3.2rem;
+  }
+  .cardMainHeading a {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1220px) {
+  .borderDiv {
+    width: 30rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 5.6rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 2.6rem;
+  }
+  .cardMainHeading a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1140px) {
+  .borderDiv {
+    width: 28rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 5rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 1024px) {
+  .borderDiv {
+    width: 35rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 6.5rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .borderDiv {
+    width: 33rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 6.2rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .borderDiv {
+    width: 30rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 5.6rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 2.6rem;
+  }
+  .cards {
+    padding: 2.125rem 2rem;
+  }
+}
+@media (max-width: 550px) {
+  .borderDiv {
+    width: 26rem;
+  }
+  .cardHeading h2 {
+    font-size: 1.5rem;
+  }
+  .cardHeading h3 {
+    font-size: 1rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 4.8rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 2.1rem;
+  }
+  .showMore {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .borderDiv {
+    width: 23rem;
+  }
+  .cardHeading h2 {
+    font-size: 1.5rem;
+  }
+  .cardHeading h3 {
+    font-size: 1rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 4rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 1.7rem;
+  }
+  .cardMainHeading a {
+    font-size: 0.8rem;
+  }
+  .cards {
+    padding: 2.125rem 2rem;
+  }
+}
+@media (max-width: 400px) {
+  .borderDiv {
+    width: 20rem;
+  }
+  .cardHeading {
+    gap: 0.7rem;
+  }
+  .cardHeading h2 {
+    font-size: 1.3rem;
+  }
+  .cardHeading h3 {
+    font-size: 1rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 3.7rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 1.5rem;
+  }
+  .cardMainHeading a {
+    font-size: 0.6rem;
+  }
+  .cards {
+    padding: 2.125rem 1.5rem;
+  }
+  .showMore {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 360px) {
+  .borderDiv {
+    width: 18rem;
+  }
+  .cardHeading {
+    gap: 0.7rem;
+  }
+  .cardHeading h2 {
+    font-size: 1.3rem;
+  }
+  .cardHeading h3 {
+    font-size: 1rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 3.5rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 1.5rem;
+  }
+  .cards {
+    padding: 2.125rem 1rem;
+  }
+}
+@media (max-width: 320px) {
+  .borderDiv {
+    width: 16rem;
+  }
+  .cardHeading {
+    gap: 0.3rem;
+  }
+  .cardHeading h2 {
+    font-size: 1.2rem;
+  }
+  .cardHeading h3 {
+    font-size: 0.8rem;
+  }
+  .cardMainHeading h1 {
+    font-size: 3.2rem;
+  }
+  .cardMainHeading h2 {
+    font-size: 1.5rem;
+  }
+  .cards {
+    padding: 2.125rem 1rem;
+  }
+}

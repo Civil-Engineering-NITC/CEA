@@ -1,10 +1,10 @@
 .maindiv {
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 8.5rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   overflow-x: hidden;
 }
 .headings {
@@ -28,9 +28,10 @@
 }
 .cardholder {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 7.5rem;
-  max-width: 71.25rem;
+  gap: 3.5rem;
+  max-width: 82rem;
   align-items: stretch;
 }
 .loadmore {
@@ -41,19 +42,13 @@
   text-decoration: underline;
 }
 @media (max-width: 1366px) {
-  .cardholder {
-    gap: 5rem;
-  }
 }
 @media (max-width: 1200px) {
-  .cardholder {
-    gap: 2rem;
-  }
 }
 @media (max-width: 1024px) {
   .cardholder {
     flex-direction: column;
-    gap: 10rem;
+    gap: 5rem;
   }
 }
 @media (max-width: 900px) {

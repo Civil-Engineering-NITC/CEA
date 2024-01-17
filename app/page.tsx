@@ -2,8 +2,9 @@
 
 import InterviewExp from "@/components/sections/InterviewExp";
 import styles from "./page.module.css";
-import { UserButton } from "@clerk/nextjs";
-import { useUser } from "@clerk/nextjs";
+import Resource from "@/components/sections/Resource";
+// import OurExperience from "@/components/sections/OurExperience";
+// import Navbar from "@/components/sections/Navbar";
 
 export default function Home() {
 
@@ -18,7 +19,10 @@ export default function Home() {
       <>
       <UserButton afterSignOutUrl="/"/>
         <div className={styles.MainPage}></div>
-        <InterviewExp />
+        {/* <Navbar /> */}
+        {/* <OurExperience /> */}
+        <Resource />
+        {/* <InterviewExp /> */}
       </>
     );
   }
