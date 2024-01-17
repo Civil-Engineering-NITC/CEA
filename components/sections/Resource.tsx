@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./resource.module.css";
 import {ResourceCard} from "../ResourceCard";
 
-function Resource() {
+const Resource = () => {
   return (
     <>
       <div className={styles.maindiv}>
