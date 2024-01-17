@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./resource.module.css";
-import ResourceCard from "../ResourceCard";
+import {ResourceCard} from "../ResourceCard";
 
 function Resource() {
   return (
@@ -11,8 +11,8 @@ function Resource() {
           <h3>MATERIALS.</h3>
         </div>
         <div className={styles.cardholder}>
-          <ResourceCard />
-          <ResourceCard />
+          <ResourceCard title="CORE"/>
+          <ResourceCard title="CODING"/>
         </div>
         <a href="" className={styles.loadmore}>
           Load More

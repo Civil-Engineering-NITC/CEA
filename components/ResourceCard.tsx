@@ -3,7 +3,11 @@ import styles from "./resourceCard.module.css";
 import Image from "next/image";
 import school from "../public/school.svg";
 
-function ResourceCard() {
+interface ResourceCardProps{
+  title : string
+}
+
+export const ResourceCard : React.FC<ResourceCardProps> = ({title}) => {
   return (
     <>
       <div className={styles.borderDiv}>
@@ -18,7 +22,7 @@ function ResourceCard() {
             <h3>/Exam</h3>
           </div>
           <div className={styles.cardMainHeading}>
-            <h1>CORE</h1>
+            <h1>{title}</h1>
             <h2>MATERIALS</h2>
             <a href="">Previous Year Papers</a>
           </div>
@@ -30,5 +34,3 @@ function ResourceCard() {
     </>
   );
 }
-
-export default ResourceCard;
