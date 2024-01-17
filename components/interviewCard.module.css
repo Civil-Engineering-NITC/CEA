@@ -126,3 +126,27 @@
     left: 29%;
   }
 }
+@media (max-width: 360px) {
+  .cardDiv {
+    width: 19rem;
+  }
+  .cardDiv::before {
+    top: -13%;
+    left: 27%;
+  }
+  .cardPrimary {
+    padding: 0.62rem 1rem 1.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .cardDiv {
+    width: 16rem;
+  }
+  .cardDiv::before {
+    top: -12%;
+    left: 23%;
+  }
+  .cardPrimary {
+    padding: 0.62rem 0.5rem 1.5rem;
+  }
+}

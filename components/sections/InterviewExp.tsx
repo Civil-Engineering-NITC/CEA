@@ -25,15 +25,17 @@ function InterviewExp() {
     <>
       <div className={styles.maindiv}>
         <div className={styles.headings}>
-          <h1 className={styles.head}>INTERVIEW.</h1>
-          <h3 className={styles.subhead}>EXPERIENCES.</h3>
+          <h1>INTERVIEW.</h1>
+          <h3>EXPERIENCES.</h3>
         </div>
         <div className={styles.cardholder}>
           {displayedData.map((data: IndexDataProps) => (
             <InterviewCard {...data} />
           ))}
         </div>
-        <p className={styles.loadmore}>Load More</p>
+        <a href="" className={styles.loadmore}>
+          Load More
+        </a>
       </div>
     </>
   );
