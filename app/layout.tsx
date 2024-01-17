@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ClerkProvider, auth } from "@clerk/nextjs";
-import { ToastProvider } from "@/providers/toast-provider";
+
 import { Sora } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from '@clerk/themes';
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -17,11 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    appearance={{
+      baseTheme: dark
+    }}
+    > 
+
       <html lang="en">
-        {/* <ToastProvider/> */}
         <body className={sora.className}>{children}</body>
       </html>
+      
     </ClerkProvider>
   );
 }
