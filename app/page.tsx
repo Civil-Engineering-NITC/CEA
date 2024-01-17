@@ -3,6 +3,8 @@
 import InterviewExp from "@/components/sections/InterviewExp";
 import styles from "./page.module.css";
 import Resource from "@/components/sections/Resource";
+
+import { useUser, UserButton } from "@clerk/nextjs";
 // import OurExperience from "@/components/sections/OurExperience";
 // import Navbar from "@/components/sections/Navbar";
 
