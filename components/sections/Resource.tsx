@@ -1,22 +1,19 @@
 import React from "react";
 import styles from "./resource.module.css";
 import { ResourceCard } from "../ResourceCard";
+import { Header } from "../Header";
+import { DownArrowButton } from "../DownArrowButton";
 
 export const Resource = () => {
   return (
     <>
       <div className={styles.maindiv}>
-        <div className={styles.headings}>
-          <h1>RESOURCE.</h1>
-          <h3>MATERIALS.</h3>
-        </div>
+        <Header headingText="RESOURCE." subHeadingText="MATERIALS." />
         <div className={styles.cardholder}>
           <ResourceCard title="CORE" />
           <ResourceCard title="CODING" />
         </div>
-        <a href="" className={styles.loadmore}>
-          Load More
-        </a>
+        <DownArrowButton text="Load More" />
       </div>
     </>
   );

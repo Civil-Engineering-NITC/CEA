@@ -1,0 +1,12 @@
+.arrowbutton {
+  color: white;
+  width: max-content;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+@media (max-width: 550px) {
+  .arrowbutton {
+    font-size: 1rem;
+  }
+}

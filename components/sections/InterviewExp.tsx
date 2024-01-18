@@ -5,6 +5,7 @@ import { datas } from "@/data/interviewExpData";
 import { Heading } from "../Heading";
 import { SubHeading } from "../SubHeading";
 import { Header } from "../Header";
+import { DownArrowButton } from "../DownArrowButton";
 
 interface IndexDataProps {
   name: string;
@@ -33,9 +34,7 @@ export const InterviewExp = () => {
             <InterviewCard {...data} />
           ))}
         </div>
-        <a href="" className={styles.loadmore}>
-          Load More
-        </a>
+        <DownArrowButton text="Load More" />
       </div>
     </>
   );
