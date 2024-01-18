@@ -24,7 +24,7 @@ export default function Home() {
         <Navbar />
         {/* <HomePage /> */}
         {/* <OurExperience /> */}
-        {/* <Resource /> */}
+        <Resource />
         <InterviewExp />
       </>
     );

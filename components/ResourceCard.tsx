@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./resourceCard.module.css";
 import Image from "next/image";
 import school from "../public/school.svg";
+import { RightArrowButton } from "./RightArrowButton";
 
 interface ResourceCardProps {
   title: string;
@@ -26,9 +27,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({ title }) => {
             <h2>MATERIALS</h2>
             <a href="">Previous Year Papers</a>
           </div>
-          <a className={styles.showMore} href="">
-            Show More
-          </a>
+          <RightArrowButton text="Show More" />
         </div>
       </div>
     </>

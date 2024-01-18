@@ -1,15 +1,19 @@
 .arrowbutton {
   color: white;
-  width: max-content;
-  font-weight: 400;
+  margin-top: 4rem;
+  text-decoration: none;
+  font-weight: 500;
   font-size: 1.5rem;
-  text-decoration: underline;
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  justify-content: center;
 }
 @media (max-width: 550px) {
+  .arrowbutton {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 400px) {
   .arrowbutton {
     font-size: 1rem;
   }

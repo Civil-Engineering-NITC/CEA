@@ -51,13 +51,6 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
 }
-.showMore {
-  color: white;
-  margin-top: 4rem;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.5rem;
-}
 @media (max-width: 1440px) {
   .borderDiv {
     width: 35rem;
@@ -163,9 +156,6 @@
   .cardMainHeading h2 {
     font-size: 2.1rem;
   }
-  .showMore {
-    font-size: 1.2rem;
-  }
 }
 @media (max-width: 480px) {
   .borderDiv {
@@ -214,9 +204,6 @@
   }
   .cards {
     padding: 2.125rem 1.5rem;
-  }
-  .showMore {
-    font-size: 1rem;
   }
 }
 @media (max-width: 360px) {
