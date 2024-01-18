@@ -1,7 +1,10 @@
 import React from "react";
-import InterviewCard from "../interviewCard";
+import { InterviewCard } from "../interviewCard";
 import styles from "./interviewExp.module.css";
 import { datas } from "@/data/interviewExpData";
+import { Heading } from "../Heading";
+import { SubHeading } from "../SubHeading";
+import { Header } from "../Header";
 
 interface IndexDataProps {
   name: string;
@@ -16,7 +19,7 @@ interface IndexDataProps {
   linkedin: string;
 }
 
-function InterviewExp() {
+export const InterviewExp = () => {
   const sortedData = datas.sort(
     (a, b) => parseFloat(b.package) - parseFloat(a.package)
   );
@@ -24,10 +27,7 @@ function InterviewExp() {
   return (
     <>
       <div className={styles.maindiv}>
-        <div className={styles.headings}>
-          <h1>INTERVIEW.</h1>
-          <h3>EXPERIENCES.</h3>
-        </div>
+        <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
         <div className={styles.cardholder}>
           {displayedData.map((data: IndexDataProps) => (
             <InterviewCard {...data} />
@@ -39,6 +39,4 @@ function InterviewExp() {
       </div>
     </>
   );
-}
-
-export default InterviewExp;
+};

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./resource.module.css";
-import ResourceCard from "../ResourceCard";
+import { ResourceCard } from "../ResourceCard";
 
-function Resource() {
+export const Resource = () => {
   return (
     <>
       <div className={styles.maindiv}>
@@ -20,6 +20,4 @@ function Resource() {
       </div>
     </>
   );
-}
-
-export default Resource;
+};

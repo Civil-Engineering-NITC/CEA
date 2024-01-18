@@ -17,7 +17,7 @@ interface IndexDataProps {
   linkedin: string;
 }
 
-function InterviewCard(data: IndexDataProps) {
+export const InterviewCard: React.FC<IndexDataProps> = (data) => {
   return (
     <>
       {/* <div className={styles.cardMainDiv}> */}
@@ -60,6 +60,4 @@ function InterviewCard(data: IndexDataProps) {
       {/* </div> */}
     </>
   );
-}
-
-export default InterviewCard;
+};

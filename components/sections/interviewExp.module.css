@@ -7,25 +7,6 @@
   gap: 8.5rem 0;
   overflow-x: hidden;
 }
-.headings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.headings h1 {
-  font-weight: 700;
-  font-size: 5rem;
-  letter-spacing: 0.14rem;
-  margin-right: -0.14rem;
-}
-.headings h3 {
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: #868686;
-  letter-spacing: 0.77rem;
-  margin-right: -0.77rem;
-}
 .cardholder {
   display: flex;
   justify-content: space-between;
@@ -59,24 +40,8 @@
 @media (max-width: 900px) {
 }
 @media (max-width: 768px) {
-  .headings h1 {
-    font-size: 3rem;
-  }
-  .headings h3 {
-    font-size: 1.35;
-    letter-spacing: 0.5rem;
-    margin-right: -0.5rem;
-  }
 }
 @media (max-width: 550px) {
-  .headings h1 {
-    font-size: 2.25rem;
-  }
-  .headings h3 {
-    font-size: 1.25rem;
-    letter-spacing: 0.3rem;
-    margin-right: -0.3rem;
-  }
   .loadmore {
     font-size: 1rem;
   }

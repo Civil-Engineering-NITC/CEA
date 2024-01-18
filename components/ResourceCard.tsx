@@ -3,7 +3,7 @@ import styles from "./resourceCard.module.css";
 import Image from "next/image";
 import school from "../public/school.svg";
 
-function ResourceCard() {
+export const ResourceCard = () => {
   return (
     <>
       <div className={styles.borderDiv}>
@@ -29,6 +29,4 @@ function ResourceCard() {
       </div>
     </>
   );
-}
-
-export default ResourceCard;
+};

@@ -1,0 +1,105 @@
+.navDiv {
+  color: white;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 4.375rem;
+}
+.navHeading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.navlinks a {
+  color: white;
+  font-weight: 400;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+.menuLogo {
+  padding: 0.625rem;
+  background-color: #171717;
+  border-radius: 0.25rem;
+  display: none;
+}
+.mainbut button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+.mainbut button::after {
+  content: "";
+  display: flex;
+  z-index: 0;
+  position: relative;
+  top: calc((-15rem) / 7);
+  left: calc((5rem) / 10);
+  width: inherit;
+  height: inherit;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1220px) {
+  .navlinks {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navlinks {
+    display: none;
+  }
+  .menuLogo {
+    display: block;
+  }
+}
+@media (max-width: 900px) {
+  .navDiv {
+    padding: 0rem 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .navDiv {
+    padding: 0rem 3.5rem;
+  }
+}
+@media (max-width: 550px) {
+  .navDiv {
+    padding: 0rem 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .navDiv {
+    padding: 0rem 2.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .navDiv {
+    padding: 0rem 2rem;
+  }
+}
+@media (max-width: 360px) {
+  .navDiv {
+    padding: 0rem 1.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .navDiv {
+    padding: 0rem 1rem;
+  }
+}
