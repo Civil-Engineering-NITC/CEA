@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import menuIcon from "../public/hamburger Menu.svg";
-import { ColourdButton } from "./ColourdButton";
+// import { ColourdButton } from "./ColourdButton";
 import { ColouredText } from "./ColouredText";
 
 export const Navbar = () => {
