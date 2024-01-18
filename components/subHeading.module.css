@@ -1,0 +1,29 @@
+.subText {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #868686;
+  letter-spacing: 0.77rem;
+  margin-right: -0.77rem;
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+  .subText {
+    font-size: 1.35;
+    letter-spacing: 0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+@media (max-width: 550px) {
+  .subText {
+    font-size: 1.25rem;
+    letter-spacing: 0.3rem;
+    margin-right: -0.3rem;
+  }
+}
