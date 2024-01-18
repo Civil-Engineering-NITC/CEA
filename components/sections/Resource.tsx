@@ -11,8 +11,8 @@ export const Resource = () => {
           <h3>MATERIALS.</h3>
         </div>
         <div className={styles.cardholder}>
-          <ResourceCard />
-          <ResourceCard />
+          <ResourceCard title="CORE" />
+          <ResourceCard title="CODING" />
         </div>
         <a href="" className={styles.loadmore}>
           Load More
@@ -21,3 +21,5 @@ export const Resource = () => {
     </>
   );
 };
+
+export default Resource;
