@@ -34,7 +34,7 @@ export const InterviewExp = () => {
             <InterviewCard {...data} />
           ))}
         </div>
-        <DownArrowButton text="Load More" />
+        <DownArrowButton text="Load More" redirectLink="" />
       </div>
     </>
   );

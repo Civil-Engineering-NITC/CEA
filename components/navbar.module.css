@@ -6,14 +6,6 @@
   justify-content: space-between;
   padding: 0rem 4.375rem;
 }
-.navHeading {
-  font-weight: 700;
-  font-size: 1.5rem;
-  background: linear-gradient(to right, #804ced, #f48fd0);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
 .navlinks {
   display: flex;
   align-items: center;
@@ -31,25 +23,6 @@
   background-color: #171717;
   border-radius: 0.25rem;
   display: none;
-}
-.mainbut button {
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
-  background-color: rgba(255, 255, 255, 0.7);
-  font-weight: 400;
-  font-size: 1.125rem;
-}
-.mainbut button::after {
-  content: "";
-  display: flex;
-  z-index: 0;
-  position: relative;
-  top: calc((-15rem) / 7);
-  left: calc((5rem) / 10);
-  width: inherit;
-  height: inherit;
-  border-radius: 0.25rem;
-  background: linear-gradient(to right, #804ced, #f48fd0);
 }
 @media (max-width: 1440px) {
 }

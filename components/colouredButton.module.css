@@ -1,0 +1,30 @@
+.mainDiv {
+  display: flex;
+  position: relative;
+}
+.buttonDiv {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 2;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 1.125rem;
+  gap: 0.625rem;
+}
+.colorDiv {
+  position: absolute;
+  top: 0.313rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+.arrowButton {
+  background: transparent;
+}

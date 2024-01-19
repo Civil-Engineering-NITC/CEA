@@ -5,12 +5,16 @@ import arrowImg from "@/public/DownArrow.svg";
 
 interface DownArrowButtonProps {
   text: string;
+  redirectLink: string;
 }
 
-export const DownArrowButton: React.FC<DownArrowButtonProps> = ({ text }) => {
+export const DownArrowButton: React.FC<DownArrowButtonProps> = ({
+  text,
+  redirectLink,
+}) => {
   return (
     <>
-      <a href="" className={styles.arrowbutton}>
+      <a href={redirectLink} className={styles.arrowbutton}>
         {text}
         <Image src={arrowImg} alt="" />
       </a>

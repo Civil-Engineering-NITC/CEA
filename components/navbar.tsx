@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import menuIcon from "../public/hamburger Menu.svg";
-// import { ColourdButton } from "./ColourdButton";
 import { ColouredText } from "./ColouredText";
+import { ColourdButton } from "./ColourdButton";
 
 export const Navbar = () => {
   return (
@@ -16,11 +16,7 @@ export const Navbar = () => {
           <a href="">Resources.</a>
           <a href="">Members.</a>
           <a href="">ContactUS.</a>
-          {/* <ColourdButton />
-      <div className={styles.mainbut}>
-        <button>Hello from other side</button>
-        <div className={styles.colback}></div>
-      </div> */}
+          <ColourdButton text="Sign In" redirectLink="" />
         </div>
         <Image src={menuIcon} alt="" className={styles.menuLogo} />
       </div>

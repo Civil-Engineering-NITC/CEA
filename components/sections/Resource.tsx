@@ -13,7 +13,7 @@ export const Resource = () => {
           <ResourceCard title="CORE" />
           <ResourceCard title="CODING" />
         </div>
-        <DownArrowButton text="Load More" />
+        <DownArrowButton text="Load More" redirectLink="" />
       </div>
     </>
   );

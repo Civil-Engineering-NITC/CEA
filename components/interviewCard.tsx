@@ -20,7 +20,6 @@ interface IndexDataProps {
 export const InterviewCard: React.FC<IndexDataProps> = (data) => {
   return (
     <>
-      {/* <div className={styles.cardMainDiv}> */}
       <div className={styles.cardDiv}>
         <div className={styles.profilePic}>
           <Image
@@ -57,7 +56,6 @@ export const InterviewCard: React.FC<IndexDataProps> = (data) => {
           <p>{data.rollno}</p>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 };
