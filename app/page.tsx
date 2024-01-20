@@ -24,9 +24,8 @@ export default function Home() {
       <UserButton afterSignOutUrl="/"/> */}
         <div className={styles.MainPage}></div>
         <Navbar />
-        <HomePage />
+        <HomePage/>
         {/* <OurExperience /> */}
-        {/* <Competitive /> */}
         {/* <Resource /> */}
         {/* <InterviewExp /> */}
       </>

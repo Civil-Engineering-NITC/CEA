@@ -27,7 +27,7 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { name, rollno, phone, company, packages, desc, rating } = body;
+        const { name, rollno, phone, email, company, packages, desc, rating} = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
@@ -40,6 +40,9 @@ export async function POST(
         }
         if(!phone){
             return new NextResponse("phone is required", {status: 400});
+        }
+        if(!email){
+            return new NextResponse("email is required", {status: 400});
         }
         if(!company){
             return new NextResponse("company is required", {status: 400});
@@ -58,7 +61,7 @@ export async function POST(
             data:{
                 name: name, 
                 rollno: rollno, 
-                email: "vg7134@gmail.com", 
+                email: email, 
                 phone: phone, 
                 company: company,
                 package: packages, 
@@ -66,6 +69,8 @@ export async function POST(
                 rating: rating, 
             }
         })
+
+        return new NextResponse("Interview created successfully", { status: 201 });
         
     }catch(error){
         console.log("INTERVIEW_POST", error);
