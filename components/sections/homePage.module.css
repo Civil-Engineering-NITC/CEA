@@ -34,7 +34,7 @@
   background: transparent;
   overflow-x: clip;
 }
-.vaibhavKiGand {
+.gridBackground {
   animation: animate 10s linear infinite;
   z-index: 0;
   position: absolute;

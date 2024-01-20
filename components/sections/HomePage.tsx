@@ -12,7 +12,7 @@ export const HomePage = () => {
     <>
       <div className={styles.mainDiv}>
         <div className={styles.backgroundImg}>
-          <div className={styles.vaibhavKiGand}></div>
+          <div className={styles.gridBackground}></div>
         </div>
         <div className={styles.wrapperDiv}>
           <div className={styles.headingDiv}>
