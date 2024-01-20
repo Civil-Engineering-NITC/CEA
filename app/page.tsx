@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import Resource from "@/components/sections/Resource";
 
 import { useUser, UserButton } from "@clerk/nextjs";
+import { InterviewForm } from "@/components/forms/InterviewForm";
 // import OurExperience from "@/components/sections/OurExperience";
 // import Navbar from "@/components/sections/Navbar";
 
@@ -21,9 +22,10 @@ export default function Home() {
       <>
       <UserButton afterSignOutUrl="/"/>
         <div className={styles.MainPage}></div>
+        <InterviewForm/>
         {/* <Navbar /> */}
         {/* <OurExperience /> */}
-        <Resource />
+        {/* <Resource /> */}
         {/* <InterviewExp /> */}
       </>
     );
