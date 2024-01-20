@@ -1,0 +1,40 @@
+.menuBack {
+  padding: 0.625rem;
+  background-color: #171717;
+  border-radius: 0.25rem;
+  display: none;
+}
+.hamburger {
+  position: relative;
+  width: 1.75rem;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: white;
+  margin-top: 6px;
+  transition: 0.4s;
+}
+.hamburger.isActive::before {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.hamburger.isActive::after {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+.hamburger.isActive .bar {
+  opacity: 0;
+}
+@media (max-width: 1024px) {
+  .menuBack {
+    display: block;
+  }
+}

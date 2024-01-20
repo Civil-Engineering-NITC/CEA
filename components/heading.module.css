@@ -1,0 +1,26 @@
+.heading {
+  color: white;
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 0.14rem;
+  margin-right: -0.14rem;
+  background: transparent;
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 550px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}

@@ -1,0 +1,139 @@
+.wrapperDiv {
+  position: absolute;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mainDiv {
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: 100vw;
+  height: 70vh;
+  top: 0;
+  left: 0;
+}
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow-x: clip;
+}
+.gridBackground {
+  animation: animate 10s linear infinite;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  width: 33rem;
+  height: 33rem;
+  background-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 40%, 0.4) 1px,
+      transparent 0
+    ),
+    linear-gradient(180deg, hsla(0, 0%, 40%, 0.4) 1px, transparent 0);
+  background-size: 4.688rem 4.688rem;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.headingDiv {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: transparent;
+}
+.headingDiv h1 {
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 0.14rem;
+  margin-right: -0.14rem;
+  background: transparent;
+}
+.headingDiv h2 {
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 0.14rem;
+  margin-right: -0.14rem;
+  padding: 0rem 1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, transparent 50%, #5c5c5c73 50%);
+  background-size: 200%;
+  animation: appearFromLeft 4s forwards;
+}
+@keyframes appearFromLeft {
+  to {
+    background-position: -100% 0;
+  }
+}
+.colorText {
+  background: transparent;
+}
+.mainDiv p {
+  text-align: center;
+  max-width: 48.125rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  background: transparent;
+}
+.buttonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.375rem;
+  margin-top: 1.25rem;
+  background: transparent;
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1220px) {
+}
+@media (max-width: 1024px) {
+  .headingDiv {
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  .headingDiv {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .headingDiv {
+    flex-direction: row;
+  }
+}
+@media (max-width: 550px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 400px) {
+}
+@media (max-width: 360px) {
+}
+@media (max-width: 320px) {
+}

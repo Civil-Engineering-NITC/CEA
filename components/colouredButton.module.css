@@ -1,0 +1,50 @@
+.mainDiv {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+}
+.buttonDiv {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 2;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  gap: 0.625rem;
+}
+.colorDiv {
+  position: absolute;
+  top: 0.313rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+.arrowButton {
+  background: transparent;
+}
+@media (max-width: 550px) {
+  .arrowButton {
+    display: none;
+  }
+}
+.mainDiv:hover .colorDiv {
+  animation: moveIn 1s;
+}
+@keyframes moveIn {
+  0% {
+    transform: translate(0rem, 0rem);
+    box-shadow: 0px 0px 50px 1px #804ced, 0px 0px 50px 1px #f48fd0;
+  }
+  25% {
+    transform: translate(-0.5rem, -0.313rem);
+  }
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
