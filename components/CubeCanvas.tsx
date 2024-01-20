@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import React from 'react'
 import { Cube } from './Cube'
 
-export const Landing = () => {
+export const CubeCanvas = () => {
   return (
     <Canvas
     style={{ background: "#3C3C3C"}}
