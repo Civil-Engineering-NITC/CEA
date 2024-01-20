@@ -45,7 +45,7 @@ model Resources{
 
 model Events{
   id  String @id  @default(uuid())
-  regLink String
+  name String
   link Link[] @relation("EventsToLink")
   desc  String
 }

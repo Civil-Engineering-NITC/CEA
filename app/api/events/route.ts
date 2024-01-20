@@ -27,13 +27,13 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { regLink, desc} = body;
+        const { name, desc} = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
         }
-        if(!regLink){
-            return new NextResponse("regLink is required", {status: 400});
+        if(!name){
+            return new NextResponse("name is required", {status: 400});
         }
         if(!desc){
             return new NextResponse("desc is required", {status: 400});
@@ -41,7 +41,7 @@ export async function POST(
 
         const event = await prismadb.events.create({
             data:{
-                regLink: regLink, 
+                name: name, 
                 desc: desc, 
             }
         })
