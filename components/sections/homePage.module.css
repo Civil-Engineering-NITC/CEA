@@ -81,7 +81,7 @@
   border-radius: 0.5rem;
   background: linear-gradient(to right, transparent 50%, #5c5c5c73 50%);
   background-size: 200%;
-  animation: appearFromLeft 4s forwards;
+  animation: appearFromLeft 1s cubic-bezier(.69,.01,1,.42) forwards;
 }
 @keyframes appearFromLeft {
   to {
