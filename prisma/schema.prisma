@@ -20,65 +20,99 @@ model InterviewExp {
   company String
   package String
   desc  String
-  link Link[] @relation("InterviewExpToLink")
+  link InterviewExpLink[] @relation("InterviewExpToLink")
   rating  Int
+}
+
+model InterviewExpLink{
+  id  String  @id @default(uuid())
+  name  String
+  link  String
+  interviewExpId String
+  interviewExp InterviewExp @relation("InterviewExpToLink", fields: [interviewExpId], references: [id], onDelete: Cascade)
+
+  @@index([interviewExpId])
 }
 
 model ClassNotes{
   id String @id @default(uuid())
   subject String
-  download  Link[]  @relation("ClassNotesToLink")
+  link  ClassNotesLink[]  @relation("ClassNotesToLink")
+}
+
+model ClassNotesLink{
+  id  String  @id @default(uuid())
+  name  String
+  link  String
+  classNotesId String
+  classNotes ClassNotes @relation("ClassNotesToLink", fields: [classNotesId], references: [id], onDelete: Cascade)
+
+  @@index([classNotesId])
 }
 
 model Coding{
   id String @id @default(uuid())
   topic String
   desc  String
-  link  Link[]  @relation("CodingToLink")  
+  link  CodingLink[]  @relation("CodingToLink")  
+}
+
+model CodingLink{
+  id  String  @id @default(uuid())
+  name  String
+  link  String
+  codingId  String
+  coding  Coding  @relation("CodingToLink", fields: [codingId], references: [id], onDelete: Cascade)
+
+  @@index([codingId])
 }
 
 model Resources{
   id  String  @id @default(uuid())
   topic String
-  link  Link[]  @relation("ResourcesToLink")
+  link  ResourceLink[]  @relation("ResourcesToLink")
+}
+
+model ResourceLink{
+  id  String  @id @default(uuid())
+  name  String
+  link  String
+  resourcesId String
+  resources Resources @relation("ResourcesToLink", fields: [resourcesId], references: [id], onDelete: Cascade)
+
+  @@index([resourcesId])
 }
 
 model Events{
   id  String @id  @default(uuid())
   regLink String
-  link Link[] @relation("EventsToLink")
+  link EventsLink[] @relation("EventsToLink")
   desc  String
+}
+
+model EventsLink{
+  id  String  @id @default(uuid())
+  name  String
+  link  String
+  eventId String
+  events Events @relation("EventsToLink", fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@index([eventId])
 }
 
 model CompetitiveExam{
   id  String  @id @default(uuid())
   name  String
   desc  String
-  link  Link[]  @relation("CompetitiveExamToLink")
+  link  CompetitiveExamLink[]  @relation("CompetitiveExamToLink")
 }
 
-model Link{
+model CompetitiveExamLink{
   id  String  @id @default(uuid())
   name  String
   link  String
-  codingId  String?
-  coding  Coding?  @relation("CodingToLink", fields: [codingId], references: [id])
-  resourcesId String?
-  resources Resources? @relation("ResourcesToLink", fields: [resourcesId], references: [id])
-  competitiveExamId String?
-  competitiveExam CompetitiveExam? @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id])
-  classNotesId String?
-  classNotes ClassNotes? @relation("ClassNotesToLink", fields: [classNotesId], references: [id])
-  eventId String?
-  events Events? @relation("EventsToLink", fields: [eventId], references: [id])
-  interviewExpId String?
-  interviewExp InterviewExp? @relation("InterviewExpToLink", fields: [interviewExpId], references: [id])
+  competitiveExamId String
+  competitiveExam CompetitiveExam @relation("CompetitiveExamToLink", fields: [competitiveExamId], references: [id], onDelete: Cascade)
 
-
-  @@index([codingId])
-  @@index([resourcesId])
   @@index([competitiveExamId])
-  @@index([classNotesId])
-  @@index([eventId])
-  @@index([interviewExpId])
 }
