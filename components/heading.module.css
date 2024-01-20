@@ -1,8 +1,10 @@
 .heading {
+  color: white;
   font-weight: 700;
   font-size: 5rem;
   letter-spacing: 0.14rem;
   margin-right: -0.14rem;
+  background: transparent;
 }
 @media (max-width: 1366px) {
 }

@@ -1,6 +1,7 @@
 .mainDiv {
   display: flex;
   position: relative;
+  text-decoration: none;
 }
 .buttonDiv {
   color: black;
@@ -13,7 +14,6 @@
   border-radius: 0.25rem;
   background-color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
-  font-size: 1.125rem;
   gap: 0.625rem;
 }
 .colorDiv {
@@ -27,4 +27,20 @@
 }
 .arrowButton {
   background: transparent;
+}
+@media (max-width: 550px) {
+  .arrowButton {
+    display: none;
+  }
+}
+.mainDiv:hover .colorDiv {
+  animation: moveIn 1s;
+}
+@keyframes moveIn {
+  0% {
+    transform: translate(-0.5rem, -0.313rem);
+  }
+  100% {
+    transform: translate(0rem, 0rem);
+  }
 }

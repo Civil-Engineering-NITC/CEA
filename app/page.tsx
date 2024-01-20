@@ -7,6 +7,7 @@ import { Resource } from "@/components/sections/Resource";
 // import { HomePage } from "@/components/sections/HomePage";
 // import { OurExperience } from "@/components/sections/OurExperience";
 import { Navbar } from "@/components/Navbar";
+// import { Competitive } from "@/components/sections/Competitive";
 
 export default function Home() {
   const { isSignedIn, user, isLoaded } = useUser();
@@ -24,8 +25,9 @@ export default function Home() {
         <Navbar />
         {/* <HomePage /> */}
         {/* <OurExperience /> */}
-        <Resource />
-        <InterviewExp />
+        {/* <Competitive /> */}
+        {/* <Resource /> */}
+        {/* <InterviewExp /> */}
       </>
     );
   }

@@ -4,6 +4,7 @@
   color: #868686;
   letter-spacing: 0.77rem;
   margin-right: -0.77rem;
+  background: transparent;
 }
 @media (max-width: 1366px) {
 }
