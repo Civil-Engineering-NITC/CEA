@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./rightArrowButton.module.css";
-import arrowImg from "@/public/RightArrow.svg";
+import arrowImg from "@/public/rightArrow.png";
 
 interface RightArrowButtonProps {
   text: string;
@@ -16,7 +16,7 @@ export const RightArrowButton: React.FC<RightArrowButtonProps> = ({
     <>
       <a href={redirectLink} className={styles.arrowbutton}>
         {text}
-        <Image src={arrowImg} alt="" />
+        <Image src={arrowImg} alt="" style={{ background: "transparent" }} />
       </a>
     </>
   );

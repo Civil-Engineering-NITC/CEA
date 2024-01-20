@@ -4,7 +4,7 @@ import { InterviewExp } from "@/components/sections/InterviewExp";
 import { UserButton, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
-// import { HomePage } from "@/components/sections/HomePage";
+import { HomePage } from "@/components/sections/HomePage";
 // import { OurExperience } from "@/components/sections/OurExperience";
 import { Navbar } from "@/components/Navbar";
 // import { Competitive } from "@/components/sections/Competitive";
@@ -23,7 +23,7 @@ export default function Home() {
       <UserButton afterSignOutUrl="/"/> */}
         <div className={styles.MainPage}></div>
         <Navbar />
-        {/* <HomePage /> */}
+        <HomePage />
         {/* <OurExperience /> */}
         {/* <Competitive /> */}
         {/* <Resource /> */}

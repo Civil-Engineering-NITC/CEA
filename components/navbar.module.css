@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0rem 4.375rem;
+  position: sticky;
+  z-index: 100;
 }
 .navMenu {
   display: flex;
