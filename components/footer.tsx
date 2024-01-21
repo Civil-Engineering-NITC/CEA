@@ -28,10 +28,9 @@ export const Footer = () => {
         </div>
         <div className={styles.contactContainer}>
             <p>STAY UP TO DATE</p>
-            <h3>Get Our</h3> 
-            <h3>Newsletter</h3>
+            <h3>Get Our Newsletter</h3> 
             <input type="email" 
-            placeholder=""
+            placeholder="Your Email"
             />
             <button className={styles.emailInput}>
             <MdArrowOutward className={styles.arrow}/>

@@ -7,7 +7,8 @@ import { Resource } from "@/components/sections/Resource";
 import { HomePage } from "@/components/sections/HomePage";
 import { Navbar } from "@/components/Navbar";
 import { Competitive } from "@/components/sections/Competitive";
-// import { OurExperience } from "@/components/sections/OurExperience";
+import { OurExperience } from "@/components/sections/OurExperience";
+import { Footer } from "@/components/footer";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -23,13 +24,19 @@ export default function Home() {
       <>
         {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
       <UserButton afterSignOutUrl="/"/> */}
-        <div className={styles.MainPage}></div>
         <Navbar />
+        <div className={styles.margin}></div>
         <HomePage />
-        {/* <OurExperience /> */}
-        {/* <Competitive /> */}
-        {/* <Resource /> */}
-        {/* <InterviewExp /> */}
+        <div style={{ marginTop: "10rem"}}></div>
+        <OurExperience />
+        <div className={styles.margin}></div>
+        <Competitive />
+        <div className={styles.margin}></div>
+        <Resource />
+        <div className={styles.margin}></div>
+        <InterviewExp />
+        <div className={styles.margin}></div>
+        <Footer/>
       </>
     );
   }

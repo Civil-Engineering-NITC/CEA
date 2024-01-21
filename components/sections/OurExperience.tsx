@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ourExperience.module.css";
-import OurExperienceCard from "../OurExperienceCard";
+import { OurExperienceCard } from "../OurExperienceCard";
 
 export const OurExperience = () => {
   return (
