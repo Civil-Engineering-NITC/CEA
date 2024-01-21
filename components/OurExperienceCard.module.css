@@ -1,0 +1,81 @@
+.cardDiv {
+  display: flex;
+  align-items: center;
+}
+.cardDiv h3 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.75rem;
+  background-color: white;
+  color: black;
+  width: 1.938rem;
+  height: 6.5rem;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  left: calc((2rem) / 2);
+  top: calc((5rem) / 1);
+}
+.cardBox {
+  width: 37.5rem;
+  height: 25rem;
+  box-shadow: -2.371764659881592px -2.371764659881592px 0px 0px #6b6b6b;
+  border-radius: 0.5rem;
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1366px) {
+  .cardBox {
+    width: 33rem;
+  }
+}
+@media (max-width: 1220px) {
+  .cardBox {
+    width: 27rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardBox {
+    width: 37.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+}
+
+@media (max-width: 768px) {
+  .cardBox {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .cardBox {
+    width: 25rem;
+  }
+}
+@media (max-width: 480px) {
+  .cardBox {
+    width: 20rem;
+  }
+}
+@media (max-width: 400px) {
+  .cardBox {
+    width: 18rem;
+  }
+}
+@media (max-width: 360px) {
+  .cardBox {
+    width: 16rem;
+  }
+}
+@media (max-width: 320px) {
+  .cardBox {
+    width: 15rem;
+  }
+}
