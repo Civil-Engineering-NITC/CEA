@@ -1,0 +1,225 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+}
+.strips {
+  position: relative;
+}
+.whiteStrips {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.905rem;
+  height: 7.5rem;
+  position: relative;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+.whiteStripDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.905rem;
+  background: white;
+}
+.whiteStripDiv h1 {
+  background: transparent;
+  font-weight: 700;
+  font-size: 4rem;
+  width: max-content;
+}
+.whiteDots {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: black;
+}
+.blackStrips {
+  background: #313131;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.938rem;
+  height: 7.5rem;
+  transform: rotate(-2deg);
+  position: relative;
+  top: 1rem;
+}
+.blackStripDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.938rem;
+  background: #313131;
+}
+.blackDots {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.whiteStripDiv {
+  animation: animate1 20s linear infinite;
+  animation-delay: -20s;
+}
+.whiteStripDiv:nth-child(2) {
+  animation: animate2 20s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.blackStripDiv {
+  animation: animate3 20s linear infinite;
+  animation-delay: -40s;
+}
+.blackStripDiv:nth-child(2) {
+  animation: animate4 20s linear infinite;
+  animation-delay: -40s;
+}
+@keyframes animate3 {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+@keyframes animate4 {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+.competitiveDiv {
+  position: relative;
+  z-index: 2;
+  height: 42.5rem;
+}
+.competitiveDiv::after {
+  content: "";
+  position: relative;
+  display: flex;
+  width: 0rem;
+  height: 0rem;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 50rem 12rem #d9d9d933;
+  z-index: -2;
+}
+.rightRows {
+  background: none;
+  top: 0%;
+  z-index: -1;
+  display: flex;
+  gap: 6.25rem;
+  position: absolute;
+}
+.rightRows:last-child {
+  background: none;
+  z-index: -1;
+  display: flex;
+  gap: 6.25rem;
+  position: absolute;
+  top: 70%;
+}
+.leftRows {
+  background: none;
+  top: 35%;
+  z-index: -1;
+  display: flex;
+  gap: 6.25rem;
+  position: absolute;
+}
+.bubble {
+  padding: 1rem;
+  width: 9.375rem;
+  height: 9.375rem;
+  background: transparent;
+  border-radius: 50%;
+  transition: 0.4s;
+  overflow: hidden;
+  border: 2px dashed #d9d9d91a;
+}
+.eclImg {
+  width: 100%;
+  height: 100%;
+  color: black;
+  border-radius: 50%;
+}
+.bubble:hover {
+  border-color: white;
+  width: 12.813rem;
+  height: 12.813rem;
+  .leftRows {
+    animation: animateNone 10s linear infinite;
+  }
+}
+.rightRows {
+  animation: animate5 20s linear infinite;
+  animation-delay: 0s;
+}
+@keyframes animate5 {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+.leftRows {
+  animation: animate7 20s linear infinite;
+  animation-delay: 0s;
+}
+@keyframes animate7 {
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1220px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 550px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 400px) {
+}
+@media (max-width: 360px) {
+}
+@media (max-width: 320px) {
+}

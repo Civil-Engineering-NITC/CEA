@@ -3,5 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: none;
+  width: max-content;
 }

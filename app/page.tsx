@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
 import { HomePage } from "@/components/sections/HomePage";
 import { Navbar } from "@/components/Navbar";
+import { Competitive } from "@/components/sections/Competitive";
 // import { OurExperience } from "@/components/sections/OurExperience";
 
 // import { Competitive } from "@/components/sections/Competitive";
@@ -24,8 +25,9 @@ export default function Home() {
       <UserButton afterSignOutUrl="/"/> */}
         <div className={styles.MainPage}></div>
         <Navbar />
-        <HomePage/>
+        <HomePage />
         {/* <OurExperience /> */}
+        {/* <Competitive /> */}
         {/* <Resource /> */}
         {/* <InterviewExp /> */}
       </>

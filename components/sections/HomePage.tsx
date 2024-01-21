@@ -2,15 +2,30 @@ import React from "react";
 import styles from "./homePage.module.css";
 import Image from "next/image";
 import backgroundImg from "@/public/backgroundImg.png";
+import man from "@/public/man.svg";
+import scope from "@/public/scope.png";
+import books from "@/public/books.png";
+import earth from "@/public/earth.png";
 import { Heading } from "@/components/Heading";
 import { ColouredText } from "@/components/ColouredText";
 import { ColourdButton } from "../ColourdButton";
 import { RightArrowButton } from "../RightArrowButton";
+import { CubeCanvas } from "../CubeCanvas";
 
 export const HomePage = () => {
   return (
     <>
       <div className={styles.mainDiv}>
+        <div className={styles.cubes}>
+          <div className={styles.topCubes}>
+            <CubeCanvas img={man} />
+            <CubeCanvas img={scope} />
+          </div>
+          <div className={styles.bottomCubes}>
+            <CubeCanvas img={books} />
+            <CubeCanvas img={earth} />
+          </div>
+        </div>
         <div className={styles.backgroundImg}>
           <div className={styles.gridBackground}></div>
         </div>

@@ -1,14 +1,19 @@
-import { Canvas } from '@react-three/fiber'
-import React from 'react'
-import { Cube } from './Cube'
+import { Canvas } from "@react-three/fiber";
+import React from "react";
+import { Cube } from "./Cube";
+import { StaticImageData } from "next/image";
 
-export const CubeCanvas = () => {
+interface CubeCanvasProps {
+  img: StaticImageData;
+}
+
+export const CubeCanvas: React.FC<CubeCanvasProps> = ({ img }) => {
   return (
     <Canvas
-    style={{ background: "#3C3C3C"}}
+      style={{ background: "transparent", width: "20rem", height: "20rem" }}
     >
-        <ambientLight intensity={2} />
-        <Cube position={[0,0,0]} color='green' side={2} />
+      <ambientLight intensity={2} />
+      <Cube position={[0, 0, 0]} color="green" side={2} image={img} />
     </Canvas>
-  )
-}
+  );
+};
