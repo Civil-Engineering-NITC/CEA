@@ -7,19 +7,27 @@
   padding: 0rem 4.375rem;
   position: sticky;
   z-index: 100;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.1),
+    rgba(26, 26, 26, 0)
+  );
 }
 .navMenu {
   display: flex;
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 .navlinks {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  background: linear-gradient(to right #804ced, #f48fd0);
+  background: transparent;
 }
 .navlinks a {
   color: white;
@@ -28,6 +36,7 @@
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 0.25rem;
+  background: transparent;
 }
 .navlinks a:hover {
   color: #f48fd0;
@@ -38,7 +47,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: -150%;
+  top: -1300%;
   left: 0;
   width: 100%;
   min-height: 100vh;
