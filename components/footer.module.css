@@ -1,0 +1,224 @@
+.container{
+    display: flex;
+    gap: 1rem;
+    color: white;
+    margin-top: 5rem;
+    padding: 0 8.25rem;
+    justify-content: space-between;
+    
+}
+.infoContainer {
+    width: 383px;
+}
+.infoContainer p{
+    margin: 1.5rem 0;
+    color:#808080;
+    font-size: 1.1rem;
+}
+.linksContainer{
+    width: auto;
+    text-align: center;
+} 
+.linksContainer p{
+    margin-bottom: 2.5rem;
+}
+.linksContainer ul{
+    list-style-type: none;
+    font-size: 1.2rem;
+}
+.linksContainer ul li{
+    margin-bottom: 1.5rem;
+    color: #A9A9A9;
+}
+.linksContainer ul li:last-child{
+    margin-bottom: 0;
+}
+.contactContainer{
+    width: 383px;
+
+}
+.contactContainer p{
+    margin-bottom: 0.2rem;
+    color: #A9A9A9;
+
+}
+.icon{
+    height: 2rem;
+    width: 2rem;
+}
+.contactContainer h3{
+    margin-bottom: 2rem;
+    color: #808080;
+    font-size: 2rem;
+}
+.contactContainer input{
+    border: none;
+    border-bottom: 0.78px solid #808080;
+    margin-right: 0.8rem;
+    height: 50px;
+    width: 263px;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1rem;
+}
+.contactContainer button{
+    width: 50.94px;
+    height: 50.94px;
+    border-radius: 0.78px;
+    align-content: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.75) -2.91%, rgba(255, 255, 255, 0.75) 100%);
+    border: 0.78px solid;
+    
+    border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+    cursor: pointer;
+    
+    
+}
+.socialMediaIconContainer{
+    display: flex;
+    gap: 1rem;
+}
+.policy{
+    display: flex;
+    justify-content: space-between;
+}
+.bottom{
+    border-top: 1px solid linear-gradient(90deg, rgba(107, 107, 107, 0.3) 0%, #6B6B6B 50.56%, rgba(107, 107, 107, 0.3) 101.81%);
+    padding: 2rem 8.25rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    position: relative;
+    flex-wrap: wrap;
+}
+.bottom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* Adjust the border height as needed */
+    background: linear-gradient(90deg, rgba(107, 107, 107, 0.3) 0%, #6B6B6B 50.56%, rgba(107, 107, 107, 0.3) 101.81%);
+  }
+.bottom ul{
+    display: flex;
+    color: #A9A9A9;
+    list-style-type: none;
+}
+.bottom ul li{
+    font-size: 1.2rem;
+    margin-right: 4.5rem;
+}
+.bottom ul li:last-child{
+    margin-right: 0rem;
+}
+.bottom p{
+    color: #A9A9A9;
+    font-size: 1.2rem;
+}
+.arrow{
+    color: #808080;
+    font-size: 1.8rem;
+    background: none;
+}
+
+
+@media (max-width: 1366px) {
+    .container{
+        padding: 0 6rem;
+    }
+    .bottom{
+        padding: 2rem 6rem;
+    }
+}
+
+@media (max-width: 1220px) {
+    .container{
+        padding: 0 4rem;
+    }
+    .bottom{
+        padding: 2rem 4rem;
+    }
+    .linksContainer ul{
+        font-size: 1rem;
+    }
+    .infoContainer p{
+        font-size: 1rem;
+    }
+    .bottom ul li{
+        font-size: 1rem;
+    }
+    .bottom p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container{
+        padding: 0 2rem;
+    }
+    .bottom{
+        padding: 2rem 2rem;
+    }
+    .bottom ul li{
+        margin-bottom: 2rem;
+        margin-right: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    
+}
+
+@media (max-width: 768px) {
+    .container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .infoContainer{
+        margin-bottom: 2rem;
+        width: 300px;
+    }
+    .linksContainer{
+        margin-bottom: 2rem;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bottom ul li{
+        margin-right: 1rem;
+    }
+    .contactContainer input{
+        height: 30px;
+    }
+    .contactContainer h3{
+        font-size: 1.8rem;
+    }
+    .contactContainer button{
+        height: 30px;
+        width: 30px;
+    }
+    .arrow{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .infoContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .contactContainer{
+        text-align: center;
+    }
+    .bottom ul li{
+        margin-right: 1rem;
+    }
+}
