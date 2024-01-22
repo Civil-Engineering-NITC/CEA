@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { Competitive } from "@/components/sections/Competitive";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
+import { InterviewForm } from "@/components/forms/InterviewForm";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -24,7 +25,7 @@ export default function Home() {
       <>
         {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
       <UserButton afterSignOutUrl="/"/> */}
-        <Navbar />
+        {/* <Navbar />
         <div className={styles.margin}></div>
         <HomePage />
         <div style={{ marginTop: "10rem"}}></div>
@@ -36,7 +37,8 @@ export default function Home() {
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer/>
+        <Footer/> */}
+        <InterviewForm/>
       </>
     );
   }

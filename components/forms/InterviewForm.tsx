@@ -4,19 +4,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import * as  z from "zod";
 import axios from "axios";
+import { CldUploadWidget } from 'next-cloudinary';
+import { ImageUpload } from "../ImageUpload";
+import { useState } from "react";
 
-// model InterviewExp {
-//     id  String  @id @default(uuid())  
-//     name  String
-//     rollno  String
-//     email String  
-//     phone String
-//     company String
-//     package String
-//     desc  String
-//     link Link[] @relation("InterviewExpToLink")
-//     rating  Int
-//   }
 const formSchema = z.object({
     name: z.string().min(1),
     rollno: z.string().min(1),
@@ -51,6 +42,11 @@ export const InterviewForm : React.FC = () => {
             console.log(error);
         }
     };
+
+    const [value, setValue] = useState([])
+    const [url, setUrl] = useState("")
+
+
     
   return (
     <>
@@ -119,6 +115,12 @@ export const InterviewForm : React.FC = () => {
             {errors.rating && (
                 <p>{`${errors.rating?.message}`}</p>
             ) }
+
+            <ImageUpload 
+                // value={value ? [value] : []}
+                onChange={(url) => setUrl(url)}
+                onRemove={() => setUrl("")}
+            />
 
             <input type="submit" />
         </form>
