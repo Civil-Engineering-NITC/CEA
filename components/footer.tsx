@@ -37,14 +37,14 @@ export const Footer = () => {
             </button>
         </div>
     </div>
-    <div className={styles.bottom}>
+    {/* <div className={styles.bottom}>
             <ul>
                 <li>Privacy Policy</li>
                 <li>Disclaimer</li>
                 <li>Terms and Condition</li>
             </ul>
             <p>CEA NITC</p>
-    </div>
+    </div> */}
     </>
   )
 }
