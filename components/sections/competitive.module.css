@@ -174,10 +174,6 @@
   width: 12.813rem;
   height: 12.813rem;
 }
-/* .rightRows:hover,
-.leftRows:hover {
-  animation-play-state: paused;
-} */
 .rightRows.paused {
   animation-play-state: paused;
 }
@@ -185,9 +181,15 @@
   animation-play-state: paused;
 }
 .rightRows {
+  transform: translateX(-100rem);
+}
+.leftRows {
+  transform: translateX(-74rem);
+}
+/* .rightRows {
   animation: animate5 20s linear infinite;
   animation-delay: 0s;
-}
+} */
 @keyframes animate5 {
   0% {
     transform: translateX(-60%);
@@ -196,10 +198,10 @@
     transform: translateX(-30%);
   }
 }
-.leftRows {
+/* .leftRows {
   animation: animate7 20s linear infinite;
   animation-delay: 0s;
-}
+} */
 @keyframes animate7 {
   0% {
     transform: translateX(-30%);

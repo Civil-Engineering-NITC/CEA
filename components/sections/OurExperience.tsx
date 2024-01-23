@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
 import { DownArrowButton } from "../DownArrowButton";
+import { ColouredText } from "../ColouredText";
 
 export const OurExperience = () => {
   return (
@@ -9,7 +10,7 @@ export const OurExperience = () => {
       <div className={styles.mainDiv}>
         <div className={styles.topDiv}>
           <div className={styles.headingDiv}>
-            <h1>Our Experience</h1>
+            <ColouredText text="Our Experience" size="4rem" />
             <h2>Your Action</h2>
           </div>
           <p>

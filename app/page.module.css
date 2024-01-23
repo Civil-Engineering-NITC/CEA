@@ -2,11 +2,12 @@
   /* padding: 2.25rem 0rem; */
 }
 .margin {
-  margin: 2rem 4rem 2rem 4rem;
+  margin: 2rem 4rem;
   position: relative;
   display: flex;
 }
 .margin::after {
+  z-index: 1;
   content: "";
   position: absolute;
   top: 0;

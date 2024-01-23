@@ -4,6 +4,7 @@
   background: transparent;
 }
 .cardDiv h3 {
+  z-index: 1;
   display: flex;
   position: relative;
   align-items: center;
@@ -18,10 +19,12 @@
   height: 6.5rem;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  left: calc((2rem) / 2);
+  left: calc((1rem) / 6);
   top: calc((5rem) / 1);
 }
 .cardBox {
+  position: relative;
+  left: -2%;
   width: 37.5rem;
   height: 25rem;
   box-shadow: -2.371764659881592px -2.371764659881592px 0px 0px #6b6b6b;
@@ -34,18 +37,27 @@
 }
 @media (max-width: 1366px) {
   .cardBox {
-    width: 33rem;
+    width: 34rem;
+    height: 25.16rem;
   }
 }
 @media (max-width: 1220px) {
   .cardBox {
-    width: 27rem;
+    width: 28rem;
+    height: 20.72rem;
+  }
+  .cardDiv h3 {
+    width: 1.838rem;
   }
 }
 
 @media (max-width: 1024px) {
   .cardBox {
     width: 37.5rem;
+    height: 25rem;
+  }
+  .cardDiv h3 {
+    width: 1.938rem;
   }
 }
 
@@ -54,32 +66,64 @@
 
 @media (max-width: 768px) {
   .cardBox {
-    width: 30rem;
+    width: 31rem;
+    height: 22.94rem;
+  }
+  .cardDiv h3 {
+    width: 1.838rem;
   }
 }
 
 @media (max-width: 550px) {
   .cardBox {
-    width: 25rem;
+    width: 26rem;
+    height: 19.24rem;
+  }
+  .cardDiv h3 {
+    width: 1.738rem;
+    font-size: 0.7rem;
+    top: calc((4rem) / 1);
   }
 }
 @media (max-width: 480px) {
   .cardBox {
-    width: 20rem;
+    width: 21rem;
+    height: 15.54rem;
+  }
+  .cardDiv h3 {
+    width: 1.7rem;
+    height: 5.5rem;
+    font-size: 0.6rem;
+    top: calc((3rem) / 1);
   }
 }
 @media (max-width: 400px) {
   .cardBox {
-    width: 18rem;
+    width: 19rem;
+    height: 14.06rem;
+  }
+  .cardDiv h3 {
+    width: 1.5rem;
+    height: 5rem;
+    font-size: 0.55rem;
+    top: calc((5rem) / 2);
   }
 }
 @media (max-width: 360px) {
   .cardBox {
-    width: 16rem;
+    width: 17rem;
+    height: 12.58rem;
+  }
+  .cardDiv h3 {
+    width: 1.3rem;
+    height: 4.8rem;
+    font-size: 0.5rem;
+    top: calc((4rem) / 2);
   }
 }
 @media (max-width: 320px) {
   .cardBox {
-    width: 15rem;
+    width: 16rem;
+    height: 11.84rem;
   }
 }

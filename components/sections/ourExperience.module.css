@@ -83,154 +83,204 @@
 }
 @media (max-width: 1220px) {
   .headingDiv {
-    width: 25rem;
+    width: 26rem;
   }
   .topDiv p {
-    width: 30rem;
+    width: 31rem;
   }
 }
 
 @media (max-width: 1024px) {
+  .mainDiv {
+    gap: 3.5rem;
+  }
   .cardMainDiv {
     flex-direction: column;
     gap: 3.75rem;
   }
   .headingDiv {
-    width: 23rem;
+    width: 33.8rem;
   }
   .headingDiv h1 {
-    font-size: 3.3rem;
+    font-size: 4rem;
   }
   .headingDiv h2 {
-    font-size: 3.3rem;
+    font-size: 4rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: flex-start;
   }
   .topDiv p {
-    width: 25rem;
+    width: 40.25rem;
+    font-size: 1.4rem;
   }
 }
 
 @media (max-width: 900px) {
-  .headingDiv {
-    width: 20rem;
-  }
-  .headingDiv h1 {
-    font-size: 3rem;
-  }
-  .headingDiv h2 {
-    font-size: 3rem;
-  }
-  .topDiv p {
-    width: 22rem;
-    font-size: 1.3rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .topDiv {
-    gap: 1.5rem;
+  .mainDiv {
+    gap: 3rem;
+  }
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 15rem;
+    width: 32rem;
   }
   .headingDiv h1 {
-    font-size: 2.4rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 2.4rem;
+    font-size: 3rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 32rem;
   }
   .topDiv p {
-    width: 15rem;
-    font-size: 1rem;
+    width: 32rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 550px) {
-  .topDiv {
-    gap: 0.9rem;
+  .mainDiv {
+    gap: 2.5rem;
+  }
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 12rem;
+    width: 27rem;
   }
   .headingDiv h1 {
-    font-size: 1.9rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 1.9rem;
+    font-size: 2.5rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    width: 27rem;
   }
   .topDiv p {
-    width: 15rem;
-    font-size: 0.8rem;
+    width: 27rem;
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 480px) {
-  .topDiv {
-    gap: 0.7rem;
+  .mainDiv {
+    gap: 2rem;
+  }
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 10rem;
+    width: 22rem;
   }
   .headingDiv h1 {
-    font-size: 1.6rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 1.6rem;
+    font-size: 2.25rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    width: 22rem;
   }
   .topDiv p {
-    width: 13rem;
-    font-size: 0.7rem;
+    width: 22rem;
+    font-size: 0.75rem;
   }
 }
 @media (max-width: 400px) {
-  .topDiv {
-    gap: 0.6rem;
+  .mainDiv {
+    gap: 2rem;
+  }
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 9rem;
+    width: 19rem;
   }
   .headingDiv h1 {
-    font-size: 1.4rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 1.4rem;
+    font-size: 2.25rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    width: 19rem;
   }
   .topDiv p {
-    width: 10rem;
-    font-size: 0.6rem;
+    width: 19rem;
+    font-size: 0.75rem;
   }
 }
 @media (max-width: 360px) {
-  .topDiv {
-    gap: 0.5rem;
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 8rem;
+    width: 18rem;
   }
   .headingDiv h1 {
-    font-size: 1.3rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 1.3rem;
+    font-size: 2.25rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    width: 18rem;
   }
   .topDiv p {
-    width: 10rem;
-    font-size: 0.5rem;
+    width: 18rem;
+    font-size: 0.75rem;
   }
 }
 @media (max-width: 320px) {
-  .topDiv {
-    gap: 0.3rem;
+  .cardMainDiv {
+    flex-direction: column;
+    gap: 3.75rem;
   }
   .headingDiv {
-    width: 7.5rem;
+    width: 16rem;
   }
   .headingDiv h1 {
-    font-size: 1.2rem;
+    font-size: 3.7rem;
   }
   .headingDiv h2 {
-    font-size: 1.2rem;
+    font-size: 2.25rem;
+  }
+  .topDiv {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    width: 16rem;
   }
   .topDiv p {
-    width: 9rem;
-    font-size: 0.5rem;
+    width: 16rem;
+    font-size: 0.75rem;
   }
 }
