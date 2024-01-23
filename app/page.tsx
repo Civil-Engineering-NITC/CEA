@@ -28,11 +28,11 @@ export default function Home() {
         {/* <Navbar />
         <div className={styles.margin} style={{ margin: "0 4rem" }}></div>
         <HomePage /> */}
-        <div style={{ marginTop: "10rem" }}></div>
-        <OurExperience />
-        {/* <div className={styles.margin}></div>
-        <Competitive />
+        {/* <div style={{ marginTop: "10rem" }}></div>
+        <OurExperience /> */}
         <div className={styles.margin}></div>
+        <Competitive />
+        {/* <div className={styles.margin}></div>
         <Resource />
         <div className={styles.margin}></div>
         <InterviewExp />
