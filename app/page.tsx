@@ -23,21 +23,21 @@ export default function Home() {
   if (isSignedIn) {
     return (
       <>
-        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/>
-        {/* <Navbar />
-        <div className={styles.margin} style={{ margin: "0 4rem" }}></div>
-        <HomePage /> */}
-        {/* <div style={{ marginTop: "10rem" }}></div>
-        <OurExperience /> */}
+        {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+      <UserButton afterSignOutUrl="/"/> */}
+        <Navbar />
+        <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
+        <HomePage /> 
+        <div style={{ marginTop: "10rem" }}></div>
+        <OurExperience />
         <div className={styles.margin}></div>
         <Competitive />
-        {/* <div className={styles.margin}></div>
+        <div className={styles.margin}></div>
         <Resource />
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer /> */}
+        <Footer />
         {/* <InterviewForm /> */}
       </>
     );

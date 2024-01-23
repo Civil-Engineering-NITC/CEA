@@ -1,11 +1,14 @@
 .navDiv {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   color: white;
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0rem 4.375rem;
-  position: sticky;
+  /* position: sticky; */
   z-index: 100;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
