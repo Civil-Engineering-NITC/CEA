@@ -28,7 +28,7 @@ export default function Home() {
         {/* <Navbar />
         <div className={styles.margin}></div>
         <HomePage />
-        <div style={{ marginTop: "10rem"}}></div>
+        <div style={{ marginTop: "10rem" }}></div>
         <OurExperience />
         <div className={styles.margin}></div>
         <Competitive />
@@ -38,7 +38,7 @@ export default function Home() {
         <InterviewExp />
         <div className={styles.margin}></div>
         <Footer/> */}
-        <InterviewForm/>
+        <InterviewForm />
       </>
     );
   }

@@ -10,7 +10,6 @@
   justify-content: center;
   border: none;
   z-index: 2;
-  padding: 0.5rem 1.5rem;
   border-radius: 0.25rem;
   background-color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
@@ -25,6 +24,11 @@
   border-radius: 0.25rem;
   background: linear-gradient(to right, #804ced, #f48fd0);
 }
+.arrowDiv {
+  position: relative;
+  display: flex;
+  background: transparent;
+}
 .arrowButton {
   background: transparent;
 }
@@ -34,7 +38,7 @@
   }
 }
 .mainDiv:hover .colorDiv {
-  animation: moveIn 1s;
+  animation: moveIn 2s;
 }
 @keyframes moveIn {
   0% {
@@ -46,5 +50,27 @@
   }
   100% {
     transform: translate(0rem, 0rem);
+  }
+}
+.mainDiv:hover .arrowButton {
+  animation: arrow 1s;
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    transform: translate(-20%, 20%);
+  }
+  50% {
+    transform: translate(150%, -150%);
+    display: none;
+  }
+  75% {
+    transform: translate(-150%, 150%);
+    display: none;
+  }
+  100% {
+    transform: translate(0%, 0%);
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
+import { DownArrowButton } from "../DownArrowButton";
 
 export const OurExperience = () => {
   return (
@@ -22,9 +23,7 @@ export const OurExperience = () => {
           <OurExperienceCard />
           <OurExperienceCard />
         </div>
-        <a href="" className={styles.loadmore}>
-          Load More
-        </a>
+        <DownArrowButton text="Load More" redirectLink="" />
       </div>
     </>
   );

@@ -14,9 +14,11 @@ export const RightArrowButton: React.FC<RightArrowButtonProps> = ({
 }) => {
   return (
     <>
-      <a href={redirectLink} className={styles.arrowbutton}>
+      <a href={redirectLink} className={styles.arrowButton}>
         {text}
-        <Image src={arrowImg} alt="" style={{ background: "transparent" }} />
+        <div className={styles.arrowDiv}>
+          <Image src={arrowImg} alt="" className={styles.arrowImg} />
+        </div>
       </a>
     </>
   );
