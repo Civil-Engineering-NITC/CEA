@@ -14,9 +14,11 @@ export const DownArrowButton: React.FC<DownArrowButtonProps> = ({
 }) => {
   return (
     <>
-      <a href={redirectLink} className={styles.arrowbutton}>
+      <a href={redirectLink} className={styles.arrowButton}>
         {text}
-        <Image src={arrowImg} alt="" />
+        <div className={styles.arrowDiv}>
+          <Image src={arrowImg} alt="" className={styles.arrowImg} />
+        </div>
       </a>
     </>
   );

@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import { Competitive } from "@/components/sections/Competitive";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
+import { Nav } from "@/components/Nav";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -27,7 +28,7 @@ export default function Home() {
         <Navbar />
         <div className={styles.margin}></div>
         <HomePage />
-        <div style={{ marginTop: "10rem"}}></div>
+        <div style={{ marginTop: "10rem" }}></div>
         <OurExperience />
         <div className={styles.margin}></div>
         <Competitive />
@@ -36,7 +37,7 @@ export default function Home() {
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer/>
+        <Footer />
       </>
     );
   }

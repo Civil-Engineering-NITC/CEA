@@ -44,8 +44,11 @@ export const HomePage = () => {
           <div className={styles.buttonDiv}>
             <ColourdButton
               text="Let’s Get Started"
-              redirectLink=""
-              size="1.5rem"
+              textSize="1.5rem"
+              buttonWidth="18.373rem"
+              buttonHeight="3.875rem"
+              arrowWidth="1rem"
+              arrowHeight="1rem"
             />
             <RightArrowButton text="Explore Teams" redirectLink="" />
           </div>

@@ -173,9 +173,16 @@
   border-color: white;
   width: 12.813rem;
   height: 12.813rem;
-  .leftRows {
-    animation: animateNone 10s linear infinite;
-  }
+}
+/* .rightRows:hover,
+.leftRows:hover {
+  animation-play-state: paused;
+} */
+.rightRows.paused {
+  animation-play-state: paused;
+}
+.leftRows.paused {
+  animation-play-state: paused;
 }
 .rightRows {
   animation: animate5 20s linear infinite;

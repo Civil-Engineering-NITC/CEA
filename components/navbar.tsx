@@ -22,7 +22,14 @@ export const Navbar = () => {
             <a href="">Members.</a>
             <a href="">ContactUS.</a>
           </div>
-          <ColourdButton text="Sign In" redirectLink="" size="1.125rem" />
+          <ColourdButton
+            text="Sign In"
+            textSize="1.125rem"
+            buttonWidth="8.406rem"
+            buttonHeight="2.438rem"
+            arrowWidth="0.75rem"
+            arrowHeight="0.75rem"
+          />
 
           <div className={styles.menuBack}>
             <button

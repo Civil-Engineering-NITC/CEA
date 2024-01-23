@@ -4,6 +4,9 @@
   padding: 1px;
   width: 39.25rem;
 }
+.borderDiv:hover {
+  box-shadow: 0px 0px 50px 1px #804ced, 0px 0px 50px 1px #f48fd0;
+}
 .cards {
   display: flex;
   flex-direction: column;
@@ -50,6 +53,27 @@
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 4px;
+}
+.cardMainHeading a:hover {
+  background: linear-gradient(
+    190deg,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0
+  );
+  background-size: 400%;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
 }
 @media (max-width: 1440px) {
   .borderDiv {
