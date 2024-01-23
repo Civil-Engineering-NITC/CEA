@@ -5,12 +5,13 @@ interface ImageUploadProps{
     onChange: (value: string) => void;
     onRemove: (value: string) => void;
     // value: string[];
+    text: string;
 }
 
 export const ImageUpload : React.FC<ImageUploadProps> = ({
     onChange,
     onRemove,
-    // value
+    text
 }) => {
 
     const onUpload = (result: any) => {
@@ -20,27 +21,11 @@ export const ImageUpload : React.FC<ImageUploadProps> = ({
 
   return (
     <>
-    <div>
-        {/* {value.map((url) => (
-          <div key={url} >
-            <div >
-              <button onClick={() => onRemove(url)} >
-              Trash
-              </button>
-            </div>
-            <Image
-              fill
-              alt="Image"
-              src={url}
-            />
-          </div>
-        ))} */}
-    </div>
     <CldUploadWidget onUpload={onUpload} uploadPreset="interviews">
             {({ open }) => {
                 return (
                 <button onClick={() => open()}>
-                    Upload an Image
+                    {text}
                 </button>
                 );
             }}

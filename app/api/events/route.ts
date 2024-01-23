@@ -27,7 +27,7 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { name, desc} = body;
+        const { name, desc, linkData} = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
@@ -38,11 +38,20 @@ export async function POST(
         if(!desc){
             return new NextResponse("desc is required", {status: 400});
         }
+        if(!linkData){
+            return new NextResponse("link Data is required", {status: 400});
+        }
 
         const event = await prismadb.events.create({
             data:{
                 name: name, 
                 desc: desc, 
+                link:{
+                    create: linkData.map((link: any) => ({
+                        name: link.name,
+                        link: link.link,
+                    })) 
+                }
             }
         })
         

@@ -1,5 +1,6 @@
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs";
+import axios from "axios";
 import { NextResponse } from "next/server";
 
 
@@ -27,7 +28,7 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { name, rollno, phone, email, company, packages, desc, rating} = body;
+        const { name, rollno, phone, email, company, packages, desc, rating, linkData } = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
@@ -56,6 +57,9 @@ export async function POST(
         if(!rating){
             return new NextResponse("rating is required", {status: 400});
         }
+        if(!linkData){
+            return new NextResponse("Links required", {status: 400})
+        }
 
         const interview = await prismadb.interviewExp.create({
             data:{
@@ -66,7 +70,13 @@ export async function POST(
                 company: company,
                 package: packages, 
                 desc: desc,  
-                rating: rating, 
+                rating: rating,
+                link: {
+                    create: linkData.map((link : any) => ({
+                    name: link.name,
+                    link: link.link,
+                    })),
+                },
             }
         })
 
