@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import * as  z from "zod";
 import axios from "axios";
+import { useState } from "react";
+import { ImageUpload } from "../ImageUpload";
 
 // model Events{
 //     id  String @id  @default(uuid())
@@ -19,7 +21,9 @@ const formSchema = z.object({
 
 type EventFormValues = z.infer<typeof formSchema>
 
-export const InterviewForm : React.FC = () => {
+export const EventForm : React.FC = () => {
+
+    const [url, setUrl] = useState("")
 
     const {register,handleSubmit,formState:{errors, isSubmitting},
             reset,
@@ -29,11 +33,29 @@ export const InterviewForm : React.FC = () => {
 
 
     const onSubmit: SubmitHandler<EventFormValues> = async (data) => {
-        try {
-            await axios.post('/api/events', data);
-            reset();
-        } catch (error) {
-            console.log(error);
+
+        const linkData = [
+            {
+                name: "Codingurl",
+                link: url
+            },
+        ]
+
+        const finalData = {
+            ...data,
+            linkData
+        }
+
+        console.log(finalData);
+        
+        if( url !== ""){
+                
+            try {
+                await axios.post('/api/events', finalData);
+                reset();
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
     
@@ -56,6 +78,12 @@ export const InterviewForm : React.FC = () => {
             {errors.desc && (
                 <p>{`${errors.desc?.message}`}</p>
             ) }
+            
+            <ImageUpload 
+                onChange={(url) => setUrl(url)}
+                onRemove={() => setUrl("")}
+                text="Upload Your Photo"
+            />
 
             <input type="submit" />
         </form>

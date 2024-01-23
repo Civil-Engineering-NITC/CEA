@@ -27,7 +27,7 @@ export async function POST(
         const { userId } = auth();
         const body = await req.json();
 
-        const { subject } = body;
+        const { subject, linkData } = body;
 
         if(!userId){
             return new NextResponse("Unauthenticated", {status: 401});
@@ -35,10 +35,19 @@ export async function POST(
         if(!subject){
             return new NextResponse("subject is required", {status: 400});
         }
+        if(!linkData){
+            return new NextResponse("link Data is required", {status: 400});
+        }
 
         const classNote = await prismadb.classNotes.create({
             data:{
-                subject: subject
+                subject: subject,
+                link:{
+                    create: linkData.map((link : any) => ({
+                        name: link.name,
+                        link: link.link,
+                    }))
+                }
             }
         })
         

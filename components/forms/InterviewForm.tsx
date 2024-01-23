@@ -23,6 +23,11 @@ type InterviewFormValues = z.infer<typeof formSchema>
 
 export const InterviewForm : React.FC = () => {
 
+
+    const [value, setValue] = useState([])
+    const [profileUrl, setProfileUrl] = useState("")
+    const [logoUrl, setLogoUrl] = useState("")
+
     const {register,handleSubmit,formState:{errors, isSubmitting},
             reset,
         } = useForm<InterviewFormValues>({
@@ -33,21 +38,47 @@ export const InterviewForm : React.FC = () => {
     const onSubmit: SubmitHandler<InterviewFormValues> = async (data) => {
         // Convert the 'rating' value from string to integer
         data.rating = parseInt(data.rating, 10);
-    
-        try {
-            await axios.post('/api/interviews', data);
-            // Reset the form after a successful submission
-            reset();
-        } catch (error) {
-            console.log(error);
+        // console.log(profileUrl);
+        // console.log(logoUrl);
+        // console.log(data)
+
+        const linkData = [
+            {
+                name: "profileUrl",
+                link: profileUrl
+            },
+            {
+                name: "logoUrl",
+                link: logoUrl
+            }
+        ]
+
+        const finalData = {
+            ...data,
+            linkData
         }
+
+        console.log(finalData);
+        
+        if( profileUrl !== "" && logoUrl !== ""){
+
+            // console.log("FOUNDDDDDDDDDD!!!!!!!!!!!");
+            
+            try {
+                await axios.post('/api/interviews', finalData);
+                // Reset the form after a successful submission
+                reset();
+            } catch (error) {
+                console.log(error);
+            }
+
+        }else{
+            console.log("profile or logo url missing")
+        }
+
     };
 
-    const [value, setValue] = useState([])
-    const [url, setUrl] = useState("")
 
-
-    
   return (
     <>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -117,9 +148,15 @@ export const InterviewForm : React.FC = () => {
             ) }
 
             <ImageUpload 
-                // value={value ? [value] : []}
-                onChange={(url) => setUrl(url)}
-                onRemove={() => setUrl("")}
+                onChange={(imageUrl) => setProfileUrl(imageUrl)}
+                onRemove={() => setProfileUrl("")}
+                text="Upload Your Photo"
+            />
+
+            <ImageUpload 
+                onChange={(logoUrl) => setLogoUrl(logoUrl)}
+                onRemove={() => setLogoUrl("")}
+                text="Upload Your Company Logo"
             />
 
             <input type="submit" />
