@@ -47,15 +47,17 @@
   align-items: center;
   overflow: hidden;
 }
-.cubes .topCubes {
+.topCubes{
   display: flex;
   align-items: center;
-  gap: 60rem;
+  justify-content: space-between;
+  width: 100vw;
 }
-.cubes .bottomCubes {
+.bottomCubes{
   display: flex;
   align-items: center;
-  gap: 50rem;
+  justify-content: space-between;
+  width: 100vw;
 }
 .backgroundImg {
   z-index: 2;

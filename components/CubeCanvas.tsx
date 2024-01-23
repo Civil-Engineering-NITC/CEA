@@ -13,7 +13,7 @@ export const CubeCanvas: React.FC<CubeCanvasProps> = ({ img }) => {
       style={{ background: "transparent", width: "20rem", height: "20rem" }}
     >
       <ambientLight intensity={2} />
-      <Cube position={[0, 0, 0]} color="green" side={2} image={img} />
+      <Cube position={[0, 0, 0]} color="green" image={img} />
     </Canvas>
   );
 };
