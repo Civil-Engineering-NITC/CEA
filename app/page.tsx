@@ -23,8 +23,8 @@ export default function Home() {
   if (isSignedIn) {
     return (
       <>
-        {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/> */}
+        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+      <UserButton afterSignOutUrl="/"/>
         <Navbar />
         <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
         <HomePage /> 
@@ -38,7 +38,6 @@ export default function Home() {
         <InterviewExp />
         <div className={styles.margin}></div>
         <Footer />
-        {/* <InterviewForm /> */}
       </>
     );
   }
