@@ -14,9 +14,9 @@ datasource db {
 model InterviewExp {
   id  String  @id @default(uuid())  
   name  String
-  rollno  String
-  email String  
-  phone String
+  rollno  String  @unique
+  email String  @unique   
+  phone String  @unique
   company String
   package String
   desc  String
@@ -83,27 +83,31 @@ model ResourceLink{
   @@index([resourcesId])
 }
 
-model Events{
+model Activity{
   id  String @id  @default(uuid())
   name String
-  link EventsLink[] @relation("EventsToLink")
+  type  String
+  link ActivityLink[] @relation("ActivityToLink")
   desc  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
-model EventsLink{
+model ActivityLink{
   id  String  @id @default(uuid())
   name  String
   link  String
-  eventId String
-  events Events @relation("EventsToLink", fields: [eventId], references: [id], onDelete: Cascade)
+  activityId String
+  events Activity @relation("ActivityToLink", fields: [activityId], references: [id], onDelete: Cascade)
 
-  @@index([eventId])
+  @@index([activityId])
 }
 
 model CompetitiveExam{
   id  String  @id @default(uuid())
-  name  String
+  name  String  @unique
   desc  String
+  date  DateTime
   link  CompetitiveExamLink[]  @relation("CompetitiveExamToLink")
 }
 
