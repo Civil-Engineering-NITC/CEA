@@ -16,23 +16,24 @@ import { ImageUpload } from "../ImageUpload";
 
 const formSchema = z.object({
     name: z.string().min(1),
-    desc: z.string().min(1)
+    desc: z.string().min(1),
+    type: z.string().min(1)
 })
 
-type EventFormValues = z.infer<typeof formSchema>
+type ActivityFormValues = z.infer<typeof formSchema>
 
-export const EventForm : React.FC = () => {
+export const ActivityForm : React.FC = () => {
 
     const [url, setUrl] = useState("")
 
     const {register,handleSubmit,formState:{errors, isSubmitting},
             reset,
-        } = useForm<EventFormValues>({
+        } = useForm<ActivityFormValues>({
         resolver: zodResolver(formSchema)
     })
 
 
-    const onSubmit: SubmitHandler<EventFormValues> = async (data) => {
+    const onSubmit: SubmitHandler<ActivityFormValues> = async (data) => {
 
         const linkData = [
             {
@@ -77,6 +78,15 @@ export const EventForm : React.FC = () => {
             />
             {errors.desc && (
                 <p>{`${errors.desc?.message}`}</p>
+            ) }
+            
+            <label>Type of Activity</label>
+            <input 
+            {...register("type")}
+            type="text"
+            />
+            {errors.desc && (
+                <p>{`${errors.type?.message}`}</p>
             ) }
             
             <ImageUpload 
