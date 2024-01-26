@@ -22,7 +22,7 @@
   width: 100vw;
   height: 90vh;
 }
-/* .pageDiv::after {
+.pageDiv::after {
   content: "";
   z-index: 2;
   position: relative;
@@ -33,7 +33,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: -5rem 0rem 25rem 12rem #d9d9d933;
-} */
+}
 .cubes {
   position: absolute;
   width: 100%;
