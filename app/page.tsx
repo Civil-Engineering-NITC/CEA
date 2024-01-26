@@ -27,17 +27,17 @@ export default function Home() {
       <UserButton afterSignOutUrl="/"/> */}
         <Navbar />
         <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-        <HomePage /> 
-        <div style={{ marginTop: "10rem" }}></div>
-        <OurExperience />
-        <div className={styles.margin}></div>
-        <Competitive />
-        <div className={styles.margin}></div>
+        <HomePage />
+        {/* <div style={{ marginTop: "10rem" }}></div>
+        <OurExperience /> */}
+        {/* <div className={styles.margin}></div>
+        <Competitive /> */}
+        {/* <div className={styles.margin}></div>
         <Resource />
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer />
+        <Footer /> */}
         {/* <InterviewForm /> */}
       </>
     );

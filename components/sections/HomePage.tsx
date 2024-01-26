@@ -11,19 +11,28 @@ import { ColouredText } from "@/components/ColouredText";
 import { ColourdButton } from "../ColourdButton";
 import { RightArrowButton } from "../RightArrowButton";
 import { CubeCanvas } from "../CubeCanvas";
+import arrow from "@/public/Arrow 1.png";
 
 export const HomePage = () => {
   return (
     <>
-      <div className={styles.mainDiv}>
+      <div className={styles.pageDiv}>
         <div className={styles.cubes}>
           <div className={styles.topCubes}>
-            <CubeCanvas img={man} />
-            <CubeCanvas img={scope} />
+            <div className={styles.cubeDiv}>
+              <CubeCanvas img={man} />
+            </div>
+            <div className={styles.cubeDiv}>
+              <CubeCanvas img={scope} />
+            </div>
           </div>
           <div className={styles.bottomCubes}>
-            <CubeCanvas img={books} />
-            <CubeCanvas img={earth} />
+            <div className={styles.cubeDiv}>
+              <CubeCanvas img={books} />
+            </div>
+            <div className={styles.cubeDiv}>
+              <CubeCanvas img={earth} />
+            </div>
           </div>
         </div>
         <div className={styles.backgroundImg}>
@@ -34,22 +43,21 @@ export const HomePage = () => {
             <h1>CIVIL</h1>
             <h2>ENGINEERING</h2>
           </div>
-          <div className={styles.colorText}>
-            <ColouredText text="ASSOCIATION" size="5rem" />
-          </div>
+          <h1 className={styles.colorText}>ASSOCIATION</h1>
           <p>
             We will cook some powerful as well as potential resources for the
             aspiring Civil Engineering Student
           </p>
-          <div className={styles.buttonDiv}>
-            <ColourdButton
-              text="Let’s Get Started"
-              textSize="1.5rem"
-              buttonWidth="18.373rem"
-              buttonHeight="3.875rem"
-              arrowWidth="1rem"
-              arrowHeight="1rem"
-            />
+          <div className={styles.buttonsDiv}>
+            <a href="" className={styles.mainDiv}>
+              <div className={styles.buttonDiv}>
+                Let’s Get Started
+                <div className={styles.arrowDiv}>
+                  <Image src={arrow} alt="" className={styles.arrowButton} />
+                </div>
+              </div>
+              <div className={styles.colorDiv}></div>
+            </a>
             <RightArrowButton text="Explore Teams" redirectLink="" />
           </div>
         </div>

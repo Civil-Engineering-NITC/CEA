@@ -15,6 +15,32 @@
   color: #808080;
   font-size: 1.1rem;
 }
+.colorText {
+  font-weight: 700;
+  font-size: 2.25rem;
+  background: linear-gradient(
+    190deg,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
+}
 .linksContainer {
   width: auto;
   text-align: center;

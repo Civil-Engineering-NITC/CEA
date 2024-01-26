@@ -9,7 +9,7 @@
   justify-content: center;
   gap: 1rem;
 }
-.mainDiv {
+.pageDiv {
   z-index: 0;
   position: relative;
   color: white;
@@ -23,7 +23,7 @@
   top: 0;
   left: 0;
 }
-.mainDiv::after {
+.pageDiv::after {
   content: "";
   z-index: 2;
   position: relative;
@@ -42,21 +42,27 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  top: -1.625rem;
-  gap: 1.625rem;
+  top: -4.625rem;
+  gap: 4.5rem;
   align-items: center;
   overflow: hidden;
 }
-.topCubes{
+.cubeDiv {
+  width: 20rem;
+  height: 20rem;
+}
+.topCubes {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0rem 0rem;
   width: 100vw;
 }
-.bottomCubes{
+.bottomCubes {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0rem 3.75rem;
   width: 100vw;
 }
 .backgroundImg {
@@ -74,7 +80,7 @@
   overflow-x: clip;
 }
 .gridBackground {
-  animation: animate 10s linear infinite;
+  animation: animate1 10s linear infinite;
   z-index: 0;
   position: absolute;
   overflow: hidden;
@@ -88,7 +94,7 @@
     linear-gradient(180deg, hsla(0, 0%, 40%, 0.4) 1px, transparent 0);
   background-size: 4.52rem 4.5rem;
 }
-@keyframes animate {
+@keyframes animate1 {
   0% {
     transform: rotate(0deg);
   }
@@ -128,16 +134,39 @@
   }
 }
 .colorText {
-  background: transparent;
+  font-weight: 700;
+  font-size: 5rem;
+  background: linear-gradient(
+    190deg,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0
+  );
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: animate 20s linear infinite;
 }
-.mainDiv p {
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
+}
+.pageDiv p {
   text-align: center;
   max-width: 48.125rem;
   font-weight: 400;
   font-size: 1.125rem;
   background: transparent;
 }
-.buttonDiv {
+.buttonsDiv {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,50 +174,258 @@
   margin-top: 1.25rem;
   background: transparent;
 }
-/* @media (max-width: 1440px) {
-  .cubes {
-    .topCubes {
-      gap: 53rem;
-    }
-    .bottomCubes {
-      gap: 43rem;
-    }
+.mainDiv {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+}
+.buttonDiv {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 2;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  gap: 0.625rem;
+  font-size: 1.5rem;
+  width: 18.373rem;
+  height: 3.875rem;
+}
+.colorDiv {
+  position: absolute;
+  top: 0.313rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+.arrowDiv {
+  position: relative;
+  display: flex;
+  background: transparent;
+  width: 1rem;
+  height: 1rem;
+}
+.arrowButton {
+  background: transparent;
+  width: 1rem;
+  height: 1rem;
+}
+.mainDiv:hover .colorDiv {
+  animation: moveIn 2s;
+}
+@keyframes moveIn {
+  0% {
+    transform: translate(0rem, 0rem);
+    box-shadow: 0px 0px 50px 1px #804ced, 0px 0px 50px 1px #f48fd0;
+  }
+  25% {
+    transform: translate(-0.5rem, -0.313rem);
+  }
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+.mainDiv:hover .arrowButton {
+  animation: arrow 1s;
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    transform: translate(-20%, 20%);
+  }
+  50% {
+    transform: translate(150%, -150%);
+    display: none;
+  }
+  75% {
+    transform: translate(-150%, 150%);
+    display: none;
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@media (max-width: 1440px) {
+  .gridBackground {
+    width: 36.806rem;
+    height: 27.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 4.5rem;
   }
 }
 @media (max-width: 1366px) {
+  .gridBackground {
+    width: 31.806rem;
+    height: 22.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 4rem;
+  }
   .cubes {
-    .topCubes {
-      gap: 45rem;
-    }
-    .bottomCubes {
-      gap: 35rem;
-    }
+    top: -2.625rem;
+  }
+  .cubeDiv {
+    width: 18rem;
+    height: 18rem;
+  }
+  .topCubes {
+    width: 107%;
+  }
+  .bottomCubes {
+    padding: 0rem 2rem;
+  }
+  .pageDiv p {
+    font-size: 1rem;
+    max-width: 45.125rem;
+  }
+  .buttonDiv {
+    font-size: 1.4rem;
+    width: 16.373rem;
+    height: 3.675rem;
   }
 }
 @media (max-width: 1220px) {
+  .gridBackground {
+    width: 31.806rem;
+    height: 22.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 3.5rem;
+  }
+  .cubes {
+    top: -1.625rem;
+  }
+  .cubeDiv {
+    width: 16rem;
+    height: 16rem;
+  }
+  .topCubes {
+    width: 107%;
+  }
+  .bottomCubes {
+    padding: 0rem 0rem;
+  }
+  .pageDiv p {
+    font-size: 1rem;
+    max-width: 40.125rem;
+  }
+  .buttonDiv {
+    font-size: 1.3rem;
+    width: 14.373rem;
+    height: 3.575rem;
+  }
 }
 @media (max-width: 1024px) {
   .headingDiv {
     flex-direction: column;
+  }
+  .gridBackground {
+    width: 29.806rem;
+    height: 20.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 4rem;
+  }
+  .buttonsDiv {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .pageDiv p {
+    display: none;
   }
 }
 @media (max-width: 900px) {
   .headingDiv {
     flex-direction: column;
   }
+  .gridBackground {
+    width: 25.806rem;
+    height: 16.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .cubes {
+    top: -1.625rem;
+    gap: 13.5rem;
+  }
+  .bottomCubes {
+    padding: 0rem 1rem;
+  }
+  .cubeDiv {
+    width: 12rem;
+    height: 12rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 4rem;
+  }
+  .buttonsDiv {
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
 @media (max-width: 768px) {
   .headingDiv {
-    flex-direction: row;
+    flex-direction: column;
+  }
+  .gridBackground {
+    width: 25.806rem;
+    height: 16.575rem;
+    background-size: 4.08rem 3.93rem;
+  }
+  .cubes {
+    top: -4.625rem;
+    gap: 18.5rem;
+  }
+  .bottomCubes {
+    padding: 0rem 1rem;
+  }
+  .cubeDiv {
+    width: 12rem;
+    height: 12rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 3rem;
+  }
+  .buttonsDiv {
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 @media (max-width: 550px) {
 }
 @media (max-width: 480px) {
+  .gridBackground {
+    width: 26.829rem;
+    height: 20.759rem;
+  }
 }
 @media (max-width: 400px) {
 }
 @media (max-width: 360px) {
 }
 @media (max-width: 320px) {
-} */
+}

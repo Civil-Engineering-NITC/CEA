@@ -217,12 +217,192 @@
 @media (max-width: 1220px) {
 }
 @media (max-width: 1024px) {
+  .whiteStrips {
+    height: 6rem;
+    gap: 1.5rem;
+  }
+  .blackStrips {
+    height: 6rem;
+    gap: 2.5rem;
+  }
+  .whiteStripDiv {
+    gap: 1.5rem;
+  }
+  .blackStripDiv {
+    gap: 2.5rem;
+  }
+  .whiteStripDiv h1 {
+    font-size: 3rem;
+  }
+  .blackStripDiv img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .whiteDots,
+  .blackDots {
+    width: 1rem;
+    height: 1rem;
+  }
+  .bubble {
+    width: 9rem;
+    height: 9rem;
+  }
+  .bubble:hover {
+    width: 12rem;
+    height: 12rem;
+  }
+  .rightRows {
+    gap: 3.554rem;
+  }
+  .leftRows {
+    gap: 3.554rem;
+    top: 32.5%;
+  }
+  .rightRows:last-child {
+    gap: 3.554rem;
+    top: 65%;
+  }
 }
 @media (max-width: 900px) {
+  .whiteStrips {
+    height: 5.8rem;
+    gap: 1.3rem;
+  }
+  .blackStrips {
+    height: 5.8rem;
+    gap: 2.3rem;
+  }
+  .whiteStripDiv {
+    gap: 1.3rem;
+  }
+  .blackStripDiv {
+    gap: 2.3rem;
+  }
+  .whiteStripDiv h1 {
+    font-size: 2.8rem;
+  }
+  .blackStripDiv img {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+  .whiteDots,
+  .blackDots {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  .bubble {
+    width: 8rem;
+    height: 8rem;
+  }
+  .bubble:hover {
+    width: 11rem;
+    height: 11rem;
+  }
+  .rightRows {
+    gap: 3.554rem;
+  }
+  .leftRows {
+    gap: 3.554rem;
+    top: 30%;
+  }
+  .rightRows:last-child {
+    gap: 3.554rem;
+    top: 60%;
+  }
 }
 @media (max-width: 768px) {
+  .whiteStrips {
+    height: 5.6rem;
+    gap: 1.1rem;
+  }
+  .blackStrips {
+    height: 5.6rem;
+    gap: 2.1rem;
+  }
+  .whiteStripDiv {
+    gap: 1.1rem;
+  }
+  .blackStripDiv {
+    gap: 2.1rem;
+  }
+  .whiteStripDiv h1 {
+    font-size: 2.6rem;
+  }
+  .blackStripDiv img {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+  .whiteDots,
+  .blackDots {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .bubble {
+    width: 7rem;
+    height: 7rem;
+  }
+  .bubble:hover {
+    width: 10rem;
+    height: 10rem;
+  }
+  .rightRows {
+    gap: 3.554rem;
+  }
+  .leftRows {
+    gap: 3.554rem;
+    top: 27.5%;
+  }
+  .rightRows:last-child {
+    gap: 3.554rem;
+    top: 55%;
+  }
 }
 @media (max-width: 550px) {
+  .whiteStrips {
+    height: 4rem;
+    gap: 1rem;
+  }
+  .blackStrips {
+    height: 4rem;
+    gap: 2rem;
+  }
+  .whiteStripDiv {
+    gap: 1rem;
+  }
+  .blackStripDiv {
+    gap: 2rem;
+  }
+  .whiteStripDiv h1 {
+    font-size: 2rem;
+  }
+  .blackStripDiv img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .whiteDots,
+  .blackDots {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+  .bubble {
+    width: 7rem;
+    height: 7rem;
+  }
+  .bubble:hover {
+    width: 10rem;
+    height: 10rem;
+  }
+  .rightRows {
+    gap: 3.554rem;
+  }
+  .leftRows {
+    gap: 3.554rem;
+    top: 27.5%;
+  }
+  .rightRows:last-child {
+    gap: 3.554rem;
+    top: 55%;
+  }
 }
 @media (max-width: 480px) {
   .whiteStrips {
@@ -256,26 +436,19 @@
     height: 5.331rem;
   }
   .bubble:hover {
-    width: 5.331rem;
-    height: 5.331rem;
+    width: 7.331rem;
+    height: 7.331rem;
   }
   .rightRows {
-    gap: 3.554rem;
+    gap: 2rem;
   }
   .rightRows:last-child {
-    gap: 3.554rem;
+    gap: 2rem;
+    top: 41%;
   }
   .leftRows {
-    gap: 3.554rem;
-  }
-  .rightRows {
-    transform: rotate(90deg) translate(0%, 2158%);
-  }
-  .rightRows:last-child {
-    transform: rotate(90deg) translate(1%, 1968%);
-  }
-  .leftRows {
-    transform: rotate(90deg) translate(2rem, 1621%);
+    gap: 2rem;
+    top: 20%;
   }
 }
 @media (max-width: 400px) {

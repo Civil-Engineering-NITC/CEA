@@ -10,10 +10,10 @@ interface CubeCanvasProps {
 export const CubeCanvas: React.FC<CubeCanvasProps> = ({ img }) => {
   return (
     <Canvas
-      style={{ background: "transparent", width: "20rem", height: "20rem" }}
+      style={{ background: "transparent", width: "100%", height: "100%" }}
     >
       <ambientLight intensity={2} />
-      <Cube position={[0, 0, 0]} color="green" image={img} />
+      <Cube position={[0, 0, 0]} color="green" image={img} side={2} />
     </Canvas>
   );
 };

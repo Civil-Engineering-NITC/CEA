@@ -10,7 +10,7 @@ export const OurExperience = () => {
       <div className={styles.mainDiv}>
         <div className={styles.topDiv}>
           <div className={styles.headingDiv}>
-            <ColouredText text="Our Experience" size="4rem" />
+            <h1>Our Experience</h1>
             <h2>Your Action</h2>
           </div>
           <p>
