@@ -8,9 +8,10 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
+  height: 100%;
 }
 .pageDiv {
-  z-index: 0;
   position: relative;
   color: white;
   display: flex;
@@ -19,11 +20,9 @@
   justify-content: center;
   background: transparent;
   width: 100vw;
-  height: 70vh;
-  top: 0;
-  left: 0;
+  height: 90vh;
 }
-.pageDiv::after {
+/* .pageDiv::after {
   content: "";
   z-index: 2;
   position: relative;
@@ -34,18 +33,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: -5rem 0rem 25rem 12rem #d9d9d933;
-}
+} */
 .cubes {
   position: absolute;
   width: 100%;
-  height: 90vh;
+  height: 100%;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  top: -4.625rem;
-  gap: 4.5rem;
   align-items: center;
   overflow: hidden;
+  justify-content: space-between;
 }
 .cubeDiv {
   width: 20rem;
@@ -55,14 +53,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 0rem;
   width: 100vw;
 }
 .bottomCubes {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 3.75rem;
+  padding: 0 5rem;
   width: 100vw;
 }
 .backgroundImg {
@@ -269,25 +266,19 @@
   .gridBackground {
     width: 31.806rem;
     height: 22.575rem;
-    background-size: 4.08rem 3.93rem;
+    background-size: 3.52rem 3.21rem;
   }
   .headingDiv h1,
   .headingDiv h2,
   .colorText {
     font-size: 4rem;
   }
-  .cubes {
-    top: -2.625rem;
-  }
   .cubeDiv {
-    width: 18rem;
-    height: 18rem;
-  }
-  .topCubes {
-    width: 107%;
+    width: 20rem;
+    height: 20rem;
   }
   .bottomCubes {
-    padding: 0rem 2rem;
+    padding: 0rem 5rem;
   }
   .pageDiv p {
     font-size: 1rem;
@@ -303,25 +294,16 @@
   .gridBackground {
     width: 31.806rem;
     height: 22.575rem;
-    background-size: 4.08rem 3.93rem;
+    background-size: 3.52rem 3.22rem;
   }
   .headingDiv h1,
   .headingDiv h2,
   .colorText {
     font-size: 3.5rem;
   }
-  .cubes {
-    top: -1.625rem;
-  }
   .cubeDiv {
-    width: 16rem;
-    height: 16rem;
-  }
-  .topCubes {
-    width: 107%;
-  }
-  .bottomCubes {
-    padding: 0rem 0rem;
+    width: 18rem;
+    height: 18rem;
   }
   .pageDiv p {
     font-size: 1rem;
@@ -340,7 +322,14 @@
   .gridBackground {
     width: 29.806rem;
     height: 20.575rem;
-    background-size: 4.08rem 3.93rem;
+    background-size: 3.3rem 2.93rem;
+  }
+  .cubeDiv {
+    width: 18rem;
+    height: 18rem;
+  }
+  .bottomCubes {
+    padding: 0rem 3rem;
   }
   .headingDiv h1,
   .headingDiv h2,
@@ -349,7 +338,6 @@
   }
   .buttonsDiv {
     flex-direction: column;
-    gap: 3rem;
   }
   .pageDiv p {
     display: none;
@@ -360,20 +348,16 @@
     flex-direction: column;
   }
   .gridBackground {
-    width: 25.806rem;
-    height: 16.575rem;
-    background-size: 4.08rem 3.93rem;
-  }
-  .cubes {
-    top: -1.625rem;
-    gap: 13.5rem;
-  }
-  .bottomCubes {
-    padding: 0rem 1rem;
+    width: 28.806rem;
+    height: 19.575rem;
+    background-size: 3.18rem 2.78rem;
   }
   .cubeDiv {
-    width: 12rem;
-    height: 12rem;
+    width: 16rem;
+    height: 16rem;
+  }
+  .bottomCubes {
+    padding: 0rem 3rem;
   }
   .headingDiv h1,
   .headingDiv h2,
@@ -390,20 +374,16 @@
     flex-direction: column;
   }
   .gridBackground {
-    width: 25.806rem;
-    height: 16.575rem;
-    background-size: 4.08rem 3.93rem;
-  }
-  .cubes {
-    top: -4.625rem;
-    gap: 18.5rem;
-  }
-  .bottomCubes {
-    padding: 0rem 1rem;
+    width: 26.806rem;
+    height: 17.575rem;
+    background-size: 2.96rem 2.5rem;
   }
   .cubeDiv {
-    width: 12rem;
-    height: 12rem;
+    width: 14rem;
+    height: 14rem;
+  }
+  .bottomCubes {
+    padding: 0rem 2rem;
   }
   .headingDiv h1,
   .headingDiv h2,
@@ -416,16 +396,101 @@
   }
 }
 @media (max-width: 550px) {
+  .cubeDiv {
+    width: 12rem;
+    height: 12rem;
+  }
+  .bottomCubes {
+    padding: 0rem 2rem;
+  }
+  .gridBackground {
+    width: 24.829rem;
+    height: 18.759rem;
+    background-size: 2.75rem 2.67rem;
+  }
 }
 @media (max-width: 480px) {
   .gridBackground {
-    width: 26.829rem;
-    height: 20.759rem;
+    width: 24.829rem;
+    height: 18.759rem;
+    background-size: 2.75rem 2.67rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 3rem;
+  }
+  .topCubes {
+    width: 115%;
+  }
+  .bottomCubes {
+    padding: 0rem 0rem;
+  }
+  .buttonDiv {
+    font-size: 0.875rem;
+    width: 13.251rem;
+    height: 2.326rem;
+  }
+  .arrowDiv,
+  .arrowButton {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  .pageDiv p {
+    font-size: 1rem;
+    max-width: 45.125rem;
   }
 }
 @media (max-width: 400px) {
+  .gridBackground {
+    width: 18.829rem;
+    height: 12.759rem;
+    background-size: 2.08rem 1.82rem;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 2.5rem;
+  }
+  .topCubes {
+    width: 115%;
+  }
+  .bottomCubes {
+    padding: 0rem 0rem;
+  }
 }
 @media (max-width: 360px) {
+  .gridBackground {
+    width: 18.829rem;
+    height: 12.759rem;
+  }
+  .topCubes {
+    width: 125%;
+  }
+  .bottomCubes {
+    width: 120%;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 320px) {
+  .gridBackground {
+    width: 16.829rem;
+    height: 10.759rem;
+    background-size: 1.87rem 1.53rem;
+  }
+  .topCubes {
+    width: 135%;
+  }
+  .bottomCubes {
+    width: 135%;
+  }
+  .headingDiv h1,
+  .headingDiv h2,
+  .colorText {
+    font-size: 2rem;
+  }
 }

@@ -26,7 +26,7 @@ export default function Home() {
         {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
       <UserButton afterSignOutUrl="/"/> */}
         <Navbar />
-        <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
+        <div className={styles.margin} style={{ margin: "2.5rem 4rem" }}></div>
         <HomePage />
         {/* <div style={{ marginTop: "10rem" }}></div>
         <OurExperience /> */}
