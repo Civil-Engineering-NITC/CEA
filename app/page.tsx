@@ -10,6 +10,7 @@ import { Competitive } from "@/components/sections/Competitive";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
 import { InterviewForm } from "@/components/forms/InterviewForm";
+import { Rating } from "react-simple-star-rating";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -23,9 +24,9 @@ export default function Home() {
   if (isSignedIn) {
     return (
       <>
-        {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/> */}
-        <Navbar />
+        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+        <UserButton afterSignOutUrl="/" />
+        {/* <Navbar />
         <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
         <HomePage /> 
         <div style={{ marginTop: "10rem" }}></div>
@@ -37,8 +38,9 @@ export default function Home() {
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer />
-        {/* <InterviewForm /> */}
+        <Footer /> */}
+        <InterviewForm />
+        {/* <Rating /> */}
       </>
     );
   }
