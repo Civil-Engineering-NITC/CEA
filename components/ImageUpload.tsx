@@ -3,6 +3,8 @@ import Image from "next/image";
 import { RightArrowButton } from "./RightArrowButton";
 import styles from "./imageUpload.module.css";
 import { MdOutlineDriveFolderUpload } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
+import { useState } from "react";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
@@ -16,9 +18,12 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   onRemove,
   text,
 }) => {
+  const [isUploaded, setIsUploaded] = useState(false);
+
   const onUpload = (result: any) => {
     console.log(result.info.secure_url);
     onChange(result.info.secure_url);
+    setIsUploaded(true);
   };
 
   return (
@@ -27,8 +32,9 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
         {({ open }) => {
           return (
             <button onClick={() => open()} className={styles.upload}>
-              <MdOutlineDriveFolderUpload />
+              <MdOutlineDriveFolderUpload size={25} />
               {text}
+              {isUploaded && <TiTick color="green" size={25} />}
             </button>
           );
         }}
