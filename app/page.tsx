@@ -38,7 +38,6 @@ export default function Home() {
         <InterviewExp />
         <div className={styles.margin}></div> */}
         <Footer />
-        {/* <InterviewForm /> */}
       </>
     );
   }

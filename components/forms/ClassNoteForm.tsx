@@ -13,7 +13,7 @@ const formSchema = z.object({
 
 type CompExamFormValues = z.infer<typeof formSchema>
 
-export const classNotesForm : React.FC = () => {
+export const ClassNotesForm : React.FC = () => {
 
     const [value, setValue] = useState([])
     const [url, setUrl] = useState("")
