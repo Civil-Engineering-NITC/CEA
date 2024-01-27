@@ -10,6 +10,7 @@ import { Competitive } from "@/components/sections/Competitive";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
 import { InterviewForm } from "@/components/forms/InterviewForm";
+import { Rating } from "react-simple-star-rating";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -37,8 +38,9 @@ export default function Home() {
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer />
-        {/* <InterviewForm /> */}
+        <Footer /> */}
+        <InterviewForm />
+        {/* <Rating /> */}
       </>
     );
   }
