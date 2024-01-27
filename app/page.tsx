@@ -28,16 +28,17 @@ export default function Home() {
         <Navbar />
         <div className={styles.margin} style={{ margin: "2.5rem 4rem" }}></div>
         <HomePage />
-        {/* <div style={{ marginTop: "10rem" }}></div>
-        <OurExperience /> */}
-        {/* <div className={styles.margin}></div>
-        <Competitive /> */}
-        {/* <div className={styles.margin}></div>
+        <div style={{ marginTop: "10rem" }}></div>
+        <div className={styles.margin}></div>
+        <OurExperience />
+        <div className={styles.margin}></div>
+        <Competitive />
+        <div className={styles.margin}></div>
         <Resource />
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-        <Footer /> */}
+        <Footer />
         {/* <InterviewForm /> */}
       </>
     );

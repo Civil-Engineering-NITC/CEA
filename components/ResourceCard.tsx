@@ -27,7 +27,7 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({ title }) => {
             <h2>MATERIALS</h2>
             <a href="">Previous Year Papers</a>
           </div>
-          <RightArrowButton text="Show More" redirectLink="" />
+          <RightArrowButton text="Show More" redirectLink="" textDec="none" />
         </div>
       </div>
     </>

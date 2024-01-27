@@ -58,7 +58,11 @@ export const HomePage = () => {
               </div>
               <div className={styles.colorDiv}></div>
             </a>
-            <RightArrowButton text="Explore Teams" redirectLink="" />
+            <RightArrowButton
+              text="Explore Teams"
+              redirectLink=""
+              textDec="underline"
+            />
           </div>
         </div>
       </div>
