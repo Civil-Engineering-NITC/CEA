@@ -110,32 +110,27 @@ export const InterviewForm: React.FC = () => {
               />
             </div>
             {errors.name && <p>{`${errors.name?.message}`}</p>}
-            <div className={styles.rollAndContactContainer}>
-              <div className={styles.rollContainer}>
-                <label>Roll No:</label>
-                <div className={styles.inputWrapper}>
-                  <input
-                    {...register("rollno")}
-                    type="text"
-                    placeholder="Enter Your Roll No..."
-                    name="rollno"
-                  />
-                  {errors.rollno && <p>{`${errors.rollno?.message}`}</p>}
-                </div>
-              </div>
-              <div className={styles.rollContainer}>
-                <label>Contact No:</label>
-                <div className={styles.inputWrapper}>
-                  <input
-                    {...register("phone")}
-                    type="text"
-                    placeholder="Enter Your Contact Number..."
-                    name="contact"
-                  />
-                </div>
-                {errors.phone && <p>{`${errors.phone?.message}`}</p>}
-              </div>
+            <label>Roll No:</label>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("rollno")}
+                type="text"
+                placeholder="Enter Your Roll No..."
+                name="rollno"
+              />
+              {errors.rollno && <p>{`${errors.rollno?.message}`}</p>}
             </div>
+            <label>Contact No:</label>
+            <div className={styles.inputWrapper}>
+              <p style={{ marginRight: "1rem" }}>+91</p>
+              <input
+                {...register("phone")}
+                type="text"
+                placeholder="Enter Your Contact Number..."
+                name="contact"
+              />
+            </div>
+            {errors.phone && <p>{`${errors.phone?.message}`}</p>}
             <label>Email Id:</label>
             <div className={styles.inputWrapper}>
               <input

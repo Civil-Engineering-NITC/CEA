@@ -1,6 +1,8 @@
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { RightArrowButton } from "./RightArrowButton";
+import styles from "./imageUpload.module.css";
+import { MdOutlineDriveFolderUpload } from "react-icons/md";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
@@ -24,16 +26,10 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
       <CldUploadWidget onUpload={onUpload} uploadPreset="interviews">
         {({ open }) => {
           return (
-            <div
-              className="wrapper"
-              onClick={() => open()}
-              style={{ margin: "1rem 0" }}
-            >
-              <RightArrowButton text={text} redirectLink="" />
-            </div>
-            // <button onClick={() => open()} style={{margin: "2rem 0"}}>
-            //     {text}
-            // </button>
+            <button onClick={() => open()} className={styles.upload}>
+              <MdOutlineDriveFolderUpload />
+              {text}
+            </button>
           );
         }}
       </CldUploadWidget>
