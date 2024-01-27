@@ -1,0 +1,16 @@
+.mainHeading {
+  color: #afafaf;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30.24px;
+}
+
+@media (max-width: 500px) {
+  .mainHeading {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.12px;
+  }
+}

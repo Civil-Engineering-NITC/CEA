@@ -1,0 +1,51 @@
+.cardContainer {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.gradientBox {
+  display: flex;
+}
+
+.gradientLeftBox {
+  position: absolute;
+  /* bottom: 0px; */
+  left: 0px;
+  width: 255px;
+  height: 62px;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+
+.gradientRightBox {
+  position: absolute;
+  /* bottom: 0px; */
+  right: 0px;
+  width: 255px;
+  height: 62px;
+  background: linear-gradient(to left, #804ced, #f48fd0);
+}
+
+.topContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .gradientLeftBox {
+    width: 50px;
+    height: 24px;
+  }
+
+  .gradientRightBox {
+    width: 50px;
+    height: 24px;
+  }
+}
