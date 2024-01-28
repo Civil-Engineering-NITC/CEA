@@ -3,6 +3,8 @@ import styles from "./navbar.module.css";
 import { ColouredText } from "./ColouredText";
 import { ColourdButton } from "./ColourdButton";
 import { MenuBtn } from "./MenuBtn";
+import Image from "next/image";
+import arrow from "../public/Arrow 1.png";
 
 export const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -13,7 +15,7 @@ export const Navbar = () => {
   return (
     <>
       <div className={styles.navDiv}>
-        <ColouredText text="CEA." size="1.5rem" />
+        <h1 className={styles.colorText}>CEA.</h1>
         <div className={styles.navMenu}>
           <div className={styles.navlinks}>
             <a href="">Home.</a>
@@ -22,15 +24,15 @@ export const Navbar = () => {
             <a href="">Members.</a>
             <a href="">ContactUS.</a>
           </div>
-          <ColourdButton
-            text="Sign In"
-            textSize="1.125rem"
-            buttonWidth="8.406rem"
-            buttonHeight="2.438rem"
-            arrowWidth="0.75rem"
-            arrowHeight="0.75rem"
-          />
-
+          <a href="" className={styles.mainDiv}>
+            <div className={styles.buttonDiv}>
+              Sign In
+              <div className={styles.arrowDiv}>
+                <Image src={arrow} alt="" className={styles.arrowButton} />
+              </div>
+            </div>
+            <div className={styles.colorDiv}></div>
+          </a>
           <div className={styles.menuBack}>
             <button
               className={`${styles.hamburger}  ${

@@ -12,7 +12,7 @@ export const Footer = () => {
     <>
       <div className={styles.container}>
         <div className={styles.infoContainer}>
-          <ColouredText text="Civil Engineering Association" size="36px" />
+          <h1 className={styles.colorText}>Civil Engineering Association</h1>
           <p>
             Please write comments if you find any bug in the above programs or
             other ways to solve the same problem.

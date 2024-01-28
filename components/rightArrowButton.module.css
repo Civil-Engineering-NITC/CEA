@@ -51,13 +51,8 @@
     transform: translateX(0%);
   }
 }
-@media (max-width: 550px) {
-  .arrowbutton {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 400px) {
-  .arrowbutton {
+@media (max-width: 480px) {
+  .arrowButton {
     font-size: 1rem;
   }
 }
