@@ -20,10 +20,28 @@
 .headingDiv h1 {
   font-weight: 700;
   font-size: 4rem;
-  background: linear-gradient(to right, #804ced, #f48fd0);
+  background: linear-gradient(
+    190deg,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0,
+    #804ced,
+    #f48fd0
+  );
+  background-size: 400%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
 }
 .headingDiv h2 {
   font-weight: 600;
@@ -44,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.75rem;
+  gap: 0.5rem;
 }
 .loadmore {
   color: white;
@@ -57,16 +75,10 @@
   .topDiv {
     gap: 6rem;
   }
-  .cardMainDiv {
-    gap: 2.5rem;
-  }
 }
 @media (max-width: 1366px) {
   .topDiv {
     gap: 1.5rem;
-  }
-  .cardMainDiv {
-    gap: 1rem;
   }
   .headingDiv {
     width: 30rem;
@@ -133,7 +145,7 @@
     width: 32rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 3rem;
   }
   .headingDiv h2 {
     font-size: 3rem;
@@ -162,7 +174,7 @@
     width: 27rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 2.5rem;
   }
   .headingDiv h2 {
     font-size: 2.5rem;
@@ -190,7 +202,7 @@
     width: 22rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 2.25rem;
   }
   .headingDiv h2 {
     font-size: 2.25rem;
@@ -218,7 +230,7 @@
     width: 19rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 2.25rem;
   }
   .headingDiv h2 {
     font-size: 2.25rem;
@@ -243,7 +255,7 @@
     width: 18rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 2.25rem;
   }
   .headingDiv h2 {
     font-size: 2.25rem;
@@ -268,7 +280,7 @@
     width: 16rem;
   }
   .headingDiv h1 {
-    font-size: 3.7rem;
+    font-size: 2.25rem;
   }
   .headingDiv h2 {
     font-size: 2.25rem;
