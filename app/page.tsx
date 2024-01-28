@@ -23,9 +23,9 @@ export default function Home() {
   if (isSignedIn) {
     return (
       <>
-        {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/> */}
-        <Navbar />
+        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+        <UserButton afterSignOutUrl="/" />
+        {/* <Navbar />
         <div className={styles.margin} style={{ margin: "2.5rem 4rem" }}></div>
         <HomePage />
         <div style={{ marginTop: "10rem" }}></div>
@@ -37,8 +37,9 @@ export default function Home() {
         <Resource />
         <div className={styles.margin}></div>
         <InterviewExp />
-        <div className={styles.margin}></div> */}
-        <Footer />
+        <div className={styles.margin}></div>
+        <Footer /> */}
+        <InterviewForm />
       </>
     );
   }
