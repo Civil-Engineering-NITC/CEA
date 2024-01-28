@@ -1,6 +1,9 @@
 .pageHeading {
   font-size: 80px;
   font-weight: 700;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
   line-height: 100.8px;
 }
 

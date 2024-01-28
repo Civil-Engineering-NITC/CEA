@@ -6,7 +6,7 @@ export const subHeading = "EXAMS.";
 export const cardData = [
   {
     id: 1,
-    icon: "/../public/books.png",
+    type: "engineering",
     heading1: "Core Exam",
     heading2: "GATE Exam",
     heading3: "Graduate Aptitude Test",
@@ -16,7 +16,7 @@ export const cardData = [
   },
   {
     id: 2,
-    icon: "/../public/books.png",
+    type: "business",
     heading1: "Core Exam",
     heading2: "CAT Exam",
     heading3: "Common Aptitude Test",
@@ -26,7 +26,7 @@ export const cardData = [
   },
   {
     id: 3,
-    icon: "/../public/books.png",
+    type: "civil-service",
     heading1: "Core Exam",
     heading2: "UPSC Exam",
     heading3: "Civil Services Examination",
@@ -36,7 +36,7 @@ export const cardData = [
   },
   {
     id: 4,
-    icon: "/../public/books.png",
+    type: "business",
     heading1: "Core Exam",
     heading2: "CAT Exam",
     heading3: "Common Aptitude Test",
@@ -46,7 +46,7 @@ export const cardData = [
   },
   {
     id: 5,
-    icon: "/../public/books.png",
+    type: "civil-service",
     heading1: "Core Exam",
     heading2: "UPSC Exam",
     heading3: "Civil Services Examination",
@@ -56,7 +56,7 @@ export const cardData = [
   },
   {
     id: 6,
-    icon: "/../public/books.png",
+    type: "engineering",
     heading1: "Core Exam",
     heading2: "GATE Exam",
     heading3: "Graduate Aptitude Test",

@@ -3,12 +3,12 @@ import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { MdEngineering } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaHome } from "react-icons/fa";
 
 interface CardProps {
   card: {
     id: number;
-    icon: string;
+    type: string;
     heading1: string;
     heading2: string;
     heading3: string;
@@ -24,9 +24,13 @@ export const Card: React.FC<CardProps> = ({ card }) => {
       <div className={styles.cardTop}>
         <div
           className={styles.imageStyle}
-          style={{ backgroundColor: card.color }}
+          style={{ backgroundColor: card.color, borderRadius: "4px" }}
         >
-          <MdEngineering />
+          {card.type === "engineering" && (
+            <MdEngineering size={50} color="white" />
+          )}
+          {card.type === "business" && <FaHome size={50} color="white" />}
+          {card.type === "civil-service" && <FaHome size={50} color="white" />}
           {/* <Image src="/books.png" height={32} width={32} alt={"name"} /> */}
         </div>
         <div className={styles.headingOne}>{card.heading1}</div>

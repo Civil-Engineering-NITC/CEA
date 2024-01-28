@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../loadMore/loadMore.module.css";
+import styles from "./loadMore.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
@@ -10,7 +10,7 @@ import {
   cardData,
 } from "@/data/fakeLoadMore";
 
-export default function CompExam() {
+export default function Resources() {
   return (
     <div className={styles.container}>
       <PageTopHeading

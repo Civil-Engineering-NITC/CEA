@@ -7,6 +7,10 @@
   margin-top: 50px;
 }
 
+.container {
+  background-color: black;
+}
+
 .gradientBox {
   display: flex;
 }
@@ -27,15 +31,6 @@
   width: 255px;
   height: 62px;
   background: linear-gradient(to left, #804ced, #f48fd0);
-}
-
-.topContainer {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
 }
 
 @media (max-width: 500px) {
