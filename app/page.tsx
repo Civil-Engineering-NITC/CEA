@@ -10,6 +10,7 @@ import { Competitive } from "@/components/sections/Competitive";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
 import { InterviewForm } from "@/components/forms/InterviewForm";
+import { Rating } from "react-simple-star-rating";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -17,7 +18,11 @@ export default function Home() {
   const { isSignedIn, user, isLoaded } = useUser();
 
   if (!isLoaded) {
-    return null;
+    return (
+      <>
+        <h1>USER IS NOT LOADED</h1>
+      </>
+    );
   }
 
   if (isSignedIn) {
@@ -26,7 +31,7 @@ export default function Home() {
         <div>Hello {user.emailAddresses[0].emailAddress}!</div>
         <UserButton afterSignOutUrl="/" />
         {/* <Navbar />
-        <div className={styles.margin} style={{ margin: "2.5rem 4rem" }}></div>
+        <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
         <HomePage />
         <div style={{ marginTop: "10rem" }}></div>
         <div className={styles.margin}></div>

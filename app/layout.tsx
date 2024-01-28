@@ -20,26 +20,27 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-
       <ClerkProvider
         appearance={{
           baseTheme: dark,
         }}
       >
         <html lang="en">
-          <body className={sora.className}>{children}</body>
+          <body className={sora.className}>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
+            {children}
+          </body>
         </html>
       </ClerkProvider>
     </>
