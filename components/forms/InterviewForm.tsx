@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -7,7 +6,7 @@ import * as z from "zod";
 import axios from "axios";
 import { CldUploadWidget } from "next-cloudinary";
 import { ImageUpload } from "../ImageUpload";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./InterviewForm.module.css";
 import { Rating } from "react-simple-star-rating";
 import { toast } from "react-toastify";
@@ -25,8 +24,8 @@ const formSchema = z.object({
 type InterviewFormValues = z.infer<typeof formSchema>;
 
 export const InterviewForm: React.FC = () => {
-  const notifySuccess = () =>
-    toast.success("Successfully Submitted", {
+  const notifySuccess = (text: string) =>
+    toast.success(`${text} succesfully submitted`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -37,8 +36,8 @@ export const InterviewForm: React.FC = () => {
       theme: "light",
     });
 
-  const notifyError = () =>
-    toast.error("Some error has occured", {
+  const notifyError = (text: string) =>
+    toast.error(`${text} has already been used`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -49,20 +48,29 @@ export const InterviewForm: React.FC = () => {
       theme: "dark",
     });
 
-  const notifyWarning = () =>
-    toast.warn(
-      "You have either not uploaded your Photo or company logo. Please Upload",
-      {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      }
-    );
+  const notifyWarning = (text: string) =>
+    toast.warn(`${text} has not been uploaded`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+  const info = (text: string) =>
+    toast.info(text, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   const [value, setValue] = useState([]);
   const [profileUrl, setProfileUrl] = useState("");
@@ -72,6 +80,17 @@ export const InterviewForm: React.FC = () => {
 
   const [rating, setRating] = useState(0);
 
+  useEffect(() => {
+    if (profileUrl !== "") {
+      console.log("PROFILE PHOTO UPLOADED");
+      notifySuccess("Profile Photo");
+    }
+
+    if (logoUrl !== "") {
+      notifySuccess("Logo");
+    }
+  }, [profileUrl, logoUrl]);
+
   // Catch Rating value
   const handleRating = (rate: number) => {
     setRating(rate);
@@ -79,6 +98,7 @@ export const InterviewForm: React.FC = () => {
 
   const handleChecked = () => {
     setChecked(!checked);
+    console.log(checked);
   };
 
   const {
@@ -121,15 +141,30 @@ export const InterviewForm: React.FC = () => {
 
       try {
         await axios.post("/api/interviews", finalData);
+        notifySuccess("Experience");
         // Reset the form after a successful submission
-        notifySuccess();
-      } catch (error) {
-        console.log(error);
-        notifyError();
+      } catch (error: any) {
+        if (error.response.data === "email") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "rollno") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "phone") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else {
+          console.log(error);
+          notifyError("Something has went wrong");
+        }
       }
-    } else {
+    } else if (checked) {
+      info("Terms and Condition not checked");
+    } else if (profileUrl === "") {
       console.log("profile or logo url missing");
-      notifyWarning();
+      notifyWarning("Profile Photo");
+    } else if (logoUrl === "") {
+      notifyWarning("Logo");
     }
   };
 

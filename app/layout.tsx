@@ -5,6 +5,7 @@ import { Sora } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const sora = Sora({ subsets: ["latin"] });
 
