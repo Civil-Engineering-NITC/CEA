@@ -172,6 +172,10 @@ export const InterviewForm: React.FC = () => {
     <>
       <div className={styles.temp}>
         <div className={styles.container}>
+          <div className={styles.glow1}></div>
+          <div className={styles.glow2}></div>
+          <div className={styles.glow3}></div>
+
           <div className={styles.heading}>
             <p>Your</p>
             <p className={styles.colorText}>Experience</p>
@@ -309,6 +313,9 @@ export const InterviewForm: React.FC = () => {
               <div className={styles.colorDiv}></div>
             </a> */}
           </form>
+          <div className={styles.glow4}></div>
+          <div className={styles.glow5}></div>
+          <div className={styles.glow6}></div>
         </div>
       </div>
     </>

@@ -12,6 +12,55 @@
   padding: 4rem;
   max-width: 930px;
   width: 100%;
+  overflow: auto;
+}
+.glow1,
+.glow2,
+.glow3,
+.glow4,
+.glow5,
+.glow6 {
+  height: 100%;
+  width: 100%;
+  max-width: 930px;
+  position: relative;
+  background: transparent;
+}
+.glow1::after,
+.glow2::after,
+.glow3::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+.glow4::after,
+.glow5::after,
+.glow6::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+}
+.glow1::after {
+  box-shadow: 4rem -2rem 4rem 4rem #f8c7334d;
+}
+.glow2::after {
+  box-shadow: 0rem -3rem 4rem 5rem #35d8704d;
+}
+.glow3::after {
+  box-shadow: 2rem 1rem 4rem 4rem #f48fd04d;
+}
+.glow5::after {
+  box-shadow: -2rem -1rem 4rem 4rem #35d8704d;
+}
+.glow4::after {
+  box-shadow: 1rem 2rem 4rem 4rem #f8c7334d;
+}
+.glow6::after {
+  box-shadow: -1rem 1rem 4rem 4rem #f48fd04d;
 }
 .heading {
   display: flex;
