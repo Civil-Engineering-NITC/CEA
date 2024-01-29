@@ -1,0 +1,18 @@
+.subHeading {
+  color: #afafaf;
+  font-weight: 400px;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  line-height: 30.24px;
+  letter-spacing: 1rem;
+}
+
+@media (max-width: 500px) {
+  .subHeading {
+    color: #afafaf;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 25.2px;
+  }
+}

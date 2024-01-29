@@ -55,11 +55,13 @@
 }
 .infoContainer {
   width: 383px;
+  background: transparent;
 }
 .infoContainer p {
   margin: 1.5rem 0;
   color: #343434;
   font-size: 1.1rem;
+  background: transparent;
 }
 .colorText {
   font-weight: 700;
@@ -90,28 +92,35 @@
 .linksContainer {
   width: auto;
   text-align: center;
+  background: transparent;
 }
+
 .linksContainer p {
   margin-bottom: 2.5rem;
   font-size: 1.75rem;
+  background: transparent;
 }
 .linksContainer ul {
   list-style-type: none;
   font-size: 1.2rem;
+  background: transparent;
 }
 .linksContainer ul li {
   margin-bottom: 1.5rem;
   color: #a9a9a9;
+  background: transparent;
 }
 .linksContainer ul li:last-child {
   margin-bottom: 0;
 }
 .contactContainer {
   width: 383px;
+  background: transparent;
 }
 .contactContainer p {
   margin-bottom: 0.2rem;
   color: #a9a9a9;
+  background: transparent;
 }
 .icon {
   height: 2rem;
@@ -122,6 +131,7 @@
   color: #343434;
   font-size: 2rem;
   margin-left: 2rem;
+  background: transparent;
 }
 .contactContainer h3:last-child {
   margin-left: 0;
@@ -164,6 +174,7 @@
 .socialMediaIconContainer {
   display: flex;
   gap: 1rem;
+  background: transparent;
 }
 .policy {
   display: flex;

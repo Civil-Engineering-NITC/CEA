@@ -1,0 +1,14 @@
+.upload {
+  height: 2.865rem;
+  display: flex;
+  gap: 0.3rem;
+  background: #303030;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+}

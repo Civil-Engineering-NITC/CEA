@@ -1,166 +1,323 @@
-"use client"
+"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import * as  z from "zod";
+import * as z from "zod";
 import axios from "axios";
-import { CldUploadWidget } from 'next-cloudinary';
+import { CldUploadWidget } from "next-cloudinary";
 import { ImageUpload } from "../ImageUpload";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import styles from "./InterviewForm.module.css";
+import { Rating } from "react-simple-star-rating";
+import { toast } from "react-toastify";
 
 const formSchema = z.object({
-    name: z.string().min(1),
-    rollno: z.string().min(1),
-    email: z.string().min(1),
-    phone: z.string().min(1),
-    company: z.string().min(1),
-    packages: z.string().min(1),
-    desc: z.string().min(1),
-    rating: z.any(),
-})
+  name: z.string().min(1),
+  rollno: z.string().min(1),
+  email: z.string().min(1),
+  phone: z.string().min(1),
+  company: z.string().min(1),
+  packages: z.string().min(1),
+  desc: z.string().min(1),
+});
 
-type InterviewFormValues = z.infer<typeof formSchema>
+type InterviewFormValues = z.infer<typeof formSchema>;
 
-export const InterviewForm : React.FC = () => {
+export const InterviewForm: React.FC = () => {
+  const notifySuccess = (text: string) =>
+    toast.success(`${text} succesfully submitted`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
+  const notifyError = (text: string) =>
+    toast.error(`${text} has already been used`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
 
-    const [value, setValue] = useState([])
-    const [profileUrl, setProfileUrl] = useState("")
-    const [logoUrl, setLogoUrl] = useState("")
+  const notifyWarning = (text: string) =>
+    toast.warn(`${text} has not been uploaded`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
 
-    const {register,handleSubmit,formState:{errors, isSubmitting},
-            reset,
-        } = useForm<InterviewFormValues>({
-        resolver: zodResolver(formSchema)
-    })
+  const info = (text: string) =>
+    toast.info(text, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
+  const [value, setValue] = useState([]);
+  const [profileUrl, setProfileUrl] = useState("");
+  const [logoUrl, setLogoUrl] = useState("");
 
-    const onSubmit: SubmitHandler<InterviewFormValues> = async (data) => {
-        // Convert the 'rating' value from string to integer
-        data.rating = parseInt(data.rating, 10);
-        // console.log(profileUrl);
-        // console.log(logoUrl);
-        // console.log(data)
+  const [checked, setChecked] = useState(false);
 
-        const linkData = [
-            {
-                name: "profileUrl",
-                link: profileUrl
-            },
-            {
-                name: "logoUrl",
-                link: logoUrl
-            }
-        ]
+  const [rating, setRating] = useState(0);
 
-        const finalData = {
-            ...data,
-            linkData
-        }
+  useEffect(() => {
+    if (profileUrl !== "") {
+      console.log("PROFILE PHOTO UPLOADED");
+      notifySuccess("Profile Photo");
+    }
 
-        console.log(finalData);
-        
-        if( profileUrl !== "" && logoUrl !== ""){
+    if (logoUrl !== "") {
+      notifySuccess("Logo");
+    }
+  }, [profileUrl, logoUrl]);
 
-            // console.log("FOUNDDDDDDDDDD!!!!!!!!!!!");
-            
-            try {
-                await axios.post('/api/interviews', finalData);
-                // Reset the form after a successful submission
-                reset();
-            } catch (error) {
-                console.log(error);
-            }
+  // Catch Rating value
+  const handleRating = (rate: number) => {
+    setRating(rate);
+  };
 
-        }else{
-            console.log("profile or logo url missing")
-        }
+  const handleChecked = () => {
+    setChecked(!checked);
+    console.log(checked);
+  };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<InterviewFormValues>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit: SubmitHandler<InterviewFormValues> = async (data) => {
+    // Convert the 'rating' value from string to integer
+    // data.rating = parseInt(data.rating, 10);
+    // console.log(profileUrl);
+    // console.log(logoUrl);
+    // console.log(data)
+
+    const linkData = [
+      {
+        name: "profileUrl",
+        link: profileUrl,
+      },
+      {
+        name: "logoUrl",
+        link: logoUrl,
+      },
+    ];
+
+    const finalData = {
+      ...data,
+      rating,
+      linkData,
     };
 
+    console.log(finalData);
+
+    if (profileUrl !== "" && logoUrl !== "") {
+      // console.log("FOUNDDDDDDDDDD!!!!!!!!!!!");
+
+      try {
+        await axios.post("/api/interviews", finalData);
+        notifySuccess("Experience");
+        // Reset the form after a successful submission
+      } catch (error: any) {
+        if (error.response.data === "email") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "rollno") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "phone") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else {
+          console.log(error);
+          notifyError("Something has went wrong");
+        }
+      }
+    } else if (checked) {
+      info("Terms and Condition not checked");
+    } else if (profileUrl === "") {
+      console.log("profile or logo url missing");
+      notifyWarning("Profile Photo");
+    } else if (logoUrl === "") {
+      notifyWarning("Logo");
+    }
+  };
 
   return (
     <>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Name</label>
-            <input 
-            {...register("name")}
-            type="text" 
-            />
-            {errors.name && (
-                <p>{`${errors.name?.message}`}</p>
-            ) }
-            <label>Roll No.</label>
-            <input 
-            {...register("rollno")}
-            type="text" 
-            />
-            {errors.rollno && (
-                <p>{`${errors.rollno?.message}`}</p>
-            ) }
-            <label>Email</label>
-            <input 
-            {...register("email")}
-            type="email"
-            />
-            {errors.email && (
-                <p>{`${errors.email?.message}`}</p>
-            ) }
-            <label>Phone</label>
-            <input 
-            {...register("phone")}
-            type="text"
-            />
-            {errors.phone && (
-                <p>{`${errors.phone?.message}`}</p>
-            ) }
-            <label>Company</label>
-            <input 
-            {...register("company")}
-            type="text"
-            />
-            {errors.company && (
-                <p>{`${errors.company?.message}`}</p>
-            ) }
+      <div className={styles.temp}>
+        <div className={styles.container}>
+          <div className={styles.glow1}></div>
+          <div className={styles.glow2}></div>
+          <div className={styles.glow3}></div>
+
+          <div className={styles.heading}>
+            <p>Your</p>
+            <p className={styles.colorText}>Experience</p>
+            <p>Matters</p>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Name:</label>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("name")}
+                type="text"
+                placeholder="Enter Your Name..."
+                name="name"
+              />
+            </div>
+
+            <p style={{ color: "red" }}>
+              {errors.name && <p>{`${errors.name?.message}`}</p>}
+            </p>
+
+            <label>Roll No:</label>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("rollno")}
+                type="text"
+                placeholder="Enter Your Roll No..."
+                name="rollno"
+              />
+
+              <p style={{ color: "red" }}>
+                {errors.rollno && <p>{`${errors.rollno?.message}`}</p>}
+              </p>
+            </div>
+
+            <label>Contact No:</label>
+            <div className={styles.inputWrapper}>
+              <p style={{ marginRight: "1rem" }}>+91</p>
+              <input
+                {...register("phone")}
+                type="text"
+                placeholder="Enter Your Contact Number..."
+                name="phone"
+              />
+            </div>
+
+            <p style={{ color: "red" }}>
+              {errors.phone && <p>{`${errors.phone?.message}`}</p>}
+            </p>
+
+            <label>Email Id:</label>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="Enter Your Email Id..."
+                name="email"
+              />
+            </div>
+
+            <p style={{ color: "red" }}>
+              {errors.email && <p>{`${errors.email?.message}`}</p>}
+            </p>
+
+            <label>Name of Your Company</label>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("company")}
+                type="text"
+                placeholder="Enter Name of Your Company..."
+                name="company"
+              />
+            </div>
+
+            <p style={{ color: "red" }}>
+              {errors.company && <p>{`${errors.company?.message}`}</p>}
+            </p>
+
             <label>Package</label>
-            <input 
-            {...register("packages")}
-            type="text"
-            />
-            {errors.packages && (
-                <p>{`${errors.packages?.message}`}</p>
-            ) }
-            <label>Description</label>
-            <input 
-            {...register("desc")}
-            type="text"
-            />
-            {errors.desc && (
-                <p>{`${errors.desc?.message}`}</p>
-            ) }
-            <label>Rating</label>
-            <input 
-            {...register("rating")}
-            type="text"
-            />
-            {errors.rating && (
-                <p>{`${errors.rating?.message}`}</p>
-            ) }
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("packages")}
+                type="text"
+                placeholder="Enter Your Package..."
+                name="packages"
+              />
+            </div>
 
-            <ImageUpload 
-                onChange={(imageUrl) => setProfileUrl(imageUrl)}
-                onRemove={() => setProfileUrl("")}
-                text="Upload Your Photo"
+            <p style={{ color: "red" }}>
+              {errors.packages && <p>{`${errors.packages?.message}`}</p>}
+            </p>
+
+            <label>Experience</label>
+            <div className={styles.inputWrapper}>
+              <textarea
+                id="desc"
+                {...register("desc")}
+                placeholder="Please Share Your Experience..."
+                name="desc"
+              ></textarea>
+            </div>
+
+            <p style={{ color: "red" }}>
+              {errors.desc && <p>{`${errors.desc?.message}`}</p>}
+            </p>
+
+            <label>Rate Your Experience</label>
+
+            <Rating onClick={handleRating} SVGclassName={styles.star} />
+
+            <ImageUpload
+              onChange={(imageUrl) => setProfileUrl(imageUrl)}
+              onRemove={() => setProfileUrl("")}
+              text="Upload Your Photo"
             />
 
-            <ImageUpload 
-                onChange={(logoUrl) => setLogoUrl(logoUrl)}
-                onRemove={() => setLogoUrl("")}
-                text="Upload Your Company Logo"
+            <ImageUpload
+              onChange={(logoUrl) => setLogoUrl(logoUrl)}
+              onRemove={() => setLogoUrl("")}
+              text="Upload Your Company Logo"
             />
 
+            <label className={styles.checkContainer}>
+              <input
+                type="checkbox"
+                checked={checked}
+                onChange={handleChecked}
+                className={styles.checkBox}
+              />
+              <span className={styles.checkmark}></span>I hereby confirm that
+              all information provided by me is accurate.
+            </label>
             <input type="submit" />
-        </form>
+            {/* <a type="submit" href="" className={styles.mainDiv}>
+              <div className={styles.buttonDiv}>SUBMIT</div>
+              <div className={styles.colorDiv}></div>
+            </a> */}
+          </form>
+          <div className={styles.glow4}></div>
+          <div className={styles.glow5}></div>
+          <div className={styles.glow6}></div>
+        </div>
+      </div>
     </>
-    )
-}
+  );
+};
