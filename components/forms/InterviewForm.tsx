@@ -6,10 +6,11 @@ import * as z from "zod";
 import axios from "axios";
 import { CldUploadWidget } from "next-cloudinary";
 import { ImageUpload } from "../ImageUpload";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./InterviewForm.module.css";
 import { Rating } from "react-simple-star-rating";
-// import { Rating } from "../Rating";
+import { toast } from "react-toastify";
+
 const formSchema = z.object({
   name: z.string().min(1),
   rollno: z.string().min(1),
@@ -18,19 +19,77 @@ const formSchema = z.object({
   company: z.string().min(1),
   packages: z.string().min(1),
   desc: z.string().min(1),
-  rating: z.any(),
-  checked: z.boolean(),
 });
 
 type InterviewFormValues = z.infer<typeof formSchema>;
 
 export const InterviewForm: React.FC = () => {
+  const notifySuccess = (text: string) =>
+    toast.success(`${text} succesfully submitted`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  const notifyError = (text: string) =>
+    toast.error(`${text} has already been used`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+  const notifyWarning = (text: string) =>
+    toast.warn(`${text} has not been uploaded`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+  const info = (text: string) =>
+    toast.info(text, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const [value, setValue] = useState([]);
   const [profileUrl, setProfileUrl] = useState("");
   const [logoUrl, setLogoUrl] = useState("");
+
   const [checked, setChecked] = useState(false);
 
   const [rating, setRating] = useState(0);
+
+  useEffect(() => {
+    if (profileUrl !== "") {
+      console.log("PROFILE PHOTO UPLOADED");
+      notifySuccess("Profile Photo");
+    }
+
+    if (logoUrl !== "") {
+      notifySuccess("Logo");
+    }
+  }, [profileUrl, logoUrl]);
 
   // Catch Rating value
   const handleRating = (rate: number) => {
@@ -39,6 +98,7 @@ export const InterviewForm: React.FC = () => {
 
   const handleChecked = () => {
     setChecked(!checked);
+    console.log(checked);
   };
 
   const {
@@ -52,7 +112,7 @@ export const InterviewForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<InterviewFormValues> = async (data) => {
     // Convert the 'rating' value from string to integer
-    data.rating = parseInt(data.rating, 10);
+    // data.rating = parseInt(data.rating, 10);
     // console.log(profileUrl);
     // console.log(logoUrl);
     // console.log(data)
@@ -70,6 +130,7 @@ export const InterviewForm: React.FC = () => {
 
     const finalData = {
       ...data,
+      rating,
       linkData,
     };
 
@@ -80,13 +141,30 @@ export const InterviewForm: React.FC = () => {
 
       try {
         await axios.post("/api/interviews", finalData);
+        notifySuccess("Experience");
         // Reset the form after a successful submission
-        reset();
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        if (error.response.data === "email") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "rollno") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else if (error.response.data === "phone") {
+          console.log(error.response.data);
+          notifyError(error.response.data);
+        } else {
+          console.log(error);
+          notifyError("Something has went wrong");
+        }
       }
-    } else {
+    } else if (checked) {
+      info("Terms and Condition not checked");
+    } else if (profileUrl === "") {
       console.log("profile or logo url missing");
+      notifyWarning("Profile Photo");
+    } else if (logoUrl === "") {
+      notifyWarning("Logo");
     }
   };
 
@@ -94,6 +172,10 @@ export const InterviewForm: React.FC = () => {
     <>
       <div className={styles.temp}>
         <div className={styles.container}>
+          <div className={styles.glow1}></div>
+          <div className={styles.glow2}></div>
+          <div className={styles.glow3}></div>
+
           <div className={styles.heading}>
             <p>Your</p>
             <p className={styles.colorText}>Experience</p>
@@ -109,7 +191,11 @@ export const InterviewForm: React.FC = () => {
                 name="name"
               />
             </div>
-            {errors.name && <p>{`${errors.name?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.name && <p>{`${errors.name?.message}`}</p>}
+            </p>
+
             <label>Roll No:</label>
             <div className={styles.inputWrapper}>
               <input
@@ -118,8 +204,12 @@ export const InterviewForm: React.FC = () => {
                 placeholder="Enter Your Roll No..."
                 name="rollno"
               />
-              {errors.rollno && <p>{`${errors.rollno?.message}`}</p>}
+
+              <p style={{ color: "red" }}>
+                {errors.rollno && <p>{`${errors.rollno?.message}`}</p>}
+              </p>
             </div>
+
             <label>Contact No:</label>
             <div className={styles.inputWrapper}>
               <p style={{ marginRight: "1rem" }}>+91</p>
@@ -127,10 +217,14 @@ export const InterviewForm: React.FC = () => {
                 {...register("phone")}
                 type="text"
                 placeholder="Enter Your Contact Number..."
-                name="contact"
+                name="phone"
               />
             </div>
-            {errors.phone && <p>{`${errors.phone?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.phone && <p>{`${errors.phone?.message}`}</p>}
+            </p>
+
             <label>Email Id:</label>
             <div className={styles.inputWrapper}>
               <input
@@ -140,7 +234,10 @@ export const InterviewForm: React.FC = () => {
                 name="email"
               />
             </div>
-            {errors.email && <p>{`${errors.email?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.email && <p>{`${errors.email?.message}`}</p>}
+            </p>
 
             <label>Name of Your Company</label>
             <div className={styles.inputWrapper}>
@@ -151,7 +248,10 @@ export const InterviewForm: React.FC = () => {
                 name="company"
               />
             </div>
-            {errors.company && <p>{`${errors.company?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.company && <p>{`${errors.company?.message}`}</p>}
+            </p>
 
             <label>Package</label>
             <div className={styles.inputWrapper}>
@@ -159,35 +259,29 @@ export const InterviewForm: React.FC = () => {
                 {...register("packages")}
                 type="text"
                 placeholder="Enter Your Package..."
-                name="package"
+                name="packages"
               />
             </div>
-            {errors.packages && <p>{`${errors.packages?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.packages && <p>{`${errors.packages?.message}`}</p>}
+            </p>
 
             <label>Experience</label>
             <div className={styles.inputWrapper}>
-              {/* <input
-                {...register("desc")}
-                type="text"
-                placeholder="Please Share Your Experience..."
-                name="desc"
-              /> */}
               <textarea
                 id="desc"
-                // cols="30"
-                // rows="10"
                 {...register("desc")}
                 placeholder="Please Share Your Experience..."
                 name="desc"
               ></textarea>
             </div>
-            {errors.desc && <p>{`${errors.desc?.message}`}</p>}
+
+            <p style={{ color: "red" }}>
+              {errors.desc && <p>{`${errors.desc?.message}`}</p>}
+            </p>
 
             <label>Rate Your Experience</label>
-            {/* <div className={styles.inputWrapper}>
-              <input {...register("rating")} type="text" />
-            </div>
-            {errors.rating && <p>{`${errors.rating?.message}`}</p>} */}
 
             <Rating onClick={handleRating} SVGclassName={styles.star} />
 
@@ -205,7 +299,6 @@ export const InterviewForm: React.FC = () => {
 
             <label className={styles.checkContainer}>
               <input
-                {...register("checked")}
                 type="checkbox"
                 checked={checked}
                 onChange={handleChecked}
@@ -214,12 +307,15 @@ export const InterviewForm: React.FC = () => {
               <span className={styles.checkmark}></span>I hereby confirm that
               all information provided by me is accurate.
             </label>
-
-            <a type="submit" href="" className={styles.mainDiv}>
+            <input type="submit" />
+            {/* <a type="submit" href="" className={styles.mainDiv}>
               <div className={styles.buttonDiv}>SUBMIT</div>
               <div className={styles.colorDiv}></div>
-            </a>
+            </a> */}
           </form>
+          <div className={styles.glow4}></div>
+          <div className={styles.glow5}></div>
+          <div className={styles.glow6}></div>
         </div>
       </div>
     </>

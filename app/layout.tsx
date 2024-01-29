@@ -3,7 +3,9 @@ import "./globals.css";
 
 import { Sora } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from '@clerk/themes';
+import { dark } from "@clerk/themes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -18,16 +20,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-    appearance={{
-      baseTheme: dark
-    }}
-    > 
-
-      <html lang="en">
-        <body className={sora.className}>{children}</body>
-      </html>
-      
-    </ClerkProvider>
+    <>
+      <ClerkProvider
+        appearance={{
+          baseTheme: dark,
+        }}
+      >
+        <html lang="en">
+          <body className={sora.className}>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
+            {children}
+          </body>
+        </html>
+      </ClerkProvider>
+    </>
   );
 }

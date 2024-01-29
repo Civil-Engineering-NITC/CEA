@@ -21,7 +21,11 @@ export default function Home() {
   const { isSignedIn, user, isLoaded } = useUser();
 
   if (!isLoaded) {
-    return null;
+    return (
+      <>
+        <h1>USER IS NOT LOADED</h1>
+      </>
+    );
   }
 
   if (isSignedIn) {

@@ -108,6 +108,7 @@
 .linksContainer ul li {
   margin-bottom: 1.5rem;
   color: #a9a9a9;
+  background: transparent;
 }
 .linksContainer ul li:last-child {
   margin-bottom: 0;
