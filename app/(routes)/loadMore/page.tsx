@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../loadMore/loadMore.module.css";
+import styles from "./loadMore.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
@@ -10,13 +10,13 @@ import {
   cardData,
 } from "@/data/fakeLoadMore";
 
-export default function CompExam() {
+export default function LoadMore() {
   return (
     <div className={styles.container}>
       <PageTopHeading
-        mainHeading="Get to Know about different competitive Examination and Learn."
-        heading="COMPETITIVE."
-        subHeading="EXAMS."
+        mainHeading={mainHeading}
+        heading={heading}
+        subHeading={subHeading}
       />
       <SearchBar />
       <div className={styles.cardContainer}>
