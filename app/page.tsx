@@ -33,6 +33,7 @@ export default function Home() {
       <>
         {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
       <UserButton afterSignOutUrl="/"/> */}
+        <Footer />
       </>
     );
   }
