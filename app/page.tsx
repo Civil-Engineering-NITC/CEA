@@ -12,6 +12,8 @@ import { Footer } from "@/components/footer";
 import { InterviewForm } from "@/components/forms/InterviewForm";
 import { Rating } from "react-simple-star-rating";
 import LoadMore from "./(routes)/loadMore/page";
+import ResourceMaterial from "./(routes)/resources/[resourceId]/page";
+import Resources from "./(routes)/resources/page";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -30,7 +32,7 @@ export default function Home() {
         <>
           <Navbar />
           <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          <LoadMore />
+          <Resources />
           <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
           <Footer />
         </>
