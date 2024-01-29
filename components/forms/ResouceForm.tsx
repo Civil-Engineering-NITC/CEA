@@ -1,28 +1,28 @@
+// model Resources{
+//     id  String  @id @default(uuid())
+//     topic String
+//     type  String
+//     link  ResourceLink[]  @relation("ResourcesToLink")
+//   }
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
 import * as z from "zod";
 import axios from "axios";
-import { useState } from "react";
 import { ImageUpload } from "../ImageUpload";
 
-// model Events{
-//     id  String @id  @default(uuid())
-//     regLink String
-//     link Link[] @relation("EventsToLink")
-//     desc  String
-//   }
-
 const formSchema = z.object({
-  name: z.string().min(1),
-  desc: z.string().min(1),
+  topic: z.string().min(1),
   type: z.string().min(1),
 });
 
-type ActivityFormValues = z.infer<typeof formSchema>;
+type ResourceFormValues = z.infer<typeof formSchema>;
 
-export const ActivityForm: React.FC = () => {
+export const ResourceForm: React.FC = () => {
+  const [value, setValue] = useState([]);
   const [url, setUrl] = useState("");
 
   const {
@@ -30,11 +30,11 @@ export const ActivityForm: React.FC = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<ActivityFormValues>({
+  } = useForm<ResourceFormValues>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit: SubmitHandler<ActivityFormValues> = async (data) => {
+  const onSubmit: SubmitHandler<ResourceFormValues> = async (data) => {
     const linkData = [
       {
         name: "url",
@@ -51,30 +51,27 @@ export const ActivityForm: React.FC = () => {
 
     if (url !== "") {
       try {
-        await axios.post("/api/activity", finalData);
-        // reset();
+        await axios.post("/api/resource", finalData);
       } catch (error) {
         console.log(error);
       }
+    } else {
+      console.log("url not uploaded");
     }
   };
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Name</label>
-        <input {...register("name")} type="text" />
-        {errors.name && <p>{`${errors.name?.message}`}</p>}
-        <label>Description</label>
-        <input {...register("desc")} type="text" />
-        {errors.desc && <p>{`${errors.desc?.message}`}</p>}
+        <label>Subject</label>
+        <input {...register("topic")} type="text" />
+        {errors.topic && <p>{`${errors.topic?.message}`}</p>}
 
-        <label>Type of Activity</label>
+        <label>Topic</label>
         <select {...register("type")}>
           <option value="">Select...</option>
-          <option value="event">event</option>
-          <option value="workshop">workshop</option>
-          <option value="lecture">lecture</option>
+          <option value="core">core</option>
+          <option value="coding">coding</option>
         </select>
 
         {errors.type && <p>{`${errors.type?.message}`}</p>}
@@ -82,7 +79,7 @@ export const ActivityForm: React.FC = () => {
         <ImageUpload
           onChange={(url) => setUrl(url)}
           onRemove={() => setUrl("")}
-          text="Upload Your Photo"
+          text="Upload link"
         />
 
         <input type="submit" />

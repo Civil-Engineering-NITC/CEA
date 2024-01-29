@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* background: #1a1a1a; */
+  background: #1a1a1a;
   box-sizing: border-box;
 }
 form {
@@ -49,4 +49,7 @@ label {
   padding: 0.7rem;
   background: #303030;
   font-size: 1rem;
+}
+select {
+  color: white;
 }
