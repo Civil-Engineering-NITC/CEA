@@ -69,7 +69,8 @@ model CodingLink{
 
 model Resources{
   id  String  @id @default(uuid())
-  topic String
+  topic String  
+  type  String
   link  ResourceLink[]  @relation("ResourcesToLink")
 }
 
@@ -85,7 +86,7 @@ model ResourceLink{
 
 model Activity{
   id  String @id  @default(uuid())
-  name String
+  name String @unique
   type  String
   link ActivityLink[] @relation("ActivityToLink")
   desc  String
