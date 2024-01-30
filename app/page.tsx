@@ -31,14 +31,8 @@ export default function Home() {
   if (isSignedIn) {
     return (
       <>
-<<<<<<< HEAD
-        {/* <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-      <UserButton afterSignOutUrl="/"/> */}
-        <Footer />
-=======
         <div>Hello {user.emailAddresses[0].emailAddress}!</div>
         <UserButton afterSignOutUrl="/" />
->>>>>>> b022ec21e7c4f59ecba1203fcf8e9f03cb7a150a
       </>
     );
   }
