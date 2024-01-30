@@ -10,6 +10,13 @@ import { useEffect, useState } from "react";
 import styles from "./InterviewForm.module.css";
 import { Rating } from "react-simple-star-rating";
 import { toast } from "react-toastify";
+import prismadb from "@/lib/prismadb";
+import { InterviewExp } from "@prisma/client";
+
+interface InterviewFormProps {
+  email: string | undefined;
+  data: InterviewExp | null;
+}
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -17,13 +24,18 @@ const formSchema = z.object({
   email: z.string().min(1),
   phone: z.string().min(1),
   company: z.string().min(1),
-  packages: z.string().min(1),
+  package: z.string().min(1),
   desc: z.string().min(1),
 });
 
 type InterviewFormValues = z.infer<typeof formSchema>;
 
-export const InterviewForm: React.FC = () => {
+export const InterviewForm: React.FC<InterviewFormProps> = ({
+  email,
+  data,
+}) => {
+  console.log(data);
+
   const notifySuccess = (text: string) =>
     toast.success(`${text} succesfully submitted`, {
       position: "top-right",
@@ -101,6 +113,15 @@ export const InterviewForm: React.FC = () => {
     console.log(checked);
   };
 
+  // name: string;
+  //   rollno: string;
+  //   email: string;
+  //   phone: string;
+  //   company: string;
+  //   package: string;
+  //   desc: string;
+  //   rating: number;
+
   const {
     register,
     handleSubmit,
@@ -108,6 +129,15 @@ export const InterviewForm: React.FC = () => {
     reset,
   } = useForm<InterviewFormValues>({
     resolver: zodResolver(formSchema),
+    defaultValues: data || {
+      name: "",
+      rollno: "",
+      email: "",
+      phone: "",
+      company: "",
+      package: "",
+      desc: "",
+    },
   });
 
   const onSubmit: SubmitHandler<InterviewFormValues> = async (data) => {
@@ -256,15 +286,15 @@ export const InterviewForm: React.FC = () => {
             <label>Package</label>
             <div className={styles.inputWrapper}>
               <input
-                {...register("packages")}
+                {...register("package")}
                 type="text"
                 placeholder="Enter Your Package..."
-                name="packages"
+                name="package"
               />
             </div>
 
             <p style={{ color: "red" }}>
-              {errors.packages && <p>{`${errors.packages?.message}`}</p>}
+              {errors.package && <p>{`${errors.package?.message}`}</p>}
             </p>
 
             <label>Experience</label>
