@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
@@ -10,7 +11,10 @@ export const OurExperience = () => {
     <>
       <div className={styles.mainDiv}>
         <div className={styles.topDiv}>
-          <Header headingText="Activities" subHeadingText="Your Action" />
+          <Header
+            headingText="DISCOVER OUR OFFERINGS"
+            subHeadingText="EVENTS. WORKSHOPS."
+          />
           {/* <div className={styles.headingDiv}>
             <h1>Activities Activities Activities</h1>
             <h2>Your Action</h2>
