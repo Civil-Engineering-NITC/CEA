@@ -3,27 +3,15 @@ import styles from "./interviewCard.module.css";
 import icon from "../public/Frame 55.svg";
 import Image from "next/image";
 import profilePic from "../public/bg.jpg";
+import { InterviewExp } from "@prisma/client";
 
-interface IndexDataProps {
-  name: string;
-  rollno: string;
-  email: string;
-  phone: string;
-  company: string;
-  desc: string;
-  companyLogo: any;
-  photo: any;
-  rating: number;
-  linkedin: string;
-}
-
-export const InterviewCard: React.FC<IndexDataProps> = (data) => {
+export const InterviewCard: React.FC<InterviewExp> = (data) => {
   return (
     <>
       <div className={styles.cardDiv}>
         <div className={styles.profilePic}>
           <Image
-            src={data.photo}
+            src={""}
             alt=""
             style={{ maxWidth: "100%", height: "100%", borderRadius: "50%" }}
             objectFit="cover"
@@ -32,7 +20,7 @@ export const InterviewCard: React.FC<IndexDataProps> = (data) => {
         </div>
         <div className={styles.cardPrimary}>
           <div className={styles.cardImg}>
-            <Image src={data.companyLogo} alt="My SVG" />
+            <Image src={""} alt="My SVG" />
           </div>
           <h1>Interview Experience</h1>
           <h3>* * * * *</h3>

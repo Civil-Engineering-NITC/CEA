@@ -24,7 +24,7 @@ const formSchema = z.object({
   email: z.string().min(1),
   phone: z.string().min(1),
   company: z.string().min(1),
-  package: z.string().min(1),
+  packages: z.string().min(1),
   desc: z.string().min(1),
 });
 
@@ -118,7 +118,7 @@ export const InterviewForm: React.FC<InterviewFormProps> = ({
   //   email: string;
   //   phone: string;
   //   company: string;
-  //   package: string;
+  //   packages: string;
   //   desc: string;
   //   rating: number;
 
@@ -135,7 +135,7 @@ export const InterviewForm: React.FC<InterviewFormProps> = ({
       email: "",
       phone: "",
       company: "",
-      package: "",
+      packages: "",
       desc: "",
     },
   });
@@ -188,8 +188,6 @@ export const InterviewForm: React.FC<InterviewFormProps> = ({
           notifyError("Something has went wrong");
         }
       }
-    } else if (checked) {
-      info("Terms and Condition not checked");
     } else if (profileUrl === "") {
       console.log("profile or logo url missing");
       notifyWarning("Profile Photo");
@@ -283,18 +281,18 @@ export const InterviewForm: React.FC<InterviewFormProps> = ({
               {errors.company && <p>{`${errors.company?.message}`}</p>}
             </p>
 
-            <label>Package</label>
+            <label>packages</label>
             <div className={styles.inputWrapper}>
               <input
-                {...register("package")}
+                {...register("packages")}
                 type="text"
-                placeholder="Enter Your Package..."
-                name="package"
+                placeholder="Enter Your packages..."
+                name="packages"
               />
             </div>
 
             <p style={{ color: "red" }}>
-              {errors.package && <p>{`${errors.package?.message}`}</p>}
+              {errors.packages && <p>{`${errors.packages?.message}`}</p>}
             </p>
 
             <label>Experience</label>

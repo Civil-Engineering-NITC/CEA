@@ -1,4 +1,4 @@
-import { InterviewExp } from "@/components/sections/InterviewExp";
+import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
@@ -22,7 +22,8 @@ export default async function Home() {
     <>
       {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
       <UserButton afterSignOutUrl="/" />
-      <InterviewExp />
+      {/* <InterviewExperience /> */}
+      <OurExperience />
     </>
   );
 }
