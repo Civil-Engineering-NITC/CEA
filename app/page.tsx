@@ -13,17 +13,32 @@ import LoadMore from "./(routes)/loadMore/page";
 import ResourceMaterial from "./(routes)/resources/[resourceId]/page";
 import Resources from "./(routes)/resources/page";
 
-// import { Competitive } from "@/components/sections/Competitive";
-
 export default async function Home() {
-  // const { isSignedIn, user, isLoaded } = useUser();
-  const user = await currentUser();
-  return (
-    <>
-      {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
-      <UserButton afterSignOutUrl="/" />
-      <InterviewExperience />
-      {/* <OurExperience /> */}
-    </>
-  );
+  try {
+    console.log("Before currentUser()");
+    let user;
+    let retryCount = 0;
+
+    while (!user && retryCount < 3) {
+      try {
+        user = await currentUser();
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        retryCount++;
+        console.log(`Retrying fetch. Attempt ${retryCount}`);
+      }
+    }
+
+    console.log("After currentUser(), user:", user);
+    return (
+      <>
+        {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
+        <UserButton afterSignOutUrl="/" />
+        {/* <InterviewExperience /> */}
+      </>
+    );
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    return <div>Error fetching user.</div>;
+  }
 }

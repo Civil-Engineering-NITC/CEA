@@ -13,17 +13,19 @@ export const InterviewExperience = async () => {
   try {
     const info = await axios.get("http://localhost:3000/api/interviews");
 
-    const interviews = info.data;
-    console.log(interviews[1].link);
+    console.log(info);
 
-    const sortedInterviews = interviews.sort(
-      (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
-    );
-    const displayData = sortedInterviews.slice(0, 2);
+    // const interviews = info.data;
+    // // console.log(interviews[1].link);
+
+    // const sortedInterviews = interviews.sort(
+    //   (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
+    // );
+    // const displayData = sortedInterviews.slice(0, 2);
 
     return (
       <>
-        <div className={styles.maindiv}>
+        {/* <div className={styles.maindiv}>
           <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
           <div className={styles.cardholder}>
             {displayData.map((data: InterviewExp) => (
@@ -31,7 +33,7 @@ export const InterviewExperience = async () => {
             ))}
           </div>
           <DownArrowButton text="Load More" redirectLink="" />
-        </div>
+        </div> */}
       </>
     );
   } catch (err) {

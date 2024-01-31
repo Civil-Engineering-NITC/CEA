@@ -38,20 +38,24 @@ export default async function Form({
     }
     // Render the rest of your component content here
   } else {
-    const data = await prismadb.interviewExp.findUnique({
-      where: {
-        email: email,
-      },
-    });
-    console.log(data);
-    return (
-      <>
-        <InterviewForm
-          email={user?.emailAddresses[0].emailAddress}
-          data={data}
-        />
-        {/* <p>You are not authenticated to view this page</p> */}
-      </>
-    );
+    try {
+      const data = await prismadb.interviewExp.findUnique({
+        where: {
+          email: email,
+        },
+      });
+      console.log(data);
+      return (
+        <>
+          <InterviewForm
+            recordedEmail={user?.emailAddresses[0].emailAddress}
+            data={data}
+          />
+          {/* <p>You are not authenticated to view this page</p> */}
+        </>
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
