@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdEngineering } from "react-icons/md";
 import { FaArrowRight, FaHome } from "react-icons/fa";
+import { RightArrowButton } from "./RightArrowButton";
 
 interface CardProps {
   card: {
@@ -54,6 +55,7 @@ export const Card: React.FC<CardProps> = ({ card }) => {
           style={{ backgroundColor: "inherit", marginLeft: "9px" }}
         />
       </Link>
+      {/* <RightArrowButton text="Know More" redirectLink="#" /> */}
     </div>
   );
 };

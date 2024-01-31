@@ -10,6 +10,7 @@ import {
   subHeading,
   cardData,
 } from "@/data/fakeLoadMore";
+import { BigButton } from "@/components/BigButton";
 
 export default function Resources() {
   return (
@@ -20,11 +21,11 @@ export default function Resources() {
         subHeading="MATERIALS."
       />
       <div className={resourceStyle.selection}>
-        <div className={resourceStyle.buttonSection}>
-          <div className={resourceStyle.coreButton}>Core Materials</div>
-          <div className={resourceStyle.itButton}>IT/CS Materials</div>
+        <div className={resourceStyle.bigButtons}>
+          <BigButton name="Core Materials" />
+          <BigButton name="IT/CS Materials" />
         </div>
-      <SearchBar />
+        <SearchBar />
       </div>
       <div className={styles.cardContainer}>
         {cardData.map((card) => {

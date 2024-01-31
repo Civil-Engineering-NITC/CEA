@@ -34,7 +34,7 @@ export default function Home() {
           <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
           <Resources />
           <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          <Footer />
+          {/* <Footer /> */}
         </>
         {/* <Navbar />
         <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>

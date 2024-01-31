@@ -7,10 +7,27 @@
   line-height: 30.24px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+}
+@media (max-width: 550px) {
   .mainHeading {
     font-size: 12px;
     font-weight: 400;
-    line-height: 15.12px;
+    line-height: 13px;
   }
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 400px) {
+}
+@media (max-width: 360px) {
+}
+@media (max-width: 320px) {
 }
