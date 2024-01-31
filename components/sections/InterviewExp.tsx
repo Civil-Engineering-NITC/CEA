@@ -14,6 +14,7 @@ export const InterviewExperience = async () => {
     const info = await axios.get("http://localhost:3000/api/interviews");
 
     const interviews = info.data;
+    console.log(interviews[1].link);
 
     const sortedInterviews = interviews.sort(
       (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)

@@ -22,8 +22,8 @@ export default async function Home() {
     <>
       {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
       <UserButton afterSignOutUrl="/" />
-      {/* <InterviewExperience /> */}
-      <OurExperience />
+      <InterviewExperience />
+      {/* <OurExperience /> */}
     </>
   );
 }

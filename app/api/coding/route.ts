@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
   try {
-    const coding = await prismadb.coding.findMany();
+    const coding = await prismadb.coding.findMany({
+      include: {
+        link: true,
+      },
+    });
 
     return NextResponse.json(coding);
   } catch (error) {

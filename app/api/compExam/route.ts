@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
   try {
-    const compExam = await prismadb.competitiveExam.findMany();
+    const compExam = await prismadb.competitiveExam.findMany({
+      include: {
+        link: true,
+      },
+    });
 
     return NextResponse.json(compExam);
   } catch (error) {

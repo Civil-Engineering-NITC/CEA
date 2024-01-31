@@ -5,7 +5,11 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
   try {
-    const interviews = await prismadb.interviewExp.findMany();
+    const interviews = await prismadb.interviewExp.findMany({
+      include: {
+        link: true,
+      },
+    });
 
     return NextResponse.json(interviews);
   } catch (error) {
