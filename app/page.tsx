@@ -1,3 +1,4 @@
+"use client";
 import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
@@ -5,7 +6,6 @@ import { Resource } from "@/components/sections/Resource";
 import { HomePage } from "@/components/sections/HomePage";
 import { Navbar } from "@/components/Navbar";
 import { Competitive } from "@/components/sections/Competitive";
-import { OurExperience } from "@/components/sections/OurExperience";
 import { Footer } from "@/components/footer";
 import { InterviewForm } from "@/components/forms/InterviewForm";
 import { Rating } from "react-simple-star-rating";
