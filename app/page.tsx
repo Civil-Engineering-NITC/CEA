@@ -14,6 +14,7 @@ import { Rating } from "react-simple-star-rating";
 import LoadMore from "./(routes)/loadMore/page";
 import ResourceMaterial from "./(routes)/resources/[resourceId]/page";
 import Resources from "./(routes)/resources/page";
+import { ActivityForm } from "@/components/forms/ActivityForm";
 
 // import { Competitive } from "@/components/sections/Competitive";
 
@@ -26,17 +27,17 @@ export default function Home() {
 
   if (isSignedIn) {
     return (
-      <div className={styles.container}>
-        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
-        <UserButton afterSignOutUrl="/" />
-        <>
-          <Navbar />
-          <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          <Resources />
-          <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          {/* <Footer /> */}
-        </>
-        {/* <Navbar />
+      // <div className={styles.container}>
+      //   <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+      //   <UserButton afterSignOutUrl="/" />
+      <>
+        {/* <Navbar /> */}
+        {/* <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div> */}
+        <ResourceMaterial />
+        {/* <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div> */}
+        {/* <Footer /> */}
+      </>
+      /* <Navbar />
         <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
         <HomePage />
         <div style={{ marginTop: "10rem" }}></div>
@@ -48,11 +49,11 @@ export default function Home() {
         <div className={styles.margin}></div>
         <InterviewExp />
         <div className={styles.margin}></div>
-         */}
+         */
 
-        {/* <InterviewForm /> */}
-        {/* <Rating /> */}
-      </div>
+      /* <InterviewForm /> */
+      /* <Rating /> */
+      // </div>
     );
   }
 

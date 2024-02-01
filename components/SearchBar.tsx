@@ -10,7 +10,7 @@ export const SearchBar = () => {
           <input
             // {...register("name")}
             type="text"
-            // className={styles.input}
+            className={styles.input}
             placeholder="Search Exams"
             name="name"
           />

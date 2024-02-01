@@ -8,10 +8,14 @@
 }
 
 .inputContainer {
-  padding: 1.25rem 1.25rem 0.563rem 0.69rem;
+  padding: 0.688rem 1.313rem;
   background-color: #303030;
   width: 31.813rem;
-  height: 4.125rem;
+  height: 100%;
+}
+
+.input {
+  height: 100%;
 }
 
 .iconContainer {
@@ -31,7 +35,7 @@
 
   .inputContainer {
     padding: 1.25rem 1.25rem 0.563rem 0.69rem;
-    width: 25.79rem;
+    width: 30.813rem;
     height: 4.125rem;
   }
 

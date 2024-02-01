@@ -4,20 +4,21 @@
   align-items: center;
   width: 100%;
   gap: 2.25rem;
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
 }
 
 .selection {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  padding: 0.625rem 0 0.625rem 0;
+  max-width: 82rem;
+  /* margin: 7.125rem 0 6.125rem 0; */
 }
 
 @media (max-width: 1366px) {
   .selection {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 

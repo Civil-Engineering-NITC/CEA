@@ -39,10 +39,15 @@
   /* display: inline; */
   /* border: 2px solid red; */
   border-radius: 8px;
-  width: 400px;
+  width: 25rem;
   height: 374px;
   background-color: #262628;
-  margin: 28px;
+}
+
+@media (max-width: 1366px) {
+  .container {
+    width: 22.5rem;
+  }
 }
 
 .headingOne {
