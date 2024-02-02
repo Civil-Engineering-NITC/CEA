@@ -3,7 +3,7 @@ import styles from "./resource.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
-import { cardData } from "@/data/fakeLoadMore";
+import { cardData } from "@/data/fakeResource";
 import { BigButton } from "@/components/BigButton";
 import axios from "axios";
 
