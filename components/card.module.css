@@ -21,7 +21,7 @@
 }
 
 .glow1::after {
-  box-shadow: 1rem -3rem 4rem 4rem #f8c7334d #f8c7334d;
+  box-shadow: 1rem -3rem 4rem 4rem #f8c7334d;
 }
 .glow2::after {
   box-shadow: -3rem -1rem 4rem 4rem #35d8704d;
