@@ -1,15 +1,10 @@
 import React from "react";
-import styles from "../loadMore/loadMore.module.css";
-import resourceStyle from "./resource.module.css";
+import styles from "./resource.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
-import {
-  mainHeading,
-  heading,
-  subHeading,
-  cardData,
-} from "@/data/fakeLoadMore";
+import { cardData } from "@/data/fakeLoadMore";
+import { BigButton } from "@/components/BigButton";
 
 export default function Resources() {
   return (
@@ -19,12 +14,12 @@ export default function Resources() {
         heading="RESOURCES."
         subHeading="MATERIALS."
       />
-      <div className={resourceStyle.selection}>
-        <div className={resourceStyle.buttonSection}>
-          <div className={resourceStyle.coreButton}>Core Materials</div>
-          <div className={resourceStyle.itButton}>IT/CS Materials</div>
+      <div className={styles.selection}>
+        <div className={styles.bigButtons}>
+          <BigButton name="Core Materials" />
+          <BigButton name="IT/CS Materials" />
         </div>
-      <SearchBar />
+        <SearchBar />
       </div>
       <div className={styles.cardContainer}>
         {cardData.map((card) => {

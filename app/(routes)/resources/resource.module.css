@@ -1,116 +1,90 @@
-.selection {
-  display: flex;
-  /* flex: 1; */
-  flex-direction: row;
-  margin-top: 36px;
-  margin-left: 100px;
-  /* flex-wrap: wrap-reverse; */
-  justify-content: center;
-  align-items: center;
-}
-
-.buttonSection {
-  /* padding: 20px; */
+.cardContainer {
   display: flex;
   flex: 1;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 82rem;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 3.125rem;
+  gap: 3rem;
 }
 
-.coreButton {
-  width: 304px;
-  height: 66px;
-  font-size: 24px;
-  line-height: 30.24px;
-  background-color: #262628;
-  text-align: center;
-  padding: 20px;
-  color: #afafaf;
-  margin-right: 10px;
+.container {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 1500px; */
+  padding: 2rem 4rem;
 }
 
-.itButton {
-  width: 313px;
-  height: 66px;
-  font-size: 24px;
-  line-height: 30.24px;
-  text-align: center;
-  padding: 20px;
-  background-color: #262628;
-  color: #afafaf;
-  margin-right: 10px;
+.bigButtons {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  gap: 2.25rem;
 }
 
-@media (max-width: 1000px) {
+.selection {
+  display: flex;
+  width: 100%;
+  max-width: 82rem;
+  justify-content: space-between !important;
+  align-items: center;
+  margin-top: 3.125rem;
+  gap: 2.25rem;
+}
+
+@media (max-width: 1440px) {
+  .cardContainer {
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+@media (max-width: 1366px) {
+  .cardContainer {
+    justify-content: center;
+    gap: 3rem;
+  }
   .selection {
-    flex-direction: column-reverse;
-    margin-right: 100px;
-  }
-
-  .buttonSection {
-    /* padding: 20px; */
-    margin-top: 20px;
-    gap: 23px;
-  }
-
-  .coreButton {
-    max-width: 280px;
-    height: 66px;
-    font-size: 24px;
-    line-height: 30.24px;
-    background-color: #262628;
-    text-align: center;
-    padding: 20px;
-    color: #afafaf;
-    margin-right: 10px;
-  }
-
-  .itButton {
-    max-width: 280px;
-    height: 66px;
-    font-size: 24px;
-    line-height: 30.24px;
-    text-align: center;
-    padding: 20px;
-    background-color: #262628;
-    color: #afafaf;
-    margin-right: 10px;
+    flex-direction: column;
+    justify-content: center !important;
   }
 }
 
-@media (max-width: 500px) {
-  /* .selection {
-    flex-direction: column-reverse;
-    margin-right: 100px;
-  } */
-
-  .buttonSection {
-    /* padding: 20px; */
-    /* margin-top: 20px; */
-    position: relative;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* gap: 23px; */
+@media (max-width: 1220px) {
+  .cardContainer {
+    justify-content: center;
+    gap: 1rem;
   }
+}
 
-  .coreButton {
-    width: 143px;
-    height: 36px;
-    font-size: 12.5px;
-    line-height: 15.75px;
-    margin-left: 52px;
-    padding: 10px 12px 10px 12px;
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 3rem;
   }
+  .cardContainer {
+    justify-content: center;
+  }
+}
 
-  .itButton {
-    width: 141px;
-    height: 33px;
-    font-size: 10.66px;
-    line-height: 13.43px;
-    text-align: center;
-    margin-right: 60px;
-    padding: 10px 12px 10px 12px;
-    /* margin-right: 10px; */
+@media (max-width: 768px) {
+  .bigButtons {
+    gap: 1.25rem;
+    max-width: 18.75rem;
+    justify-content: space-between;
+  }
+  .container {
+    padding: 2rem 2rem;
+  }
+  .cardContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem;
   }
 }

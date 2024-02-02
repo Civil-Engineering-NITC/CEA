@@ -1,63 +1,84 @@
 .searchBar {
-  position: relative;
   display: flex;
+  flex: 1;
   width: 100%;
-  height: 66px;
-  justify-content: center;
-  /* margin-top: 20px; */
-  /* right: 0; */
-  /* right: 100px; */
-  margin-right: 8px;
-  gap: 36px;
+  height: 4.125rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
 }
 
 .inputContainer {
-  padding: 20px 20px 9px 11px;
-  background-color: #303030;
-  width: auto;
-}
-
-.iconContainer {
-  padding-top: 12px;
-  padding-left: 12.75px;
-  /* padding-bottom: 2px; */
-  padding-right: 12.75px;
-  background-color: #303030;
+  display: flex;
+  flex-grow: 1;
+  padding: 0.688rem 1.313rem;
+  background-color: #262628;
+  border-radius: 0.156rem;
+  max-width: 33rem;
+  height: 100%;
 }
 
 .input {
-  background-color: #303030 !important;
-  width: 470px;
-  padding-right: 10px;
-  justify-content: center;
+  height: 100%;
+  /* background-color: #262628 !important; */
 }
 
-@media (max-width: 500px) {
+.iconContainer {
+  display: flex;
+  border-radius: 0.156rem;
+  justify-content: center;
+  align-items: center;
+  height: 4.125rem;
+  width: 4.125rem;
+  background-color: #262628;
+}
+
+.icons {
+  height: 41.25px;
+  width: 41.25px;
+  color: #afafaf;
+}
+
+@media (max-width: 1366px) {
   .searchBar {
-    /* padding-left: 20px;
-      padding-right: 20px; */
-    width: 318.23px;
-    height: 41.26px;
-    /* padding-left: 10px; */
-    /* padding-right: 10px; */
     justify-content: center;
-    gap: 16px;
-    /* align-items: center; */
   }
-
   .inputContainer {
-    padding: 6px;
+    max-width: 33rem;
   }
+}
 
-  .input {
-    width: 100%;
-    padding-right: 2px;
-    display: flex;
-    flex: 1;
+@media (max-width: 1220px) {
+  .searchBar {
     justify-content: center;
   }
+  .inputContainer {
+    max-width: 33rem;
+  }
+}
 
+@media (max-width: 768px) {
+  .searchBar {
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  .inputContainer {
+    height: 2.579rem;
+    max-width: 14.875rem;
+  }
   .iconContainer {
-    padding: 6px 6px 6px 6px;
+    height: 2.579rem;
+    width: 2.579rem;
+  }
+  .icons {
+    height: 25.79px;
+    width: 25.79px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchBar {
+    height: 2.579rem;
+    max-width: 18.75rem;
   }
 }
