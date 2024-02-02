@@ -33,6 +33,7 @@
   justify-content: space-between !important;
   align-items: center;
   margin-top: 3.125rem;
+  z-index: 1;
   gap: 2.25rem;
 }
 
@@ -45,10 +46,9 @@
 @media (max-width: 1366px) {
   .cardContainer {
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
   }
   .selection {
-    flex-direction: column;
     justify-content: center !important;
   }
 }
@@ -57,6 +57,9 @@
   .cardContainer {
     justify-content: center;
     gap: 1rem;
+  }
+  .selection {
+    flex-direction: column;
   }
 }
 
