@@ -5,8 +5,17 @@ import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
 import { cardData } from "@/data/fakeLoadMore";
 import { BigButton } from "@/components/BigButton";
+import axios from "axios";
 
-export default function Resources() {
+export default async function Resources() {
+  try {
+    const info = await axios.get("http://localhost:3000/api/resource");
+    const resource = info.data;
+    var displayData = resource.slice(0, 2);
+  } catch {
+    console.log("Data fetch error from backend");
+  }
+
   return (
     <div className={styles.container}>
       <PageTopHeading

@@ -15,35 +15,29 @@ export const InterviewExperience = async () => {
 
     console.log(info);
 
-    // const interviews = info.data;
-    // // console.log(interviews[1].link);
+    const interviews = info.data;
+    // console.log(interviews[1].link);
 
-    // const sortedInterviews = interviews.sort(
-    //   (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
-    // );
-    // const displayData = sortedInterviews.slice(0, 2);
-
-    return (
-      <>
-        {/* <div className={styles.maindiv}>
-          <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
-          <div className={styles.cardholder}>
-            {displayData.map((data: InterviewExp) => (
-              <InterviewCard key={data.id} {...data} />
-            ))}
-          </div>
-          <DownArrowButton text="Load More" redirectLink="" />
-        </div> */}
-      </>
+    const sortedInterviews = interviews.sort(
+      (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
     );
+    var displayData = sortedInterviews.slice(0, 2);
   } catch (err) {
     console.log("ERROR WHILE FETCHING DATA");
     console.log(err);
-    // You might return a different JSX structure here based on the error
-    return (
-      <div style={{ color: "white" }}>
-        Error loading data. Please try again later.
-      </div>
-    );
   }
+
+  return (
+    <>
+      <div className={styles.maindiv}>
+        <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
+        <div className={styles.cardholder}>
+          {displayData.map((data: InterviewExp) => (
+            <InterviewCard key={data.id} {...data} />
+          ))}
+        </div>
+        <DownArrowButton text="Load More" redirectLink="" />
+      </div>
+    </>
+  );
 };
