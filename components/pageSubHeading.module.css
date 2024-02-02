@@ -8,11 +8,10 @@
   letter-spacing: 1rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .subHeading {
-    color: #afafaf;
-    font-weight: 400px;
-    font-size: 20px;
-    line-height: 25.2px;
+    font-size: 1.25rem;
+    line-height: 1.575rem;
+    letter-spacing: 0.5rem;
   }
 }

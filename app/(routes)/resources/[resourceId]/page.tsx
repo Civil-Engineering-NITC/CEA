@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "../../loadMore/loadMore.module.css";
 import { PageTopHeading } from "@/components/PageTopHeading";
-import resourceStyles from "./resourceMaterial.module.css";
+import styles from "./resourceMaterial.module.css";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { SiBookstack } from "react-icons/si";
 
@@ -14,21 +13,17 @@ export default function ResourceMaterial() {
         subHeading="MATERIALS."
       />
 
-      <div className={resourceStyles.container}>
-        <div className={resourceStyles.heading}>
+      <div className={styles.division}>
+        <div className={styles.heading}>
           Resources Materials.\Geotechnical Engineering
         </div>
-
-        <div className={resourceStyles.title}>
-          <div className={resourceStyles.titleImage}>
-            <MdOutlineLibraryBooks size={36} />
+        <div className={styles.title}>
+          <div className={styles.titleImage}>
+            <MdOutlineLibraryBooks className={styles.icons} />
           </div>
-          <div className={resourceStyles.titleContent}>
-            Foundation Engineering
-          </div>
+          <div className={styles.titleContent}>Foundation Engineering</div>
         </div>
-
-        <div className={resourceStyles.content}>
+        <div className={styles.content}>
           <div>
             CAT is a national level MBA entrance exam for admission to 21 IIMs,
             8 IITs, and 1000+ other b-schools in India. It is conducted once
@@ -48,23 +43,21 @@ export default function ResourceMaterial() {
             7 for the 3.3 lakh registered candidates.
           </div>
         </div>
+      </div>
 
-        <div className={resourceStyles.button}>
-          <button className={resourceStyles.syllabus}>
-            <div>
-              <SiBookstack size={30} />
-            </div>
-            <div>Syllabus</div>
-          </button>
-          <button className={resourceStyles.materials}>
-            <div>
-              <MdOutlineLibraryBooks size={30} />
-            </div>
-            <div className={resourceStyles.materialTitle}>
-              Support Materials
-            </div>
-          </button>
-        </div>
+      <div className={styles.button}>
+        <button className={styles.syllabus}>
+          <div>
+            <SiBookstack className={styles.buttonIcons} />
+          </div>
+          <div className={styles.syllabusTitle}>Syllabus</div>
+        </button>
+        <button className={styles.materials}>
+          <div>
+            <MdOutlineLibraryBooks className={styles.buttonIcons} />
+          </div>
+          <div className={styles.materialTitle}>Support Materials</div>
+        </button>
       </div>
     </div>
   );
