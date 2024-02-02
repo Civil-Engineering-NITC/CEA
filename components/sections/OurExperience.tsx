@@ -5,8 +5,17 @@ import { OurExperienceCard } from "../OurExperienceCard";
 import { DownArrowButton } from "../DownArrowButton";
 import { ColouredText } from "../ColouredText";
 import { Header } from "../Header";
+import axios from "axios";
 
-export const OurExperience = () => {
+export const OurExperience = async () => {
+  try {
+    const info = await axios.get("http://localhost:3000/api/activity");
+    const ourExp = info.data;
+    var displayData = ourExp.slice(0, 2);
+  } catch {
+    console.log("Data fetch error from backend");
+  }
+
   return (
     <>
       <div className={styles.mainDiv}>

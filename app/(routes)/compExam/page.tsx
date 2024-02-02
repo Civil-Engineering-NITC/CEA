@@ -9,8 +9,17 @@ import {
   subHeading,
   cardData,
 } from "@/data/fakeLoadMore";
+import axios from "axios";
 
-export default function CompExam() {
+export default async function CompExam() {
+  try {
+    const info = await axios.get("http://localhost:3000/api/compExam");
+    const compExam = info.data;
+    var displayData = compExam.slice(0, 2);
+  } catch {
+    console.log("Data fetch error from backend");
+  }
+
   return (
     <div className={styles.container}>
       <PageTopHeading
