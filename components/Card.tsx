@@ -62,6 +62,9 @@ export const Card: React.FC<CardProps> = ({ card }) => {
         />
       </Link>
       {/* <RightArrowButton text="Know More" redirectLink="#" /> */}
+      <div className={styles.glow1}></div>
+      <div className={styles.glow2}></div>
+      <div className={styles.glow3}></div>
     </div>
   );
 };
