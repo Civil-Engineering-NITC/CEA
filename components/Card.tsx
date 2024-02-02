@@ -22,9 +22,6 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ card }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.glow1}></div>
-      <div className={styles.glow2}></div>
-      <div className={styles.glow3}></div>
       <div className={styles.cardTop}>
         <div
           className={styles.imageStyle}
@@ -59,6 +56,9 @@ export const Card: React.FC<CardProps> = ({ card }) => {
         />
       </Link>
       {/* <RightArrowButton text="Know More" redirectLink="#" /> */}
+      <div className={styles.glow1}></div>
+      <div className={styles.glow2}></div>
+      <div className={styles.glow3}></div>
     </div>
   );
 };
