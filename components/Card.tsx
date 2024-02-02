@@ -5,6 +5,8 @@ import Link from "next/link";
 import { MdEngineering } from "react-icons/md";
 import { FaArrowRight, FaHome } from "react-icons/fa";
 import { RightArrowButton } from "./RightArrowButton";
+import { MdOutlineLibraryBooks } from "react-icons/md";
+import { Icons } from "./Icons";
 
 interface CardProps {
   card: {
@@ -27,11 +29,15 @@ export const Card: React.FC<CardProps> = ({ card }) => {
           className={styles.imageStyle}
           style={{ backgroundColor: card.color, borderRadius: "4px" }}
         >
-          {card.type === "engineering" && (
+          {/* {card.type === "engineering" && (
             <MdEngineering size={50} color="white" />
           )}
           {card.type === "business" && <FaHome size={50} color="white" />}
           {card.type === "civil-service" && <FaHome size={50} color="white" />}
+          {card.type === "materials" && (
+            <MdOutlineLibraryBooks size={50} color="white" />
+          )} */}
+          <Icons type={card.type} />
           {/* <Image src="/books.png" height={32} width={32} alt={"name"} /> */}
         </div>
         <div className={styles.headingOne}>{card.heading1}</div>
