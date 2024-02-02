@@ -1,99 +1,84 @@
 .searchBar {
   display: flex;
+  flex: 1;
   width: 100%;
   height: 4.125rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 2.25rem;
+  gap: 3rem;
 }
 
 .inputContainer {
+  display: flex;
+  flex-grow: 1;
   padding: 0.688rem 1.313rem;
-  background-color: #303030;
-  width: 31.813rem;
+  background-color: #262628;
+  border-radius: 0.156rem;
+  max-width: 33rem;
   height: 100%;
 }
 
 .input {
   height: 100%;
+  /* background-color: #262628 !important; */
 }
 
 .iconContainer {
   display: flex;
+  border-radius: 0.156rem;
   justify-content: center;
   align-items: center;
   height: 4.125rem;
   width: 4.125rem;
-  background-color: #303030;
+  background-color: #262628;
+}
+
+.icons {
+  height: 41.25px;
+  width: 41.25px;
+  color: #afafaf;
 }
 
 @media (max-width: 1366px) {
   .searchBar {
-    height: 4.125rem;
-    gap: 2.25rem;
+    justify-content: center;
   }
-
   .inputContainer {
-    padding: 1.25rem 1.25rem 0.563rem 0.69rem;
-    width: 30.813rem;
-    height: 4.125rem;
+    max-width: 33rem;
   }
+}
 
-  .iconContainer {
-    height: 4.125rem;
-    width: 4.125rem;
+@media (max-width: 1220px) {
+  .searchBar {
+    justify-content: center;
+  }
+  .inputContainer {
+    max-width: 33rem;
   }
 }
 
 @media (max-width: 768px) {
   .searchBar {
-    height: 2.579rem;
+    justify-content: center;
     gap: 1.25rem;
   }
-
   .inputContainer {
-    padding: 0.6rem 0.6rem 0.36rem 0.47rem;
-    width: 19rem;
     height: 2.579rem;
+    max-width: 14.875rem;
   }
-
   .iconContainer {
     height: 2.579rem;
     width: 2.579rem;
   }
+  .icons {
+    height: 25.79px;
+    width: 25.79px;
+  }
 }
 
-@media (max-width: 550px) {
-}
 @media (max-width: 480px) {
   .searchBar {
-    height: 2.25rem;
-    gap: 1rem;
+    height: 2.579rem;
+    max-width: 18.75rem;
   }
-
-  .inputContainer {
-    padding: 0.2rem 0.6rem 0.1rem 0.1rem;
-    width: 18rem;
-    font-size: 0.781rem !important;
-    height: 2.25rem;
-  }
-
-  .iconContainer {
-    height: 2.25rem;
-    width: 2.25rem;
-  }
-}
-@media (max-width: 400px) {
-  .inputContainer {
-    padding: 0.2rem 0.6rem 0.1rem 0.1rem;
-    width: 16rem;
-  }
-}
-@media (max-width: 360px) {
-  .inputContainer {
-    padding: 0.2rem 0.6rem 0.1rem 0.1rem;
-    width: 15rem;
-  }
-}
-@media (max-width: 320px) {
 }

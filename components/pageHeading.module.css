@@ -9,16 +9,16 @@
 
 @media (max-width: 768px) {
   .pageHeading {
-    font-size: 46px;
+    font-size: 40px;
     font-weight: 700;
-    /* line-height: 45.36px; */
+    line-height: 57.36px;
   }
 }
 @media (max-width: 550px) {
   .pageHeading {
     font-size: 36px;
     font-weight: 700;
-    line-height: 45.36px;
+    line-height: 45px;
   }
 }
 @media (max-width: 480px) {

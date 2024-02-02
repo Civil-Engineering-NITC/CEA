@@ -20,7 +20,9 @@
   .mainHeading {
     font-size: 12px;
     font-weight: 400;
-    line-height: 13px;
+    line-height: 15.12px;
+    text-align: center;
+    /* margin-bottom: 6px; */
   }
 }
 @media (max-width: 480px) {

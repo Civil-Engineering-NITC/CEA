@@ -16,7 +16,7 @@ export const SearchBar = () => {
           />
         </div>
         <div className={styles.iconContainer}>
-          <CiFilter size={30} color="white" />
+          <CiFilter className={styles.icons} />
         </div>
       </div>
     </>

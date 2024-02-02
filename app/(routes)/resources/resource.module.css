@@ -1,48 +1,90 @@
+.cardContainer {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  max-width: 82rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.125rem;
+  gap: 3rem;
+}
+
+.container {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 1500px; */
+  padding: 2rem 4rem;
+}
+
 .bigButtons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between !important;
   align-items: center;
-  width: 100%;
   gap: 2.25rem;
-  /* padding: 1.25rem; */
 }
 
 .selection {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
+  width: 100%;
   max-width: 82rem;
-  /* margin: 7.125rem 0 6.125rem 0; */
+  justify-content: space-between !important;
+  align-items: center;
+  margin-top: 3.125rem;
+  gap: 2.25rem;
 }
 
+@media (max-width: 1440px) {
+  .cardContainer {
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
 @media (max-width: 1366px) {
+  .cardContainer {
+    justify-content: center;
+    gap: 3rem;
+  }
   .selection {
     flex-direction: column;
+    justify-content: center !important;
   }
 }
 
 @media (max-width: 1220px) {
-}
-@media (max-width: 1024px) {
-}
-@media (max-width: 900px) {
-}
-@media (max-width: 768px) {
-  .selection {
-    gap: 2rem;
+  .cardContainer {
+    justify-content: center;
+    gap: 1rem;
   }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 3rem;
+  }
+  .cardContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
   .bigButtons {
     gap: 1.25rem;
+    max-width: 18.75rem;
+    justify-content: space-between;
+  }
+  .container {
+    padding: 2rem 2rem;
+  }
+  .cardContainer {
+    justify-content: center;
   }
 }
-@media (max-width: 550px) {
-}
+
 @media (max-width: 480px) {
-}
-@media (max-width: 400px) {
-}
-@media (max-width: 360px) {
-}
-@media (max-width: 320px) {
+  .container {
+    padding: 2rem 1rem;
+  }
 }
