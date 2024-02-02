@@ -12,7 +12,7 @@ export const InterviewCard: React.FC<any> = (data) => {
 
   useEffect(() => {
     if (data.desc.length > 20) {
-      setPara(data.desc.slice(0, 4000 - 3) + "...");
+      setPara(data.desc.slice(0, 500 - 3) + "...");
     } else {
       setPara(data.desc);
     }
