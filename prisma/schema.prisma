@@ -2,6 +2,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  // output = "./generate/clientY"
 }
 
 datasource db {
@@ -22,6 +23,7 @@ model InterviewExp {
   desc  String
   link InterviewExpLink[] @relation("InterviewExpToLink")
   rating  Int
+  recordedEmail String
 }
 
 model InterviewExpLink{

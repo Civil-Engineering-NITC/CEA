@@ -1,4 +1,3 @@
-"use client";
 import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
@@ -13,46 +12,32 @@ import LoadMore from "./(routes)/loadMore/page";
 import ResourceMaterial from "./(routes)/resources/[resourceId]/page";
 import Resources from "./(routes)/resources/page";
 
-// import { Competitive } from "@/components/sections/Competitive";
-import { OurExperience } from "./../components/sections/OurExperience";
+export default async function Home() {
+  try {
+    console.log("Before currentUser()");
+    let user;
+    let retryCount = 0;
 
-export default function Home() {
-  const { isSignedIn, user, isLoaded } = useUser();
+    while (!user && retryCount < 3) {
+      try {
+        user = await currentUser();
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        retryCount++;
+        console.log(`Retrying fetch. Attempt ${retryCount}`);
+      }
+    }
 
-  if (!isLoaded) {
-    return null;
-  }
-
-  if (isSignedIn) {
+    console.log("After currentUser(), user:", user);
     return (
-      <div className={styles.container}>
-        <div>Hello {user.emailAddresses[0].emailAddress}!</div>
+      <>
+        {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
         <UserButton afterSignOutUrl="/" />
-        <>
-          <Navbar />
-          <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-          {/* <Footer /> */}
-        </>
-        {/* <Navbar />
-        <div className={styles.margin} style={{ margin: "5rem 4rem" }}></div>
-        <HomePage />
-        <div style={{ marginTop: "10rem" }}></div>
-        <OurExperience />
-        <div className={styles.margin}></div>
-        <Competitive />
-        <div className={styles.margin}></div>
-        <Resource />
-        <div className={styles.margin}></div>
-        <InterviewExp />
-        <div className={styles.margin}></div>
-         */}
-
-        {/* <InterviewForm /> */}
-        {/* <Rating /> */}
-      </div>
+        <Resources />
+      </>
     );
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    return <div>Error fetching user.</div>;
   }
-
-  return <div>Not signed in</div>;
 }

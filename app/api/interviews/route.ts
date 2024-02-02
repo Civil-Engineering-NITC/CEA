@@ -5,11 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
   try {
-    const interviews = await prismadb.interviewExp.findMany({
-      include: {
-        link: true,
-      },
-    });
+    const interviews = await prismadb.interviewExp.findMany();
 
     return NextResponse.json(interviews);
   } catch (error) {
@@ -35,6 +31,7 @@ export async function POST(req: Request) {
       desc,
       rating,
       linkData,
+      recordedEmail,
     } = body;
 
     if (!userId) {
@@ -51,6 +48,9 @@ export async function POST(req: Request) {
     }
     if (!email) {
       return new NextResponse("email is required", { status: 400 });
+    }
+    if (!recordedEmail) {
+      return new NextResponse("recordedEmail is required", { status: 400 });
     }
     if (!company) {
       return new NextResponse("company is required", { status: 400 });
@@ -78,6 +78,7 @@ export async function POST(req: Request) {
         package: packages,
         desc: desc,
         rating: rating,
+        recordedEmail: recordedEmail,
         link: {
           create: linkData.map((link: any) => ({
             name: link.name,

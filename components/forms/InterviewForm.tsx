@@ -14,7 +14,7 @@ import prismadb from "@/lib/prismadb";
 import { InterviewExp } from "@prisma/client";
 
 interface InterviewFormProps {
-  email: string | undefined;
+  recordedEmail: string | undefined;
   data: InterviewExp | null;
 }
 
@@ -31,7 +31,7 @@ const formSchema = z.object({
 type InterviewFormValues = z.infer<typeof formSchema>;
 
 export const InterviewForm: React.FC<InterviewFormProps> = ({
-  email,
+  recordedEmail,
   data,
 }) => {
   console.log(data);
@@ -162,6 +162,7 @@ export const InterviewForm: React.FC<InterviewFormProps> = ({
       ...data,
       rating,
       linkData,
+      recordedEmail,
     };
 
     console.log(finalData);

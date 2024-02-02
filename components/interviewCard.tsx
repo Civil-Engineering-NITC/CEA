@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./interviewCard.module.css";
 import icon from "../public/Frame 55.svg";
 import Image from "next/image";
@@ -6,6 +8,12 @@ import profilePic from "../public/bg.jpg";
 import { InterviewExp } from "@prisma/client";
 
 export const InterviewCard: React.FC<InterviewExp> = (data) => {
+  const [para, setPara] = useState("");
+
+  if (data.desc.length > 20) {
+    setPara(data.desc.slice(0, 20 - 3) + "...");
+  }
+
   return (
     <>
       <div className={styles.cardDiv}>
@@ -24,20 +32,7 @@ export const InterviewCard: React.FC<InterviewExp> = (data) => {
           </div>
           <h1>Interview Experience</h1>
           <h3>* * * * *</h3>
-          <ul>
-            <li>
-              Please write comments if you find any bug in the above programs or
-              other ways to solve the same problem.
-            </li>
-            <li>
-              Please write comments if you find any bug in the above programs or
-              other ways to solve the same problem.
-            </li>
-            <li>
-              Please write comments if you find any bug in the above programs or
-              other ways to solve the same problem.
-            </li>
-          </ul>
+          <p>{para}</p>
         </div>
         <div className={styles.cardfooter}>
           <h4>{data.name}</h4>
