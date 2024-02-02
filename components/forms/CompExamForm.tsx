@@ -1,85 +1,89 @@
-"use client"
+"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import * as  z from "zod";
+import * as z from "zod";
 import axios from "axios";
 import { useState } from "react";
 import { ImageUpload } from "../ImageUpload";
 
 const formSchema = z.object({
-    name: z.string().min(1),
-    desc: z.string().min(1)
-})
+  name: z.string().min(1),
+  desc: z.string().min(1),
+  webLink: z.string().min(1),
+});
 
-type CompExamFormValues = z.infer<typeof formSchema>
+type CompExamFormValues = z.infer<typeof formSchema>;
 
-export const CompExamForm : React.FC = () => {
+export const CompExamForm: React.FC = () => {
+  const [syllabusUrl, setSyllabusUrl] = useState("");
+  const [notesUrl, setNotesUrl] = useState("");
 
-    const [url, setUrl] = useState("")
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<CompExamFormValues>({
+    resolver: zodResolver(formSchema),
+  });
 
-    const {register,handleSubmit,formState:{errors, isSubmitting},
-            reset,
-        } = useForm<CompExamFormValues>({
-        resolver: zodResolver(formSchema)
-    })
+  const onSubmit: SubmitHandler<CompExamFormValues> = async (data) => {
+    const linkData = [
+      {
+        name: "syllabusUrl",
+        link: syllabusUrl,
+      },
+      {
+        name: "notesUrl",
+        link: notesUrl,
+      },
+    ];
 
-
-    const onSubmit: SubmitHandler<CompExamFormValues> = async (data) => {
-
-        const linkData = [
-            {
-                name: "Codingurl",
-                link: url
-            },
-        ]
-
-        const finalData = {
-            ...data,
-            linkData
-        }
-
-        console.log(finalData);
-        
-        if( url !== ""){
-                
-            try {
-                await axios.post('/api/compExam', finalData);
-                reset();
-            } catch (error) {
-                console.log(error);
-            }
-        }
+    const finalData = {
+      ...data,
+      linkData,
     };
-    
+
+    console.log(finalData);
+
+    if (syllabusUrl !== "" && notesUrl !== "") {
+      try {
+        await axios.post("/api/compExam", finalData);
+        reset();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Name</label>
-            <input 
-            {...register("name")}
-            type="text" 
-            />
-            {errors.name && (
-                <p>{`${errors.name?.message}`}</p>
-            ) }
-            <label>Description</label>
-            <input 
-            {...register("desc")}
-            type="text"
-            />
-            {errors.desc && (
-                <p>{`${errors.desc?.message}`}</p>
-            ) }
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label>Name</label>
+        <input {...register("name")} type="text" />
+        {errors.name && <p>{`${errors.name?.message}`}</p>}
+        <label>Description</label>
+        <input {...register("desc")} type="text" />
+        {errors.desc && <p>{`${errors.desc?.message}`}</p>}
+        <label>Website Link</label>
+        <input {...register("webLink")} type="text" />
+        {errors.webLink && <p>{`${errors.webLink?.message}`}</p>}
 
-            <ImageUpload 
-                onChange={(url) => setUrl(url)}
-                onRemove={() => setUrl("")}
-                text="Upload Your Photo"
-            />
+        <ImageUpload
+          onChange={(syllabusUrl) => setSyllabusUrl(syllabusUrl)}
+          onRemove={() => setSyllabusUrl("")}
+          text="Upload Syllabus"
+        />
 
-            <input type="submit" />
-        </form>
+        <ImageUpload
+          onChange={(notesUrl) => setNotesUrl(notesUrl)}
+          onRemove={() => setNotesUrl("")}
+          text="Upload Notes"
+        />
+
+        <input type="submit" />
+      </form>
     </>
-    )
-}
+  );
+};
