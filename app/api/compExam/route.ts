@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     const { userId } = auth();
     const body = await req.json();
 
-    const { name, desc, linkData } = body;
+    const { name, desc, webLink, linkData } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 401 });
@@ -37,11 +37,16 @@ export async function POST(req: Request) {
       return new NextResponse("regLink is required", { status: 400 });
     }
 
+    if (!webLink) {
+      return new NextResponse("webLink is required", { status: 400 });
+    }
+
     const compExam = await prismadb.competitiveExam.create({
       data: {
         name: name,
         desc: desc,
         date: new Date(),
+        webLink: webLink,
         link: {
           create: linkData.map((link: any) => ({
             name: link.name,

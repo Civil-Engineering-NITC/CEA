@@ -17,13 +17,15 @@ import { ImageUpload } from "../ImageUpload";
 const formSchema = z.object({
   topic: z.string().min(1),
   type: z.string().min(1),
+  desc: z.string().min(1),
 });
 
 type ResourceFormValues = z.infer<typeof formSchema>;
 
 export const ResourceForm: React.FC = () => {
   const [value, setValue] = useState([]);
-  const [url, setUrl] = useState("");
+  const [notesUrl, setNotesUrl] = useState("");
+  const [syllabusUrl, setSyllabusUrl] = useState("");
 
   const {
     register,
@@ -37,8 +39,12 @@ export const ResourceForm: React.FC = () => {
   const onSubmit: SubmitHandler<ResourceFormValues> = async (data) => {
     const linkData = [
       {
-        name: "url",
-        link: url,
+        name: "notesUrl",
+        link: notesUrl,
+      },
+      {
+        name: "syllabusUrl",
+        link: syllabusUrl,
       },
     ];
 
@@ -49,7 +55,7 @@ export const ResourceForm: React.FC = () => {
 
     console.log(finalData);
 
-    if (url !== "") {
+    if (notesUrl !== "" && syllabusUrl !== "") {
       try {
         await axios.post("/api/resource", finalData);
       } catch (error) {
@@ -73,13 +79,21 @@ export const ResourceForm: React.FC = () => {
           <option value="core">core</option>
           <option value="coding">coding</option>
         </select>
-
         {errors.type && <p>{`${errors.type?.message}`}</p>}
 
+        <label>Description </label>
+        <input {...register("desc")} type="text" />
+        {errors.topic && <p>{`${errors.desc?.message}`}</p>}
+
         <ImageUpload
-          onChange={(url) => setUrl(url)}
-          onRemove={() => setUrl("")}
-          text="Upload link"
+          onChange={(notesUrl) => setNotesUrl(notesUrl)}
+          onRemove={() => setNotesUrl("")}
+          text="Upload Notes"
+        />
+        <ImageUpload
+          onChange={(syllabusUrl) => setSyllabusUrl(syllabusUrl)}
+          onRemove={() => setSyllabusUrl("")}
+          text="Upload Syllabus"
         />
 
         <input type="submit" />

@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     const { userId } = auth();
     const body = await req.json();
 
-    const { topic, type, linkData } = body;
+    const { topic, type, linkData, desc } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 401 });
@@ -33,10 +33,15 @@ export async function POST(req: Request) {
       return new NextResponse("link Data is required", { status: 400 });
     }
 
+    if (!desc) {
+      return new NextResponse("Description is required", { status: 400 });
+    }
+
     const classNote = await prismadb.resources.create({
       data: {
         topic: topic,
         type: type,
+        desc: desc,
         link: {
           create: linkData.map((link: any) => ({
             name: link.name,

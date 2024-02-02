@@ -1,4 +1,3 @@
-"use client";
 import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";

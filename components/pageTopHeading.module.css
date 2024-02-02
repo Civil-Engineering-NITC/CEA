@@ -11,15 +11,13 @@
   display: flex;
   flex: 1;
   width: 100%;
+  background: transparent;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-<<<<<<< HEAD
   padding: 5rem 0;
   margin-bottom: 20px;
-=======
-  gap: 3rem;
+  /* gap: 3rem; */
   /* margin-bottom: 20px; */
->>>>>>> loadMore
 }

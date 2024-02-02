@@ -73,6 +73,7 @@ model Resources{
   id  String  @id @default(uuid())
   topic String  
   type  String
+  desc String
   link  ResourceLink[]  @relation("ResourcesToLink")
 }
 
@@ -111,6 +112,7 @@ model CompetitiveExam{
   name  String  @unique
   desc  String
   date  DateTime
+  webLink String
   link  CompetitiveExamLink[]  @relation("CompetitiveExamToLink")
 }
 
