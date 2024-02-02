@@ -1,3 +1,25 @@
+.glow1,
+.glow2,
+.glow3,
+.glow4,
+.glow5,
+.glow6 {
+  height: 100%;
+  width: 100%;
+  max-width: 930px;
+  position: relative;
+  background: transparent;
+}
+.glow1::after,
+.glow2::after,
+.glow3::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+
 .cardBottom {
   display: flex;
   background-color: #262628;
