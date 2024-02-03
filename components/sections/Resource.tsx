@@ -18,5 +18,3 @@ export const Resource = () => {
     </>
   );
 };
-
-export default Resource;

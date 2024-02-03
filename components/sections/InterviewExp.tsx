@@ -9,23 +9,33 @@ import { DownArrowButton } from "../DownArrowButton";
 import axios from "axios";
 import { InterviewExp } from "@prisma/client";
 
-export const InterviewExperience = async () => {
-  try {
-    const info = await axios.get("http://localhost:3000/api/interviews");
+async function getData() {
+  const res = await fetch("http://localhost:3000/api/interviews");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
 
-    console.log(info);
-
-    const interviews = info.data;
-    // console.log(interviews[1].link);
-
-    const sortedInterviews = interviews.sort(
-      (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
-    );
-    var displayData = sortedInterviews.slice(0, 2);
-  } catch (err) {
-    console.log("ERROR WHILE FETCHING DATA");
-    console.log(err);
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
   }
+
+  return res.json();
+}
+
+export const InterviewExperience = async () => {
+  const info = await getData();
+
+  // console.log(info);
+
+  // const interviews = info.data;
+  // console.log(interviews[1].link);
+
+  const sortedInterviews = info.sort(
+    (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
+  );
+  var displayData = sortedInterviews.slice(0, 2);
+
+  // console.log(displayData);
 
   return (
     <>

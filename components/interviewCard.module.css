@@ -41,13 +41,29 @@
   height: 142px;
   /* overflow: hidden; */
   justify-content: center;
-  top: calc((-10rem) / 2);
+  top: -5rem;
   background: linear-gradient(to right, #804ced, #f48fd0);
   z-index: 0;
 }
+.profilePic img {
+  width: 142px;
+  height: 142px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
 .cardImg {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  align-items: end;
+  margin-top: 1rem;
+}
+.cardImg img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
 }
 .cardPrimary ul {
   display: flex;
