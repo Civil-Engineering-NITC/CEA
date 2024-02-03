@@ -36,6 +36,13 @@ export default async function Form({
       return <ActivityForm />;
     } else if (searchParams.kind === "resource") {
       return <ResourceForm />;
+    } else if (searchParams.kind === "interview") {
+      return (
+        <InterviewForm
+          recordedEmail={user?.emailAddresses[0].emailAddress}
+          data={null}
+        />
+      );
     }
     // Render the rest of your component content here
   } else {

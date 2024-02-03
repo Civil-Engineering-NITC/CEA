@@ -24,7 +24,7 @@ async function getData() {
 
 export default async function ResourcesPage() {
   const info = await getData();
-  // console.log("************* ", info);
+  console.log("************* ", info);
   return (
     <div className={styles.container}>
       <PageTopHeading

@@ -11,10 +11,10 @@ import { Resources } from "@prisma/client";
 
 export const Card: React.FC<Resources> = (card) => {
   let bgColor = "rgba(255, 255, 255, 0.2)";
-  if (card.type !== "core" && card.type !== "it") {
+  if (card.type !== "core" && card.type !== "coding") {
     if (card.name === "UPSC") {
       bgColor = "#35D870";
-    } else if (card.name === "CAT EXAM ") bgColor = "#017FDD";
+    } else if (card.name === "CAT EXAM") bgColor = "#017FDD";
     else bgColor = "#F8C733";
   }
 
