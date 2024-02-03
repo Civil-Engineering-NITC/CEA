@@ -20,20 +20,16 @@ export const OurExperience = async () => {
     <>
       <div className={styles.mainDiv}>
         <div className={styles.topDiv}>
-          <Header
-            headingText="DISCOVER OUR OFFERINGS"
-            subHeadingText="EVENTS. WORKSHOPS."
-          />
-          {/* <div className={styles.headingDiv}>
-            <h1>Activities Activities Activities</h1>
-            <h2>Your Action</h2>
-          </div> */}
-          {/* <p>
-            Having gained extensive experience various companies, we've curated
-            something unique for you. Delve into our portfolio to witness some
-            of our latest experiences and delve deeper into our expertise and
-            capabilities.
-          </p> */}
+          <div className={styles.headingContainer}>
+            <h1 className={styles.colorText}>DISCOVER</h1>
+            <h1 className={styles.colorText}>OUR</h1>
+            <h1 className={styles.colorText}>OFFERINGS</h1>
+          </div>
+          <div className={styles.headingContainer}>
+            <h2 className={styles.kind}>EVENT.</h2>
+            <h2 className={styles.kind}>WORKSHOP.</h2>
+            <h2 className={styles.kind}>LECTURE.</h2>
+          </div>
         </div>
         <div className={styles.cardMainDiv}>
           <OurExperienceCard />
