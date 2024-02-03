@@ -7,14 +7,22 @@ import { cardData } from "@/data/fakeResource";
 import { BigButton } from "@/components/BigButton";
 import axios from "axios";
 
-export default async function Resources() {
-  try {
-    const info = await axios.get("http://localhost:3000/api/resource");
-    const resource = info.data;
-    var displayData = resource.slice(0, 2);
-  } catch {
-    console.log("Data fetch error from backend");
+async function getData() {
+  const res = await fetch("http://localhost:3000/api/resource");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
   }
+
+  return res.json();
+}
+
+export default async function Resources() {
+  const info = await getData();
+  console.log(info);
 
   return (
     <div className={styles.container}>
