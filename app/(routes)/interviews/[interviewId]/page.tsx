@@ -2,6 +2,7 @@ import React from "react";
 import { PageTopHeading } from "@/components/PageTopHeading";
 import styles from "./interviewExp.module.css";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function InterviewExp() {
   return (
@@ -12,37 +13,45 @@ export default function InterviewExp() {
         subHeading="INTERVIEW EXP."
       />
 
-      <div className={styles.interviewCard}>
-        <div className={styles.heading}>
-          <div className={styles.interviewExp}>Interview Experience </div>
-          <div>
-            <Image
-              src="/sprikler.png"
-              width={50}
-              height={50}
-              alt="company logo"
-            />
+      <div className={styles.container}>
+        <div className="profile">
+          <div className="profileInfoContainer">
+            <div className="imgContainer">
+              <img src="" alt="" />
+            </div>
+            <div className="profileInfo">
+              <p className="name">Robert D. Jr.</p>
+              <p className="roll">B200642CE</p>
+              <FaLinkedin />
+            </div>
           </div>
         </div>
-        <div>
-          {/* {" "}
-          In this sheet, we cover all the popular companies’ interview
-          experiences that will help you to perform well in your upcoming
-          interviews. By following this sheet you can also prepare yourself to
-          attend any particular company, here we attached the preparation guide
-          and asked questions as well. Want to know how successful candidates
-          ace their interviews and get their dream job? Then read on to
-          find ‘Interview Experiences’ of all product and service-based
-          companies from all corners of the world. And prepares yourself for
-          your dream company. In this sheet, we cover all the popular companies’
-          interview experiences that will help you to perform well in your
-          upcoming interviews. By following this sheet you can also prepare
-          yourself to attend any particular company, here we attached the
-          preparation guide and asked questions as well. Want to know how
-          successful candidates ace their interviews and get their dream job?
-          Then read on to find ‘Interview Experiences’ of all product and
-          service-based companies from all corners of the world. And prepares
-          yourself for your dream company. */}
+        <div className="infoContainer">
+          <div className="heading">
+            <div className="headline">
+              <p>Interview Experience</p>
+              <p>*****</p>
+            </div>
+            <div className="companyContainer">
+              <img src="" alt="" />
+              <p>Sprinkler</p>
+            </div>
+          </div>
+          <p className="experience">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+            consequatur repellendus consequuntur tenetur deserunt totam? Magnam,
+            voluptatibus porro recusandae quae aliquid cum, earum sint corrupti
+            repellendus quasi sapiente quod. Facere error aspernatur recusandae
+            optio, officiis expedita non pariatur hic voluptatibus porro dolorem
+            autem fuga totam at quidem? Ipsum doloribus aspernatur rerum
+            temporibus commodi ab molestias sapiente sunt possimus magnam
+            accusamus illo voluptatibus magni ipsam eligendi nostrum, harum
+            nihil voluptas neque! At, reprehenderit vel voluptas beatae fugiat
+            impedit saepe, dicta culpa aperiam quibusdam ipsum accusantium
+            aspernatur molestias tempore distinctio soluta ducimus. Cumque,
+            ducimus a. Magnam quisquam, repudiandae similique molestias illum
+            doloremque.
+          </p>
         </div>
       </div>
     </>
