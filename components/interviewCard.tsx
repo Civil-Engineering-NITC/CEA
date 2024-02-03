@@ -6,6 +6,7 @@ import icon from "../public/Frame 55.svg";
 import Image from "next/image";
 import profilePic from "../public/bg.jpg";
 import { InterviewExp } from "@prisma/client";
+import { IoStar } from "react-icons/io5";
 
 export const InterviewCard: React.FC<any> = (data) => {
   const [para, setPara] = useState("");
@@ -17,6 +18,10 @@ export const InterviewCard: React.FC<any> = (data) => {
       setPara(data.desc);
     }
   }, [data.desc]);
+
+  const starsArray = Array.from({ length: data.rating }, (_, index) => (
+    <IoStar key={index} style={{ marginRight: "0.3rem" }} size={15} />
+  ));
 
   console.log(data);
 
@@ -32,7 +37,8 @@ export const InterviewCard: React.FC<any> = (data) => {
             <p>{data.company}</p>
           </div>
           <h1>Interview Experience</h1>
-          <h3>* * * * *</h3>
+
+          <h3>{starsArray}</h3>
           <p>{para}</p>
         </div>
         <div className={styles.cardfooter}>

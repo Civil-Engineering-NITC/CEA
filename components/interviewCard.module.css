@@ -32,6 +32,9 @@
   font-weight: 700;
   font-size: 0.875rem;
 }
+.cardPrimary h3 {
+  margin-bottom: 1rem;
+}
 .profilePic {
   display: flex;
   position: absolute;
