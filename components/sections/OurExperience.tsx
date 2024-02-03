@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
