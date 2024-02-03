@@ -2,6 +2,7 @@ import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
+import { ActivityCard } from "@/components/ActivityCard";
 // import { HomePage } from "@/components/sections/HomePage";
 // import { Navbar } from "@/components/Navbar";
 // import { Competitive } from "@/components/sections/Competitive";
@@ -32,9 +33,10 @@ export default async function Home() {
     return (
       <>
         {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
-        <UserButton afterSignOutUrl="/" />
+        {/* <UserButton afterSignOutUrl="/" /> */}
         {/* <Resource /> */}
-        <InterviewExperience />
+        {/* <InterviewExperience /> */}
+        <ActivityCard />
         {/* <InterviewExperience /> */}
       </>
     );
