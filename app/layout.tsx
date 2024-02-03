@@ -6,6 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -40,7 +42,9 @@ export default function RootLayout({
               pauseOnHover
               theme="dark"
             />
+            <Navbar />
             {children}
+            <Footer />
           </body>
         </html>
       </ClerkProvider>
