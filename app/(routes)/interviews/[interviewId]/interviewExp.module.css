@@ -1,0 +1,25 @@
+.interviewCard {
+  background-color: #313131;
+  color: white;
+  z-index: 2;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  position: relative;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  color: white;
+  z-index: 2;
+}
+
+.interviewExp {
+  color: #f8c733;
+  font-size: 36px;
+  line-height: 45.36px;
+  font-weight: 700;
+}

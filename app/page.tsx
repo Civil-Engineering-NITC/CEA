@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
 import ResourcesPage from "./(routes)/resources/page";
 import CompExam from "./(routes)/compExam/page";
+import InterviewExp from "./(routes)/interviews/[interviewId]/page";
 // import { HomePage } from "@/components/sections/HomePage";
 // import { Navbar } from "@/components/Navbar";
 // import { Competitive } from "@/components/sections/Competitive";
@@ -36,6 +37,7 @@ export default async function Home() {
       <>
         {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
         <UserButton afterSignOutUrl="/" />
+        <InterviewExp />
       </>
     );
   } catch (error) {
