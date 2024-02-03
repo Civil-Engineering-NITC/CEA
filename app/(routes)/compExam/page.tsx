@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../loadMore/loadMore.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
@@ -30,19 +30,19 @@ export default async function CompExam() {
   const info = await getData();
   console.log("************* ", info);
 
-  // return (
-  //   <div className={styles.container}>
-  //     <PageTopHeading
-  //       mainHeading="Get to Know about different competitive Examination and Learn."
-  //       heading="COMPETITIVE."
-  //       subHeading="EXAMS."
-  //     />
-  //     <SearchBar />
-  //     <div className={styles.cardContainer}>
-  //       {info.map((card: CompetitiveExam) => (
-  //         <Card key={card.id} {...card} />
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
+  return (
+    <div className={styles.container}>
+      <PageTopHeading
+        mainHeading="Get to Know about different competitive Examination and Learn."
+        heading="COMPETITIVE."
+        subHeading="EXAMS."
+      />
+      <SearchBar />
+      <div className={styles.cardContainer}>
+        {info.map((card: CompetitiveExam) => (
+          <Card key={card.id} {...card} />
+        ))}
+      </div>
+    </div>
+  );
 }
