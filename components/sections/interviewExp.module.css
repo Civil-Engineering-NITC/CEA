@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 8.5rem 0;
+  /* gap: 8.5rem 0; */
   overflow-x: hidden;
 }
 .cardholder {
@@ -13,6 +13,7 @@
   gap: 7.5rem;
   max-width: 71.25rem;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 @media (max-width: 1366px) {
   .cardholder {
@@ -33,4 +34,97 @@
 @media (max-width: 900px) {
 }
 @media (max-width: 768px) {
+}
+
+.buttonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.375rem;
+  margin-top: 1.25rem;
+  background: transparent;
+  margin-bottom: 10.8rem;
+}
+.mainDiv {
+  display: flex;
+  position: relative;
+  text-decoration: none;
+}
+.buttonDiv {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  z-index: 2;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  gap: 0.625rem;
+  /* font-size: 1.5rem; */
+  width: 50.875rem;
+  height: 4.813rem;
+
+  font-size: 2.2rem;
+  font-weight: 400;
+
+  /* margin-bottom: 5rem; */
+}
+.colorDiv {
+  position: absolute;
+  top: 0.313rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, #804ced, #f48fd0);
+}
+.arrowDiv {
+  position: relative;
+  display: flex;
+  background: transparent;
+  width: 1rem;
+  height: 1rem;
+}
+.arrowButton {
+  background: transparent;
+  width: 1rem;
+  height: 1rem;
+}
+.mainDiv:hover .colorDiv {
+  animation: moveIn 2s;
+}
+@keyframes moveIn {
+  0% {
+    transform: translate(0rem, 0rem);
+    box-shadow: 0px 0px 50px 1px #804ced, 0px 0px 50px 1px #f48fd0;
+  }
+  25% {
+    transform: translate(-0.5rem, -0.313rem);
+  }
+  100% {
+    transform: translate(0rem, 0rem);
+  }
+}
+.mainDiv:hover .arrowButton {
+  animation: arrow 1s;
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    transform: translate(-20%, 20%);
+  }
+  50% {
+    transform: translate(150%, -150%);
+    display: none;
+  }
+  75% {
+    transform: translate(-150%, 150%);
+    display: none;
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
 }

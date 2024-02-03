@@ -5,6 +5,10 @@ import { InterviewExp } from "@prisma/client";
 import { DownArrowButton } from "@/components/DownArrowButton";
 import { InterviewCard } from "@/components/interviewCard";
 import { Header } from "@/components/Header";
+import Image from "next/image";
+import arrow from "@/public/Arrow 1.png";
+import { RightArrowButton } from "@/components/RightArrowButton";
+import { PageTopHeading } from "@/components/PageTopHeading";
 
 export default async function InterviewExpPage() {
   try {
@@ -27,13 +31,29 @@ export default async function InterviewExpPage() {
   return (
     <>
       <div className={styles.maindiv}>
-        <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
+        <PageTopHeading
+          mainHeading="Get to Know about different competitive Examination and Learn."
+          heading="RESOURCES."
+          subHeading="MATERIALS."
+        />
+
+        <div className={styles.buttonsDiv}>
+          <a href="" className={styles.mainDiv}>
+            <div className={styles.buttonDiv}>
+              Share Your Own Experience
+              <div className={styles.arrowDiv}>
+                <Image src={arrow} alt="" className={styles.arrowButton} />
+              </div>
+            </div>
+            <div className={styles.colorDiv}></div>
+          </a>
+        </div>
+
         <div className={styles.cardholder}>
           {sortedInterviews.map((data: InterviewExp) => (
             <InterviewCard key={data.id} {...data} />
           ))}
         </div>
-        <DownArrowButton text="Load More" redirectLink="" />
       </div>
     </>
   );
