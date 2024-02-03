@@ -13,10 +13,13 @@ import { useState } from "react";
 import * as z from "zod";
 import axios from "axios";
 import { ImageUpload } from "../ImageUpload";
+import { subtle } from "crypto";
 
 const formSchema = z.object({
-  topic: z.string().min(1),
+  name: z.string().min(1),
   type: z.string().min(1),
+  title: z.string().min(1),
+  subTitle: z.string().min(1),
   desc: z.string().min(1),
 });
 
@@ -69,11 +72,14 @@ export const ResourceForm: React.FC = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Subject</label>
-        <input {...register("topic")} type="text" />
-        {errors.topic && <p>{`${errors.topic?.message}`}</p>}
+        <label>Name</label>
+        <select {...register("name")}>
+          <option value="">Select...</option>
+          <option value="Study Material">Study Material</option>
+        </select>
+        {errors.name && <p>{`${errors.name?.message}`}</p>}
 
-        <label>Topic</label>
+        <label>Type</label>
         <select {...register("type")}>
           <option value="">Select...</option>
           <option value="core">core</option>
@@ -81,9 +87,17 @@ export const ResourceForm: React.FC = () => {
         </select>
         {errors.type && <p>{`${errors.type?.message}`}</p>}
 
+        <label>Subject </label>
+        <input {...register("title")} type="text" />
+        {errors.title && <p>{`${errors.title?.message}`}</p>}
+
+        <label>Field</label>
+        <input {...register("subTitle")} type="text" />
+        {errors.subTitle && <p>{`${errors.subTitle?.message}`}</p>}
+
         <label>Description </label>
         <input {...register("desc")} type="text" />
-        {errors.topic && <p>{`${errors.desc?.message}`}</p>}
+        {errors.desc && <p>{`${errors.desc?.message}`}</p>}
 
         <ImageUpload
           onChange={(notesUrl) => setNotesUrl(notesUrl)}

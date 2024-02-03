@@ -9,6 +9,9 @@ import { ImageUpload } from "../ImageUpload";
 
 const formSchema = z.object({
   name: z.string().min(1),
+  type: z.string().min(1),
+  title: z.string().min(1),
+  subTitle: z.string().min(1),
   desc: z.string().min(1),
   webLink: z.string().min(1),
 });
@@ -63,6 +66,18 @@ export const CompExamForm: React.FC = () => {
         <label>Name</label>
         <input {...register("name")} type="text" />
         {errors.name && <p>{`${errors.name?.message}`}</p>}
+        <label>Type</label>
+        <select {...register("type")}>
+          <option value="">Select...</option>
+          <option value="core exam">core exam</option>
+        </select>
+        {errors.type && <p>{`${errors.type?.message}`}</p>}
+        <label>Title </label>
+        <input {...register("title")} type="text" />
+        {errors.title && <p>{`${errors.title?.message}`}</p>}
+        <label>Subtitle</label>
+        <input {...register("subTitle")} type="text" />
+        {errors.subTitle && <p>{`${errors.subTitle?.message}`}</p>}
         <label>Description</label>
         <input {...register("desc")} type="text" />
         {errors.desc && <p>{`${errors.desc?.message}`}</p>}

@@ -7,55 +7,44 @@ import { FaArrowRight, FaHome } from "react-icons/fa";
 import { RightArrowButton } from "./RightArrowButton";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { Icons } from "./Icons";
+import { Resources } from "@prisma/client";
 
-interface CardProps {
-  card: {
-    id: number;
-    type: string;
-    heading1: string;
-    heading2: string;
-    heading3: string;
-    heading4: string;
-    buttonTitle: string;
-    color: string;
-  };
-}
+export const Card: React.FC<Resources> = (card) => {
+  let bgColor = "rgba(255, 255, 255, 0.2)";
+  if (card.type !== "core" && card.type !== "it") {
+    if (card.name === "UPSC") {
+      bgColor = "#35D870";
+    } else if (card.name === "CAT EXAM ") bgColor = "#017FDD";
+    else bgColor = "#F8C733";
+  }
 
-export const Card: React.FC<CardProps> = ({ card }) => {
+  console.log("Card Data");
+  console.log(card);
+
   return (
     <div className={styles.container}>
       <div className={styles.cardTop}>
         <div
           className={styles.imageStyle}
-          style={{ backgroundColor: card.color, borderRadius: "4px" }}
+          style={{
+            backgroundColor: bgColor,
+            borderRadius: "4px",
+          }}
         >
-          {/* {card.type === "engineering" && (
-            <MdEngineering size={50} color="white" />
-          )}
-          {card.type === "business" && <FaHome size={50} color="white" />}
-          {card.type === "civil-service" && <FaHome size={50} color="white" />}
-          {card.type === "materials" && (
-            <MdOutlineLibraryBooks size={50} color="white" />
-          )} */}
-          <Icons type={card.type} />
-          {/* <Image src="/books.png" height={32} width={32} alt={"name"} /> */}
+          <Icons type={card.type} name={card.name} />
         </div>
-        <div className={styles.headingOne}>{card.heading1}</div>
+        <div className={styles.headingOne}>{card.type}</div>
       </div>
 
       <div className={styles.cardMiddle}>
-        <div className={styles.headingTwo}>{card.heading2}</div>
+        <div className={styles.headingTwo}>{card.name}</div>
         <div className={styles.middleHeading}>
-          <div className={styles.headingThree}>{card.heading3}</div>
-          <div className={styles.headingFour}>{card.heading4}</div>
+          <div className={styles.headingThree}>{card.title}</div>
+          <div className={styles.headingFour}>{card.subTitle}</div>
         </div>
       </div>
 
-      <Link
-        className={styles.cardBottom}
-        style={{ color: card.color }}
-        href="#"
-      >
+      <Link className={styles.cardBottom} style={{ color: bgColor }} href="#">
         Know More{"  "}
         <FaArrowRight
           style={{ backgroundColor: "inherit", marginLeft: "9px" }}

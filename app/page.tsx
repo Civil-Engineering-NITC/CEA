@@ -2,6 +2,8 @@ import { InterviewExperience } from "@/components/sections/InterviewExp";
 import { UserButton, currentUser, useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 import { Resource } from "@/components/sections/Resource";
+import Resources from "./(routes)/resources/page";
+import CompExam from "./(routes)/compExam/page";
 // import { HomePage } from "@/components/sections/HomePage";
 // import { Navbar } from "@/components/Navbar";
 // import { Competitive } from "@/components/sections/Competitive";
@@ -14,32 +16,33 @@ import { Resource } from "@/components/sections/Resource";
 
 export default async function Home() {
   try {
-    console.log("Before currentUser()");
+    // console.log("Before currentUser()");
     let user;
     let retryCount = 0;
 
     while (!user && retryCount < 3) {
       try {
         user = await currentUser();
+        console.log(user?.emailAddresses[0].emailAddress);
       } catch (error) {
-        console.error("Error fetching user:", error);
+        // console.error("Error fetching user:", error);
         retryCount++;
-        console.log(`Retrying fetch. Attempt ${retryCount}`);
+        // console.log(`Retrying fetch. Attempt ${retryCount}`);
       }
     }
 
-    console.log("After currentUser(), user:", user);
+    // console.log("After currentUser(), user:", user);
     return (
       <>
-        {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
+        <div>Hello {user?.emailAddresses[0].emailAddress}!</div>
         <UserButton afterSignOutUrl="/" />
-        {/* <Resource /> */}
-        <InterviewExperience />
+        {/* <Resources /> */}
+        {/* <CompExam /> */}
         {/* <InterviewExperience /> */}
       </>
     );
   } catch (error) {
-    console.error("Error fetching user:", error);
+    // console.error("Error fetching user:", error);
     return <div>Error fetching user.</div>;
   }
 }

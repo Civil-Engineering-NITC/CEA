@@ -71,8 +71,10 @@ model CodingLink{
 
 model Resources{
   id  String  @id @default(uuid())
-  topic String  
   type  String
+  name String 
+  title String 
+  subTitle String
   desc String
   link  ResourceLink[]  @relation("ResourcesToLink")
 }
@@ -110,6 +112,9 @@ model ActivityLink{
 model CompetitiveExam{
   id  String  @id @default(uuid())
   name  String  @unique
+  type String
+  title String 
+  subTitle String 
   desc  String
   date  DateTime
   webLink String

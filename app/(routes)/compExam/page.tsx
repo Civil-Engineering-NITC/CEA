@@ -10,15 +10,25 @@ import {
   cardData,
 } from "@/data/fakeLoadMore";
 import axios from "axios";
+import { CompetitiveExam } from "@prisma/client";
+
+async function getData() {
+  const res = await fetch("http://localhost:3000/api/compExam");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  // console.log(res);
+  return res.json();
+}
 
 export default async function CompExam() {
-  try {
-    const info = await axios.get("http://localhost:3000/api/compExam");
-    const compExam = info.data;
-    var displayData = compExam.slice(0, 2);
-  } catch {
-    console.log("Data fetch error from backend");
-  }
+  const info = await getData();
+  console.log("************* ", info);
 
   return (
     <div className={styles.container}>
@@ -29,9 +39,9 @@ export default async function CompExam() {
       />
       <SearchBar />
       <div className={styles.cardContainer}>
-        {cardData.map((card) => {
-          return <Card key={card.id} card={card} />;
-        })}
+        {info.map((card: CompetitiveExam) => (
+          <Card key={card.id} {...card} />
+        ))}
       </div>
     </div>
   );

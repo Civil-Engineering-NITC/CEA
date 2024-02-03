@@ -5,7 +5,7 @@ export const subHeading = "EXAMS.";
 
 export const cardData = [
   {
-    id: 1,
+    id: "1",
     type: "engineering",
     heading1: "Core Exam",
     heading2: "GATE Exam",
@@ -15,7 +15,7 @@ export const cardData = [
     color: "#F8C733",
   },
   {
-    id: 2,
+    id: "2",
     type: "business",
     heading1: "Core Exam",
     heading2: "CAT Exam",
@@ -25,7 +25,7 @@ export const cardData = [
     color: "#017FDD",
   },
   {
-    id: 3,
+    id: "3",
     type: "civil-service",
     heading1: "Core Exam",
     heading2: "UPSC Exam",
@@ -35,7 +35,7 @@ export const cardData = [
     color: "#35D870",
   },
   {
-    id: 4,
+    id: "4",
     type: "business",
     heading1: "Core Exam",
     heading2: "CAT Exam",
@@ -45,7 +45,7 @@ export const cardData = [
     color: "#017FDD",
   },
   {
-    id: 5,
+    id: "5",
     type: "civil-service",
     heading1: "Core Exam",
     heading2: "UPSC Exam",
@@ -55,7 +55,7 @@ export const cardData = [
     color: "#35D870",
   },
   {
-    id: 6,
+    id: "6",
     type: "engineering",
     heading1: "Core Exam",
     heading2: "GATE Exam",

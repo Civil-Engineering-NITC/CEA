@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
   try {
     const resources = await prismadb.resources.findMany();
+    console.log(resources);
 
     return NextResponse.json(resources);
   } catch (error) {
@@ -18,16 +19,23 @@ export async function POST(req: Request) {
     const { userId } = auth();
     const body = await req.json();
 
-    const { topic, type, linkData, desc } = body;
+    const { type, name, title, subTitle, linkData, desc } = body;
 
     if (!userId) {
       return new NextResponse("Unauthenticated", { status: 401 });
     }
-    if (!topic) {
-      return new NextResponse("topic is required", { status: 400 });
-    }
     if (!type) {
       return new NextResponse("type is required", { status: 400 });
+    }
+    if (!name) {
+      return new NextResponse("topic is required", { status: 400 });
+    }
+
+    if (!title) {
+      return new NextResponse("topic is required", { status: 400 });
+    }
+    if (!subTitle) {
+      return new NextResponse("topic is required", { status: 400 });
     }
     if (!linkData) {
       return new NextResponse("link Data is required", { status: 400 });
@@ -39,8 +47,10 @@ export async function POST(req: Request) {
 
     const classNote = await prismadb.resources.create({
       data: {
-        topic: topic,
+        name: name,
         type: type,
+        title: title,
+        subTitle: subTitle,
         desc: desc,
         link: {
           create: linkData.map((link: any) => ({

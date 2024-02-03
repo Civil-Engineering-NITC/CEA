@@ -24,6 +24,7 @@ export default async function Form({
   console.log(user?.emailAddresses[0].emailAddress);
   const email = user?.emailAddresses[0].emailAddress;
 
+  console.log("*********** ", searchParams);
   if (email === process.env.NEXT_PUBLIC_MASTER) {
     if (searchParams.kind === "classNote") {
       return <ClassNotesForm />;
