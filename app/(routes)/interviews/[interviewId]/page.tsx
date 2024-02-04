@@ -4,26 +4,52 @@ import styles from "./interviewExp.module.css";
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { Heading } from "@/components/Heading";
+import { IoStar } from "react-icons/io5";
 
 export default function InterviewExp() {
+  const starsArray = Array.from({ length: 3 }, (_, index) => (
+    <IoStar
+      key={index}
+      style={{
+        marginRight: "0.3rem",
+        marginBottom: "0.5rem",
+        marginTop: "0.5rem",
+      }}
+      size={30}
+    />
+  ));
+
   return (
     <div className={styles.mainContainer}>
-      <PageTopHeading
+      {/* <PageTopHeading
         mainHeading="Get to Know about different competitive Examinations and Learn."
         heading="TESTIMONIALS."
         subHeading="INTERVIEW EXP."
-      />
+      /> */}
 
       <div className={styles.container}>
+        <div className={styles.mobileHeader}>
+          <div className={styles.headline}>
+            <p className={styles.title}>Interview Experience</p>
+            <p className={styles.stars}>{starsArray}</p>
+          </div>
+          <div className={styles.companyContainer}>
+            <img src="/sprinkler.png" alt="" className={styles.companyLogo} />
+            <p
+              style={{ backgroundColor: "inherit" }}
+              className={styles.companyName}
+            >
+              Sprinkler
+            </p>
+          </div>
+        </div>
         <div className={styles.profile}>
           <div className={styles.profileInfoContainer}>
             <div className={styles.imgContainer}>
-              <Image
-                src="/robert.svg"
-                height={300}
-                width={300}
-                className={styles.image}
+              <img
+                src="/robert.png"
                 alt="company logo"
+                className={styles.image}
               />
             </div>
             <div className={styles.profileInfo}>
@@ -39,16 +65,25 @@ export default function InterviewExp() {
           <div className={styles.heading}>
             <div className={styles.headline}>
               <p className={styles.title}>Interview Experience</p>
-              <p className={styles.stars}>*****</p>
+              <p className={styles.stars}>{starsArray}</p>
+              <div className={styles.moreInfoContainer}>
+                <div className={styles.moreInfo}>
+                  <p>Email: </p>
+                  <p>vg7134@gmailcom</p>
+                </div>
+                <div className={styles.moreInfo}>
+                  <p>Phone: </p>
+                  <p>9529164989</p>
+                </div>
+                <div className={styles.moreInfo}>
+                  <p>Package: </p>
+                  <p>34.1</p>
+                </div>
+              </div>
             </div>
             <div className={styles.companyContainer}>
-              <Image
-                src="/sprikler.svg"
-                height={88}
-                width={88}
-                className={styles.companyLogo}
-                alt=""
-              />
+              <img src="/sprinkler.png" alt="" className={styles.companyLogo} />
+
               <p
                 style={{ backgroundColor: "inherit" }}
                 className={styles.companyName}

@@ -51,7 +51,11 @@
 }
 
 .imgContainer {
-  background-color: #313131;
+  background: transparent;
+  position: absolute;
+  height: 349px;
+  width: 349px;
+  top: -176px;
 }
 
 .profileInfo {
@@ -79,8 +83,12 @@
 .heading {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: inherit;
+}
+
+.mobileHeader{
+  display: none;
 }
 
 .experience {
@@ -93,11 +101,8 @@
 }
 
 .image {
-  position: absolute;
-  top: -187px;
-  right: -1px;
-  width: 349px;
-  height: 349px;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
 }
 
@@ -120,24 +125,30 @@
   background-color: #313131;
 }
 
-.interviewExp {
-}
-
 .companyContainer {
   display: flex;
   flex-direction: column;
   max-width: 90px;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #313131;
+  margin-left: 1rem;
+
+}
+
+.companyLogo {
+  display: flex;
+  /* width: 100%; */
+  width: 89.61px;
+  height: auto;
   justify-content: center;
   align-items: center;
   background-color: #313131;
 }
 
-.companyLogo {
-  display: flex;
+.companyLogo img{
+  height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: #313131;
 }
 
 .companyName {
@@ -161,8 +172,39 @@
   font-weight: 500;
   color: #afafaf;
 }
+.moreInfoContainer{
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  background: transparent;
+  gap: 1rem;
+}
+.moreInfo{
+  display: flex;
+  background: transparent;
+  gap: 1rem;
+}
+.moreInfo p:nth-child(1){
+  color: #F8C733;
+  font-size: 1.25rem;
+}
+.moreInfo p:nth-child(2){
+  color: white;
+  font-size: 1.25rem;
+}
 
 @media (max-width: 900px) {
+  .heading{
+    display: none;
+  }
+
+  .mobileHeader{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+  width: 100%;
+  }
   .mainContainer {
     max-width: none;
     padding: 0 2rem;
@@ -182,9 +224,6 @@
     align-items: center;
   }
   .imgContainer {
-    position: absolute;
-    top: -18px;
-    right: -1px;
     width: 349px;
     height: 349px;
     background-color: transparent;
@@ -199,6 +238,7 @@
 }
 
 @media (max-width: 550px) {
+
   .mainContainer {
     max-width: none;
     padding: 0 1rem;
@@ -238,10 +278,9 @@
   }
   .imgContainer {
     /* position: absolute; */
-    top: -18px;
-    right: -1px;
     width: 285.71px;
     height: 285.71px;
+    top: -126px;
     /* background-color: transparent; */
   }
   .image {
@@ -255,5 +294,21 @@
   .experience {
     font-size: 18px;
     line-height: 27px;
+  }
+  .container{
+    padding: 2rem;
+  }
+  .moreInfo p{
+    font-size: 1rem;
+  }
+  .companyLogo{
+    width: 54px;
+    height: auto;
+  }
+}
+@media (max-width: 400px) {
+  .image{
+    width: 250px;
+    height: 250px;
   }
 }
