@@ -1,25 +1,259 @@
-.interviewCard {
+.mainContainer {
+  /* max-width: 1312px; */
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container {
   background-color: #313131;
   color: white;
   z-index: 2;
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
+
+  max-width: 1312px;
+  padding: 3rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profile {
+  max-width: 350px;
+  /* max-height: 579px; */
+  height: 230px;
+  background-color: transparent;
+  position: relative;
+  top: 72px;
+}
+
+.profileInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 349px;
+  height: 349px;
+  position: relative;
+  top: 111px;
+  border-radius: 16px;
+  background: linear-gradient(
+    to bottom,
+    #1e1e1e 21%,
+    #1a1a1a 50%,
+    #121212 69%,
+    #151515 95%
+  );
+}
+
+.imgContainer {
+  background-color: #313131;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 320px;
+  justify-content: flex-end;
+  align-items: center;
+  border: 2px dashed #afafaf;
+  border-radius: 16px;
+  gap: 12px;
+}
+
+.infoContainer {
+  max-width: 832px;
+  display: flex;
+  object-fit: contain;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #313131;
+  gap: 15px;
 }
 
 .heading {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
-  color: white;
-  z-index: 2;
+  background-color: inherit;
 }
 
-.interviewExp {
-  color: #f8c733;
+.experience {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  max-width: 832px;
+  text-align: justify;
+  background-color: #313131;
+}
+
+.image {
+  position: absolute;
+  top: -187px;
+  right: -1px;
+  width: 349px;
+  height: 349px;
+  border-radius: 50%;
+}
+
+.headline {
+  background-color: inherit;
+}
+
+.title {
   font-size: 36px;
   line-height: 45.36px;
   font-weight: 700;
+  text-align: justify;
+  background-color: #313131;
+  color: #f8c733;
+}
+
+.stars {
+  font-size: 36px;
+  letter-spacing: 17.71px;
+  background-color: #313131;
+}
+
+.interviewExp {
+}
+
+.companyContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 90px;
+  justify-content: center;
+  align-items: center;
+  background-color: #313131;
+}
+
+.companyLogo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #313131;
+}
+
+.companyName {
+  display: flex;
+  /* width: 89px;
+  height: 89px; */
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.roll {
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: 500;
+  color: #afafaf;
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    max-width: none;
+    padding: 0 2rem;
+  }
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .profile {
+    max-width: none;
+    max-width: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    align-items: center;
+  }
+  .imgContainer {
+    position: absolute;
+    top: -18px;
+    right: -1px;
+    width: 349px;
+    height: 349px;
+    background-color: transparent;
+  }
+  .infoContainer {
+    margin-top: 11rem;
+    width: 100%;
+  }
+  .experience {
+    max-width: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .mainContainer {
+    max-width: none;
+    padding: 0 1rem;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 30.24px;
+  }
+  .stars {
+    font-size: 24px;
+    letter-spacing: 13.7px;
+    background-color: #313131;
+  }
+  .name {
+    font-size: 32px;
+    line-height: 40.32px;
+  }
+  .roll {
+    font-size: 20px;
+    line-height: 25.2px;
+  }
+  .profile {
+    /* max-width: 287px; */
+    /* height: 230px; */
+    /* top: 72px; */
+  }
+
+  .profileInfoContainer {
+    width: 287px;
+    /* height: 349px; */
+    border-radius: 16px;
+  }
+  .profileInfo {
+    width: 260px;
+    /* height: 320px; */
+    gap: 12px;
+  }
+  .imgContainer {
+    /* position: absolute; */
+    top: -18px;
+    right: -1px;
+    width: 285.71px;
+    height: 285.71px;
+    /* background-color: transparent; */
+  }
+  .image {
+    /* position: absolute; */
+    top: -89px;
+    right: 1px;
+    width: 285.71px;
+    height: 285.71px;
+    /* border-radius: 50%; */
+  }
+  .experience {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }

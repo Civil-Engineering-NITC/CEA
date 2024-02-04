@@ -8,6 +8,7 @@ import { HomePage } from "@/components/sections/HomePage";
 import { OurExperience } from "@/components/sections/OurExperience";
 import { Competitive } from "@/components/sections/Competitive";
 import { Footer } from "@/components/footer";
+import InterviewExp from "./(routes)/interviews/[interviewId]/page";
 // import { HomePage } from "@/components/sections/HomePage";
 // import { Navbar } from "@/components/Navbar";
 // import { Competitive } from "@/components/sections/Competitive";
@@ -40,11 +41,12 @@ export default async function Home() {
       <>
         {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
         {/* <UserButton afterSignOutUrl="/" /> */}
-        <HomePage />
+        {/* <HomePage />
         <OurExperience />
         <Competitive />
         <Resource />
-        <InterviewExperience />
+        <InterviewExperience /> */}
+        <InterviewExp />
       </>
     );
   } catch (error) {
