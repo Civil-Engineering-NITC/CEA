@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .profile {
@@ -29,6 +29,7 @@
   background-color: transparent;
   position: relative;
   top: 72px;
+  margin-right: 2rem;
 }
 
 .profileInfoContainer {
@@ -193,6 +194,12 @@
   font-size: 1.25rem;
 }
 
+@media(max-width: 1024px) {
+  .mainContainer{
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 900px) {
   .heading{
     display: none;
@@ -229,7 +236,7 @@
     background-color: transparent;
   }
   .infoContainer {
-    margin-top: 11rem;
+    margin-top: 13rem;
     width: 100%;
   }
   .experience {
@@ -307,8 +314,4 @@
   }
 }
 @media (max-width: 400px) {
-  .image{
-    width: 250px;
-    height: 250px;
-  }
 }
