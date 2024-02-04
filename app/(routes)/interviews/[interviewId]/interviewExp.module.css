@@ -30,6 +30,7 @@
   position: relative;
   top: 72px;
   margin-right: 2rem;
+  height: 34rem;
 }
 
 .profileInfoContainer {
@@ -158,6 +159,7 @@
   height: 89px; */
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .name {
@@ -208,7 +210,7 @@
   .mobileHeader{
     display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   background-color: inherit;
   width: 100%;
   }

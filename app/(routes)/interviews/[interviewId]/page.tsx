@@ -5,27 +5,47 @@ import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { Heading } from "@/components/Heading";
 import { IoStar } from "react-icons/io5";
+import { useParams, useRouter } from "next/navigation";
+import prismadb from "@/lib/prismadb";
 
-export default function InterviewExp() {
-  const starsArray = Array.from({ length: 3 }, (_, index) => (
-    <IoStar
-      key={index}
-      style={{
-        marginRight: "0.3rem",
-        marginBottom: "0.5rem",
-        marginTop: "0.5rem",
-      }}
-      size={30}
-    />
-  ));
+export default async function InterviewExp({
+  params,
+}: {
+  params: { interviewId: string };
+}) {
+  console.log(params);
+
+  const interview = await prismadb.interviewExp.findUnique({
+    where: {
+      id: params.interviewId,
+    },
+    include: {
+      link: true,
+    },
+  });
+
+  const starsArray = Array.from(
+    { length: interview?.rating ?? 0 },
+    (_, index) => (
+      <IoStar
+        key={index}
+        style={{
+          marginRight: "0.3rem",
+          marginBottom: "0.5rem",
+          marginTop: "0.5rem",
+        }}
+        size={30}
+      />
+    )
+  );
 
   return (
     <div className={styles.mainContainer}>
-      {/* <PageTopHeading
+      <PageTopHeading
         mainHeading="Get to Know about different competitive Examinations and Learn."
         heading="TESTIMONIALS."
         subHeading="INTERVIEW EXP."
-      /> */}
+      />
 
       <div className={styles.container}>
         <div className={styles.mobileHeader}>
@@ -34,12 +54,16 @@ export default function InterviewExp() {
             <p className={styles.stars}>{starsArray}</p>
           </div>
           <div className={styles.companyContainer}>
-            <img src="/sprinkler.png" alt="" className={styles.companyLogo} />
+            <img
+              src={interview?.link[1].link}
+              alt="Company logo"
+              className={styles.companyLogo}
+            />
             <p
               style={{ backgroundColor: "inherit" }}
               className={styles.companyName}
             >
-              Sprinkler
+              {interview?.company}
             </p>
           </div>
         </div>
@@ -47,14 +71,14 @@ export default function InterviewExp() {
           <div className={styles.profileInfoContainer}>
             <div className={styles.imgContainer}>
               <img
-                src="/robert.png"
-                alt="company logo"
+                src={interview?.link[0].link}
+                alt="profile photo"
                 className={styles.image}
               />
             </div>
             <div className={styles.profileInfo}>
-              <div className={styles.name}>Robert D. Jr.</div>
-              <div className={styles.roll}>B200642CE</div>
+              <div className={styles.name}>{interview?.name}</div>
+              <div className={styles.roll}>{interview?.rollno}</div>
               <div>
                 <FaLinkedin size={32} color="#A9A9A9" />
               </div>
@@ -69,20 +93,24 @@ export default function InterviewExp() {
               <div className={styles.moreInfoContainer}>
                 <div className={styles.moreInfo}>
                   <p>Email: </p>
-                  <p>vg7134@gmailcom</p>
+                  <p>{interview?.email}</p>
                 </div>
                 <div className={styles.moreInfo}>
                   <p>Phone: </p>
-                  <p>9529164989</p>
+                  <p>{interview?.phone}</p>
                 </div>
                 <div className={styles.moreInfo}>
                   <p>Package: </p>
-                  <p>34.1</p>
+                  <p>{interview?.package}</p>
                 </div>
               </div>
             </div>
             <div className={styles.companyContainer}>
-              <img src="/sprinkler.png" alt="" className={styles.companyLogo} />
+              <img
+                src={interview?.link[1].link}
+                alt="Company logo"
+                className={styles.companyLogo}
+              />
 
               <p
                 style={{ backgroundColor: "inherit" }}
@@ -92,25 +120,7 @@ export default function InterviewExp() {
               </p>
             </div>
           </div>
-          <div className={styles.experience}>
-            In this sheet, we cover all the popular companies’ interview
-            experiences that will help you to perform well in your upcoming
-            interviews. By following this sheet you can also prepare yourself to
-            attend any particular company, here we attached the preparation
-            guide and asked questions as well. Want to know how successful
-            candidates ace their interviews and get their dream job? Then read
-            on to find ‘Interview Experiences’ of all product and service-based
-            companies from all corners of the world. And prepares yourself for
-            your dream company. In this sheet, we cover all the popular
-            companies’ interview experiences that will help you to perform well
-            in your upcoming interviews. By following this sheet you can also
-            prepare yourself to attend any particular company, here we attached
-            the preparation guide and asked questions as well. Want to know how
-            successful candidates ace their interviews and get their dream job?
-            Then read on to find ‘Interview Experiences’ of all product and
-            service-based companies from all corners of the world. And prepares
-            yourself for your dream company.
-          </div>
+          <div className={styles.experience}>{interview?.desc}</div>
         </div>
       </div>
     </div>

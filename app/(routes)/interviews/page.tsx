@@ -9,6 +9,8 @@ import Image from "next/image";
 import arrow from "@/public/Arrow 1.png";
 import { RightArrowButton } from "@/components/RightArrowButton";
 import { PageTopHeading } from "@/components/PageTopHeading";
+import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function InterviewExpPage() {
   try {
@@ -51,7 +53,9 @@ export default async function InterviewExpPage() {
 
         <div className={styles.cardholder}>
           {sortedInterviews.map((data: InterviewExp) => (
-            <InterviewCard key={data.id} {...data} />
+            <Link href={`/interviews/${data.id}`}>
+              <InterviewCard key={data.id} {...data} />
+            </Link>
           ))}
         </div>
       </div>

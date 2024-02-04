@@ -40,13 +40,7 @@ export default async function Home() {
     return (
       <>
         {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
-        {/* <UserButton afterSignOutUrl="/" /> */}
-        {/* <HomePage />
-        <OurExperience />
-        <Competitive />
-        <Resource />
-        <InterviewExperience /> */}
-        <InterviewExp />
+        <UserButton afterSignOutUrl="/" />
       </>
     );
   } catch (error) {
