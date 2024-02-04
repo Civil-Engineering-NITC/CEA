@@ -7,6 +7,7 @@ import { cardData } from "@/data/fakeResource";
 import { BigButton } from "@/components/BigButton";
 import axios from "axios";
 import { Resources } from "@prisma/client";
+import Link from "next/link";
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/resource");
@@ -23,7 +24,7 @@ async function getData() {
 }
 
 export default async function ResourcesPage() {
-  const info = await getData();
+  const info: Resources[] = await getData();
   console.log("************* ", info);
   return (
     <div className={styles.container}>
@@ -40,8 +41,10 @@ export default async function ResourcesPage() {
         <SearchBar />
       </div>
       <div className={styles.cardContainer}>
-        {info.map((c: Resources) => (
-          <Card key={c.id} {...c} />
+        {info.map((resource: Resources) => (
+          <Link href={`/resources/${resource.id}`}>
+            <Card key={resource.id} {...resource} />
+          </Link>
         ))}
       </div>
     </div>

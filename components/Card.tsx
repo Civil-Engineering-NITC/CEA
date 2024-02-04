@@ -7,9 +7,9 @@ import { FaArrowRight, FaHome } from "react-icons/fa";
 import { RightArrowButton } from "./RightArrowButton";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { Icons } from "./Icons";
-import { Resources } from "@prisma/client";
+import { CompetitiveExam, Resources } from "@prisma/client";
 
-export const Card: React.FC<Resources> = (card) => {
+export const Card: React.FC<Resources | CompetitiveExam> = (card) => {
   let bgColor = "rgba(255, 255, 255, 0.2)";
   if (card.type !== "core" && card.type !== "coding") {
     if (card.name === "UPSC") {

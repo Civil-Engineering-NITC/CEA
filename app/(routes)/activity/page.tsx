@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
-import styles from "../loadMore/loadMore.module.css";
+import React from "react";
+import styles from "./loadMore.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
-import {
-  mainHeading,
-  heading,
-  subHeading,
-  cardData,
-} from "@/data/fakeLoadMore";
-import axios from "axios";
-import { CompetitiveExam } from "@prisma/client";
+import { Activity } from "@prisma/client";
+import { ActivityCard } from "@/components/ActivityCard";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/compExam");
+  const res = await fetch("http://localhost:3000/api/activity");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -27,10 +21,8 @@ async function getData() {
   return res.json();
 }
 
-export default async function CompExam() {
-  const info = await getData();
-  console.log("************* ", info);
-
+export default async function ActivityPage() {
+  const info: Activity[] = await getData();
   return (
     <div className={styles.container}>
       <PageTopHeading
@@ -40,9 +32,9 @@ export default async function CompExam() {
       />
       <SearchBar />
       <div className={styles.cardContainer}>
-        {info.map((exam: CompetitiveExam) => (
-          <Link href={`/compExam/${exam.id}`}>
-            <Card key={exam.id} {...exam} />
+        {info.map((activity: Activity) => (
+          <Link href={`/activity/${activity.id}`}>
+            <ActivityCard key={activity.id} {...activity} />
           </Link>
         ))}
       </div>
