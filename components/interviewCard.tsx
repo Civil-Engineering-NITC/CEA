@@ -7,6 +7,7 @@ import Image from "next/image";
 import profilePic from "../public/bg.jpg";
 import { InterviewExp } from "@prisma/client";
 import { IoStar } from "react-icons/io5";
+import { useInterviewStore } from "@/app/store/interviews";
 
 export const InterviewCard: React.FC<any> = (data) => {
   const [para, setPara] = useState("");

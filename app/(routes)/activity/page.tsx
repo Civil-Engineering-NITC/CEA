@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./loadMore.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
@@ -6,23 +6,19 @@ import { PageTopHeading } from "@/components/PageTopHeading";
 import { Activity } from "@prisma/client";
 import { ActivityCard } from "@/components/ActivityCard";
 import Link from "next/link";
-
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/activity");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  // console.log(res);
-  return res.json();
-}
+import { useActivityStore } from "@/app/store/activity";
+import { Loader } from "@react-three/drei";
 
 export default async function ActivityPage() {
-  const info: Activity[] = await getData();
+  const { activities, addActivities } = useActivityStore();
+
+  useEffect(() => {
+    if (activities.length == 0) {
+      addActivities();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <PageTopHeading
@@ -32,11 +28,15 @@ export default async function ActivityPage() {
       />
       <SearchBar />
       <div className={styles.cardContainer}>
-        {info.map((activity: Activity) => (
-          <Link href={`/activity/${activity.id}`}>
-            <ActivityCard key={activity.id} {...activity} />
-          </Link>
-        ))}
+        {activities.length === 0 ? (
+          <Loader />
+        ) : (
+          activities.map((data: Activity) => (
+            <Link href={`/activity/${data.id}`} key={data.id}>
+              <ActivityCard key={data.id} {...data} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );
