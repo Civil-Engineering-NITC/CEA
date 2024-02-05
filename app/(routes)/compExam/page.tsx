@@ -15,6 +15,7 @@ import axios from "axios";
 import { CompetitiveExam } from "@prisma/client";
 import Link from "next/link";
 import { useCompExamStore } from "@/app/store/compExam";
+import { Loader } from "@react-three/drei";
 
 export default function CompExam() {
   const { compExam, addCompetitiveExam } = useCompExamStore();
@@ -35,11 +36,15 @@ export default function CompExam() {
       />
       <SearchBar />
       <div className={styles.cardContainer}>
-        {compExam.map((exam: CompetitiveExam) => (
-          <Link href={`/compExam/${exam.id}`}>
-            <Card key={exam.id} {...exam} />
-          </Link>
-        ))}
+        {compExam.length === 0 ? (
+          <Loader />
+        ) : (
+          compExam.map((exam) => (
+            <Link href={`/compExam/${exam.id}`} key={exam.id}>
+              <Card {...exam} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );
