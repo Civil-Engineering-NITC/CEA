@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import styles from "@/components/sections/interviewExp.module.css";
 import axios from "axios";

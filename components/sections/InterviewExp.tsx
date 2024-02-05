@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { InterviewCard } from "../interviewCard";
 import styles from "./interviewExp.module.css";

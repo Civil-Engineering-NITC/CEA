@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import styles from "./loadMore.module.css";
 import { Card } from "@/components/Card";
@@ -9,7 +11,7 @@ import Link from "next/link";
 import { useActivityStore } from "@/app/store/activity";
 import { Loader } from "@react-three/drei";
 
-export default async function ActivityPage() {
+export default function ActivityPage() {
   const { activities, addActivities } = useActivityStore();
 
   useEffect(() => {

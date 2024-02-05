@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
@@ -10,7 +12,7 @@ import { Loader } from "@react-three/drei";
 import { Activity } from "@prisma/client";
 import Link from "next/link";
 
-export const OurExperience = async () => {
+export const OurExperience = () => {
   const { twoActivities, addActivities } = useActivityStore();
 
   useEffect(() => {

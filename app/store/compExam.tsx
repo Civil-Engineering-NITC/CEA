@@ -6,12 +6,12 @@ import {
 } from "@prisma/client";
 import { create } from "zustand";
 
-interface ResourceStore {
+interface CompetitiveExamStore {
   compExam: CompetitiveExam[];
   addCompetitiveExam: () => Promise<void>;
 }
 
-export const useResourceStore = create<ResourceStore>((set) => ({
+export const useCompExamStore = create<CompetitiveExamStore>((set) => ({
   compExam: [],
   addCompetitiveExam: async () => {
     try {
