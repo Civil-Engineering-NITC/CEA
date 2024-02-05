@@ -1,6 +1,6 @@
 .parentDiv {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 .imageDiv {
   position: absolute;
