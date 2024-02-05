@@ -36,12 +36,14 @@ export const Footer = () => {
         <div className={styles.contactContainer}>
           <p>STAY UP TO DATE</p>
           <h3>Get Our Newsletter</h3>
-          <input type="email" placeholder="Your Email" />
-          <button className={styles.emailInput}>
-            <div className={styles.arrowDiv}>
-              <Image src={arrowImg} alt="" className={styles.arrowImg} />
-            </div>
-          </button>
+          <div className={styles.inputBtnContainer}>
+            <input type="email" placeholder="Your Email" />
+            <button className={styles.emailInput}>
+              <div className={styles.arrowDiv}>
+                <Image src={arrowImg} alt="" className={styles.arrowImg} />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
       {/* <div className={styles.bottom}>
