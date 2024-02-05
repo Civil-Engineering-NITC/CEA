@@ -1,0 +1,152 @@
+.cardContainer {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  max-width: 82rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.125rem;
+  gap: 3rem;
+}
+
+.container {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 1500px; */
+  padding: 2rem 4rem;
+}
+
+.imageContainer {
+  max-width: 1242px;
+  max-height: 413.74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.image {
+  position: relative;
+  /* top: 10px; */
+  z-index: 1;
+  flex-shrink: 1;
+  width: 1200px;
+  height: 350px;
+}
+
+@media (max-width: 1440px) {
+  .cardContainer {
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+@media (max-width: 1366px) {
+  .cardContainer {
+    justify-content: center;
+    gap: 3rem;
+  }
+  .imageContainer {
+    width: 1150px;
+    height: 400px;
+  }
+
+  .image {
+    width: 1100px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .cardContainer {
+    justify-content: center;
+    gap: 3rem;
+  }
+  .imageContainer {
+    width: 1000px;
+    height: 380px;
+  }
+
+  .image {
+    width: 970px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 3rem;
+  }
+  .cardContainer {
+    justify-content: center;
+    gap: 3rem;
+  }
+  .imageContainer {
+    width: 900px;
+    height: 350px;
+  }
+
+  .image {
+    width: 850px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .imageContainer {
+    width: 750px;
+    height: 330px;
+  }
+
+  .image {
+    width: 700px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 2rem;
+  }
+  .cardContainer {
+    justify-content: center;
+  }
+  .imageContainer {
+    width: 525px;
+    height: 300px;
+  }
+
+  .image {
+    width: 500px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 550px) {
+  .imageContainer {
+    width: 470px;
+    height: 132px;
+  }
+
+  .image {
+    width: 420px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .imageContainer {
+    width: 400px;
+    height: 132px;
+  }
+
+  .image {
+    width: 350px;
+    height: 120px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./loadMore.module.css";
+import styles from "@/app/(routes)/activity/activity.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
@@ -23,17 +23,21 @@ async function getData() {
 
 export default async function ActivityPage() {
   const info: Activity[] = await getData();
+  console.log("************* ", info);
   return (
     <div className={styles.container}>
       <PageTopHeading
-        mainHeading="Get to Know about different competitive Examination and Learn."
-        heading="COMPETITIVE."
-        subHeading="EXAMS."
+        mainHeading="F I N D ."
+        heading="OUR OFFERINGS."
+        subHeading="EVENTS. WORKSHOPS."
       />
-      <SearchBar />
+      <div className={styles.imageContainer}>
+        <img src="/prithvi.png" className={styles.image} alt="event_img" />
+      </div>
+
       <div className={styles.cardContainer}>
         {info.map((activity: Activity) => (
-          <Link href={`/activity/${activity.id}`}>
+          <Link href={`/activity/${activity.id}`} key={activity.id}>
             <ActivityCard key={activity.id} {...activity} />
           </Link>
         ))}

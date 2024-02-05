@@ -45,7 +45,7 @@ export const InterviewExperience = async () => {
         <div className={styles.seperator}></div>
         <div className={styles.cardholder}>
           {displayData.map((data: InterviewExp) => (
-            <Link href={`/interviews/${data.id}`}>
+            <Link href={`/interviews/${data.id}`} key={data.id}>
               <InterviewCard key={data.id} {...data} />
             </Link>
           ))}

@@ -53,7 +53,7 @@ export default async function InterviewExpPage() {
 
         <div className={styles.cardholder}>
           {sortedInterviews.map((data: InterviewExp) => (
-            <Link href={`/interviews/${data.id}`}>
+            <Link href={`/interviews/${data.id}`} key={data.id}>
               <InterviewCard key={data.id} {...data} />
             </Link>
           ))}
