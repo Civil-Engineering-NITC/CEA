@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
+  margin: 2rem 0;
 }
 .arrowDiv {
   display: flex;

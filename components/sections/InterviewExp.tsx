@@ -8,6 +8,7 @@ import { Header } from "../Header";
 import { DownArrowButton } from "../DownArrowButton";
 import axios from "axios";
 import { InterviewExp } from "@prisma/client";
+import Link from "next/link";
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/interviews");
@@ -41,9 +42,12 @@ export const InterviewExperience = async () => {
     <>
       <div className={styles.maindiv}>
         <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
+        <div className={styles.seperator}></div>
         <div className={styles.cardholder}>
           {displayData.map((data: InterviewExp) => (
-            <InterviewCard key={data.id} {...data} />
+            <Link href={`/interviews/${data.id}`}>
+              <InterviewCard key={data.id} {...data} />
+            </Link>
           ))}
         </div>
         <DownArrowButton text="Load More" redirectLink="" />

@@ -47,9 +47,15 @@ label {
 ::placeholder {
   color: white;
   padding: 0.7rem;
-  background: #303030;
+  background:#303030;
   font-size: 1rem;
 }
 select {
   color: white;
+}
+
+polygon { 
+  fill: #1a1a1a; 
+  stroke-width: 0.3;
+  stroke: #808080;
 }

@@ -5,12 +5,12 @@
 .MainPage {
   /* padding: 2.25rem 0rem; */
 }
-.margin {
+.seperator {
   margin: 2rem 4rem;
   position: relative;
   display: flex;
 }
-.margin::after {
+.seperator::after {
   z-index: 1;
   content: "";
   position: absolute;

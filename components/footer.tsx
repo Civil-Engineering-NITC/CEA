@@ -6,11 +6,13 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import arrowImg from "@/public/footerArrow 1.png";
+import FooterBg from "./assests/FooterBg";
 
 export const Footer = () => {
   return (
     <>
       <div className={styles.container}>
+        <div className={styles.bg}>{/* <FooterBg /> */}</div>
         <div className={styles.infoContainer}>
           <h1 className={styles.colorText}>Civil Engineering Association</h1>
           <p>

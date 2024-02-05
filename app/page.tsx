@@ -41,6 +41,16 @@ export default async function Home() {
       <>
         {/* <div>Hello {user?.emailAddresses[0].emailAddress}!</div> */}
         <UserButton afterSignOutUrl="/" />
+        <HomePage />
+        <div className={styles.seperator}></div>
+        <OurExperience />
+        <div className={styles.seperator}></div>
+        <Competitive />
+        <div className={styles.seperator}></div>
+        <Resource />
+        <div className={styles.seperator}></div>
+        <InterviewExperience />
+        <div className={styles.seperator}></div>
       </>
     );
   } catch (error) {

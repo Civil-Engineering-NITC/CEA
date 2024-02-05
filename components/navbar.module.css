@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 4.375rem;
+  padding: 0rem 4rem;
   z-index: 100;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -220,14 +220,7 @@
 .hamburger.isActive .bar {
   opacity: 0;
 }
-@media (max-width: 1024px) {
-  .menuBack {
-    display: block;
-  }
-  .mobileNav {
-    display: flex;
-  }
-}
+
 @media (max-width: 1440px) {
 }
 @media (max-width: 1366px) {
@@ -241,6 +234,15 @@
   .navlinks {
     display: none;
   }
+  .menuBack {
+    display: block;
+  }
+  .mobileNav {
+    display: flex;
+  }
+  .navDiv{
+    padding: 0rem 3rem;
+  }
 }
 @media (max-width: 900px) {
   .navDiv {
@@ -249,12 +251,12 @@
 }
 @media (max-width: 768px) {
   .navDiv {
-    padding: 0rem 3.5rem;
+    padding: 0rem 3rem;
   }
 }
 @media (max-width: 550px) {
   .navDiv {
-    padding: 0rem 3rem;
+    padding: 0rem 2rem;
   }
   .buttonDiv {
     font-size: 1rem;
@@ -264,7 +266,7 @@
 }
 @media (max-width: 480px) {
   .navDiv {
-    padding: 0rem 2.5rem;
+    padding: 0rem 1.5rem;
   }
   .buttonDiv {
     font-size: 1rem;
@@ -274,7 +276,7 @@
 }
 @media (max-width: 400px) {
   .navDiv {
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
   }
   .buttonDiv {
     font-size: 1rem;
@@ -289,7 +291,7 @@
 }
 @media (max-width: 360px) {
   .navDiv {
-    padding: 0rem 1.5rem;
+    padding: 0rem 1rem;
   }
   .buttonDiv {
     font-size: 0.8rem;
