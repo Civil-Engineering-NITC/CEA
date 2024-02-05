@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { InterviewCard } from "../interviewCard";
 import styles from "./interviewExp.module.css";
 import { datas } from "@/data/interviewExpData";
@@ -9,34 +11,18 @@ import { DownArrowButton } from "../DownArrowButton";
 import axios from "axios";
 import { InterviewExp } from "@prisma/client";
 import Link from "next/link";
+import { useInterviewStore } from "@/app/store/interviews";
+import { Loader } from "@react-three/drei";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/interviews");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+export const InterviewExperience = () => {
+  const { twoInterviews, addInterviews } = useInterviewStore();
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-export const InterviewExperience = async () => {
-  const info = await getData();
-
-  // console.log(info);
-
-  // const interviews = info.data;
-  // console.log(interviews[1].link);
-
-  const sortedInterviews = info.sort(
-    (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
-  );
-  var displayData = sortedInterviews.slice(0, 2);
-
-  // console.log(displayData);
+  useEffect(() => {
+    if (twoInterviews.length == 0) {
+      addInterviews();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
 
   return (
     <>
@@ -44,11 +30,15 @@ export const InterviewExperience = async () => {
         <Header headingText="INTERVIEW." subHeadingText="EXPERIENCES." />
         <div className={styles.seperator}></div>
         <div className={styles.cardholder}>
-          {displayData.map((data: InterviewExp) => (
-            <Link href={`/interviews/${data.id}`} key={data.id}>
-              <InterviewCard key={data.id} {...data} />
-            </Link>
-          ))}
+          {twoInterviews.length === 0 ? (
+            <Loader />
+          ) : (
+            twoInterviews.map((data: InterviewExp) => (
+              <Link href={`/interviews/${data.id}`} key={data.id}>
+                <InterviewCard key={data.id} {...data} />
+              </Link>
+            ))
+          )}
         </div>
         <DownArrowButton text="Load More" redirectLink="" />
       </div>

@@ -1,19 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import styles from "./ourExperience.module.css";
 import { OurExperienceCard } from "../OurExperienceCard";
 import { DownArrowButton } from "../DownArrowButton";
 import { ColouredText } from "../ColouredText";
 import { Header } from "../Header";
 import axios from "axios";
+import { useActivityStore } from "@/app/store/activity";
+import { Loader } from "@react-three/drei";
+import { Activity } from "@prisma/client";
+import Link from "next/link";
 
-export const OurExperience = async () => {
-  try {
-    const info = await axios.get("http://localhost:3000/api/activity");
-    const ourExp = info.data;
-    var displayData = ourExp.slice(0, 2);
-  } catch {
-    console.log("Data fetch error from backend");
-  }
+export const OurExperience = () => {
+  const { twoActivities, addActivities } = useActivityStore();
+
+  useEffect(() => {
+    if (twoActivities.length == 0) {
+      addActivities();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
 
   return (
     <>
@@ -31,8 +38,15 @@ export const OurExperience = async () => {
           </div>
         </div>
         <div className={styles.cardMainDiv}>
-          <OurExperienceCard />
-          <OurExperienceCard />
+          {twoActivities.length === 0 ? (
+            <Loader />
+          ) : (
+            twoActivities.map((data: Activity) => (
+              <Link href={`/activity/${data.id}`} key={data.id}>
+                <OurExperienceCard key={data.id} {...data} />
+              </Link>
+            ))
+          )}
         </div>
         <DownArrowButton text="Load More" redirectLink="" />
       </div>

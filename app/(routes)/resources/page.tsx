@@ -1,31 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import styles from "./resource.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
 import { PageTopHeading } from "@/components/PageTopHeading";
-import { cardData } from "@/data/fakeResource";
 import { BigButton } from "@/components/BigButton";
-import axios from "axios";
-import { Resources } from "@prisma/client";
 import Link from "next/link";
+import { useInterviewStore } from "@/app/store/interviews";
+import { useResourceStore } from "@/app/store/resources";
+import { Resources } from "@prisma/client";
+import { Loader } from "@/components/assests/Loader";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/resource");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+export default function ResourcesPage() {
+  const { resources, addResources } = useResourceStore();
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+  useEffect(() => {
+    if (resources.length == 0) {
+      addResources();
+      console.log("ADDED RESOURCES");
+    }
+  }, []);
 
-  // console.log(res);
-  return res.json();
-}
-
-export default async function ResourcesPage() {
-  const info: Resources[] = await getData();
-  console.log("************* ", info);
   return (
     <div className={styles.container}>
       <PageTopHeading
@@ -41,11 +37,15 @@ export default async function ResourcesPage() {
         <SearchBar />
       </div>
       <div className={styles.cardContainer}>
-        {info.map((resource: Resources) => (
-          <Link href={`/resources/${resource.id}`}>
-            <Card key={resource.id} {...resource} />
-          </Link>
-        ))}
+        {resources.length === 0 ? (
+          <Loader />
+        ) : (
+          resources.map((resource) => (
+            <Link href={`/resources/${resource.id}`} key={resource.id}>
+              <Card {...resource} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import styles from "@/components/sections/interviewExp.module.css";
 import axios from "axios";
 import { InterviewExp } from "@prisma/client";
@@ -11,24 +13,18 @@ import { RightArrowButton } from "@/components/RightArrowButton";
 import { PageTopHeading } from "@/components/PageTopHeading";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { useInterviewStore } from "@/app/store/interviews";
+import { Loader } from "@react-three/drei";
 
-export default async function InterviewExpPage() {
-  try {
-    const info = await axios.get("http://localhost:3000/api/interviews");
+export default function InterviewExpPage() {
+  const { interviews, addInterviews } = useInterviewStore();
 
-    console.log(info);
-
-    const interviews = info.data;
-    // console.log(interviews[1].link);
-
-    var sortedInterviews = interviews.sort(
-      (a: any, b: any) => parseFloat(b.package) - parseFloat(a.package)
-    );
-    // var displayData = sortedInterviews.slice(0, 2)
-  } catch (err) {
-    console.log("ERROR WHILE FETCHING DATA");
-    console.log(err);
-  }
+  useEffect(() => {
+    if (interviews.length == 0) {
+      addInterviews();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
 
   return (
     <>
@@ -52,11 +48,15 @@ export default async function InterviewExpPage() {
         </div>
 
         <div className={styles.cardholder}>
-          {sortedInterviews.map((data: InterviewExp) => (
-            <Link href={`/interviews/${data.id}`} key={data.id}>
-              <InterviewCard key={data.id} {...data} />
-            </Link>
-          ))}
+          {interviews.length === 0 ? (
+            <Loader />
+          ) : (
+            interviews.map((data: InterviewExp) => (
+              <Link href={`/interviews/${data.id}`} key={data.id}>
+                <InterviewCard key={data.id} {...data} />
+              </Link>
+            ))
+          )}
         </div>
       </div>
     </>

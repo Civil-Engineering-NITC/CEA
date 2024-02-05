@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import styles from "../loadMore/loadMore.module.css";
 import { Card } from "@/components/Card";
@@ -12,24 +14,18 @@ import {
 import axios from "axios";
 import { CompetitiveExam } from "@prisma/client";
 import Link from "next/link";
+import { useCompExamStore } from "@/app/store/compExam";
+import { Loader } from "@react-three/drei";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/compExam");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+export default function CompExam() {
+  const { compExam, addCompetitiveExam } = useCompExamStore();
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  // console.log(res);
-  return res.json();
-}
-
-export default async function CompExam() {
-  const info = await getData();
-  console.log("************* ", info);
+  useEffect(() => {
+    if (compExam.length == 0) {
+      addCompetitiveExam();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -40,11 +36,15 @@ export default async function CompExam() {
       />
       <SearchBar />
       <div className={styles.cardContainer}>
-        {info.map((exam: CompetitiveExam) => (
-          <Link href={`/compExam/${exam.id}`}>
-            <Card key={exam.id} {...exam} />
-          </Link>
-        ))}
+        {compExam.length === 0 ? (
+          <Loader />
+        ) : (
+          compExam.map((exam) => (
+            <Link href={`/compExam/${exam.id}`} key={exam.id}>
+              <Card {...exam} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );
