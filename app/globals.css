@@ -63,6 +63,6 @@ a{
   text-decoration: none;
   background: transparent;
 }
-p,h1,h2,h3,label,form{
+p,h1,h2,h3,label,form,span{
   background: transparent;
 }
