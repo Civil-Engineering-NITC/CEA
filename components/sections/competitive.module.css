@@ -265,6 +265,9 @@
   .competitiveDiv {
     height: 38.5rem;
   }
+  .competitiveDiv::after {
+    box-shadow: 0px 0px 30rem 12rem #d9d9d933;
+  }
 }
 @media (max-width: 900px) {
   .whiteStrips {
@@ -314,6 +317,9 @@
   }
   .competitiveDiv {
     height: 33.5rem;
+  }
+  .competitiveDiv::after {
+    box-shadow: 0px 0px 25rem 12rem #d9d9d933;
   }
 }
 @media (max-width: 768px) {
@@ -365,6 +371,9 @@
   .competitiveDiv {
     height: 28.5rem;
   }
+  .competitiveDiv::after {
+    box-shadow: 0px 0px 23rem 12rem #d9d9d933;
+  }
 }
 @media (max-width: 550px) {
   .whiteStrips {
@@ -411,6 +420,9 @@
   .rightRows:last-child {
     gap: 3.554rem;
     /* top: 55%; */
+  }
+  .competitiveDiv::after {
+    box-shadow: 0px 0px 20rem 12rem #d9d9d933;
   }
 }
 @media (max-width: 480px) {
@@ -461,6 +473,9 @@
   }
   .competitiveDiv {
     height: 23.5rem;
+  }
+  .competitiveDiv::after {
+    box-shadow: 0px 0px 18rem 12rem #d9d9d933;
   }
 }
 @media (max-width: 400px) {
