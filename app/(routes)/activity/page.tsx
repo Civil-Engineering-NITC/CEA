@@ -17,7 +17,7 @@ export default function ActivityPage() {
   useEffect(() => {
     if (activities.length === 0) {
       addActivities();
-      console.log("ADDED INTERVIEWS");
+      console.log("ADDED ACTIVITIES");
     }
   }, []);
 

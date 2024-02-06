@@ -32,7 +32,11 @@ export default function CompExam() {
           <Loader />
         ) : (
           compExam.map((exam) => (
-            <Link href={`/compExam/${exam.id}`} key={exam.id}>
+            <Link
+              className={styles.link}
+              href={`/compExam/${exam.id}`}
+              key={exam.id}
+            >
               <Card {...exam} />
             </Link>
           ))

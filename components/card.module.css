@@ -73,8 +73,9 @@
   border-radius: 8px;
   width: 25rem;
   height: 374px;
-  z-index: 1;
+  z-index: 2;
   background-color: #262628;
+  position: relative;
   /* margin-bottom: 3.5rem; */
   overflow: auto;
 }
@@ -122,6 +123,9 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 20.16px;
+}
+
+@media (max-width: 400px) {
 }
 
 @media (max-width: 768px) {
@@ -185,4 +189,10 @@
   height: 64px;
   width: 64px;
   /* left: 35px; */
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
 }

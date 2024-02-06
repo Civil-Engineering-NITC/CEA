@@ -12,7 +12,7 @@ import axios from "axios";
 import { InterviewExp } from "@prisma/client";
 import Link from "next/link";
 import { useInterviewStore } from "@/app/store/interviews";
-import { Loader } from "@react-three/drei";
+import { Loader } from "../assests/Loader";
 
 export const InterviewExperience = () => {
   const { twoInterviews, addInterviews } = useInterviewStore();
@@ -20,7 +20,7 @@ export const InterviewExperience = () => {
   useEffect(() => {
     if (twoInterviews.length == 0) {
       addInterviews();
-      console.log("ADDED INTERVIEWS");
+      console.log("ADDED INTERVIEWS USEEFFECT");
     }
   }, []);
 
