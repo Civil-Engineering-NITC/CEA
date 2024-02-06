@@ -186,7 +186,8 @@
 }
 .menuBack {
   padding: 0.625rem;
-  background-color: #171717;
+  /* background-color: #171717; */
+  background: transparent;
   border-radius: 0.25rem;
   display: none;
   z-index: 99;

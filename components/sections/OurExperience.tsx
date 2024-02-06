@@ -48,7 +48,7 @@ export const OurExperience = () => {
             ))
           )}
         </div>
-        <DownArrowButton text="Load More" redirectLink="/activity" />
+        <DownArrowButton text="Load More" redirectLink="" />
       </div>
     </>
   );
