@@ -143,210 +143,235 @@ export const Competitive = () => {
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
               </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <Image src={ecl} alt="" className={styles.eclImg} />
-              </div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                <Image src={ecl} alt="" className={styles.eclImg} />
-              </div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                <Image src={ecl} alt="" className={styles.eclImg} />
-              </div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                <Image src={ecl} alt="" className={styles.eclImg} />
-              </div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                <Image src={ecl} alt="" className={styles.eclImg} />
-              </div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              >
-                <Image src={ecl} alt="" className={styles.eclImg} />
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
               </div>
             </div>
             <div className={styles.leftRows}>
@@ -354,274 +379,474 @@ export const Competitive = () => {
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
+              <div
+                className={styles.bubble}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
             </div>
             <div className={styles.rightRows}>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Bhabha_Atomic_Research_Centre_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Engineers_India_Logo.svg"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/gate.jpg" alt="" className={styles.eclImg} />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img
+                  src="/Indian_Space_Research_Organisation_Logo.png"
+                  alt=""
+                  className={styles.eclImg}
+                />
+              </div>
               <div
                 className={styles.bubble}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
-              ></div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              ></div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              ></div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              ></div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              ></div>
-              <div
-                className={styles.bubble}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-              ></div>
+              >
+                <img src="/NPCIL_Logo.png" alt="" className={styles.eclImg} />
+              </div>
             </div>
           </div>
         </div>

@@ -10,19 +10,24 @@
 
 @media (max-width: 768px) {
   .pageHeading {
-    font-size: 40px;
+    font-size: 70px;
     font-weight: 700;
-    line-height: 57.36px;
+    line-height: 76.36px;
   }
 }
 @media (max-width: 550px) {
+  .pageHeading {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 58.36px;
+  }
+}
+@media (max-width: 480px) {
   .pageHeading {
     font-size: 36px;
     font-weight: 700;
     line-height: 45px;
   }
-}
-@media (max-width: 480px) {
 }
 @media (max-width: 400px) {
 }
