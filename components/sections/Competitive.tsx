@@ -8,6 +8,7 @@ import fireImg from "@/public/Fire.png";
 import ecl from "@/public/Ellipse 4.png";
 import { useEffect } from "react";
 import { DownArrowButton } from "../DownArrowButton";
+import Link from "next/link";
 
 export const Competitive = () => {
   const handleMouseOver = () => {
@@ -624,7 +625,9 @@ export const Competitive = () => {
             </div>
           </div>
         </div>
-        <DownArrowButton text="Load More" redirectLink="" />
+        <Link href={"/compExam"}>
+          <DownArrowButton text="Load More" redirectLink="/compExam" />
+        </Link>
       </div>
     </>
   );

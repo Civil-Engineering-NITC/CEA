@@ -7,6 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import arrowImg from "@/public/footerArrow 1.png";
 import FooterBg from "./assests/FooterBg";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -28,9 +29,15 @@ export const Footer = () => {
         <div className={styles.linksContainer}>
           <p>Quick Links</p>
           <ul>
-            <li>Interview Experience</li>
-            <li>Competitive Exams</li>
-            <li>Resource</li>
+            <Link href={"/interviews"}>
+              <li>Interview Experience</li>
+            </Link>
+            <Link href={"/compExam"}>
+              <li>Competitive Exams</li>
+            </Link>
+            <Link href={"/resources"}>
+              <li>Resource</li>
+            </Link>
           </ul>
         </div>
         <div className={styles.contactContainer}>

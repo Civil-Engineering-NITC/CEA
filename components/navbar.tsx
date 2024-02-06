@@ -8,6 +8,7 @@ import { ColourdButton } from "./ColourdButton";
 import { MenuBtn } from "./MenuBtn";
 import Image from "next/image";
 import arrow from "../public/Arrow 1.png";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -18,23 +19,25 @@ export const Navbar = () => {
   return (
     <>
       <div className={styles.navDiv}>
-        <h1 className={styles.colorText}>CEA.</h1>
+        <Link href={"/"}>
+          <h1 className={styles.colorText}>CEA.</h1>
+        </Link>
         <div className={styles.navMenu}>
           <div className={styles.navlinks}>
-            <a href="">Home.</a>
-            <a href="">AboutUs.</a>
-            <a href="">Resources.</a>
-            <a href="">Members.</a>
-            <a href="">ContactUS.</a>
+            <a href="/">Home.</a>
+            <a href="/activity">Activity.</a>
+            <a href="/resources">Resources.</a>
+            <a href="/interviews">Interviews</a>
+            <a href="/compExam">CompExam.</a>
           </div>
           <a href="" className={styles.mainDiv}>
-            <div className={styles.buttonDiv}>
+            {/* <div className={styles.buttonDiv}>
               Sign In
               <div className={styles.arrowDiv}>
                 <Image src={arrow} alt="" className={styles.arrowButton} />
               </div>
-            </div>
-            <div className={styles.colorDiv}></div>
+            </div> */}
+            {/* <div className={styles.colorDiv}></div> */}
           </a>
           <div className={styles.menuBack}>
             <button
@@ -51,11 +54,11 @@ export const Navbar = () => {
           className={`${styles.mobileNav} ${isActive ? styles.isActive : ""}`}
           onClick={toggleMenu}
         >
-          <a href="">Home.</a>
-          <a href="">AboutUs.</a>
-          <a href="">Resources.</a>
-          <a href="">Members.</a>
-          <a href="">ContactUS.</a>
+          <a href="/">Home.</a>
+          <a href="/activity">Activity.</a>
+          <a href="/resources">Resources.</a>
+          <a href="/interviews">Interviews</a>
+          <a href="/compExam">CompExam.</a>
         </div>
       </div>
     </>

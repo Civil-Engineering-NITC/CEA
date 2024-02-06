@@ -40,7 +40,7 @@ export const InterviewExperience = () => {
             ))
           )}
         </div>
-        <DownArrowButton text="Load More" redirectLink="" />
+        <DownArrowButton text="Load More" redirectLink="/compExam" />
       </div>
     </>
   );
