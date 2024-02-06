@@ -73,6 +73,7 @@
 .buttonIcons {
   height: 1.875rem;
   width: 1.875rem;
+  background: inherit;
 }
 
 .button {
@@ -141,10 +142,12 @@
 .materialTitle {
   line-height: 1.875rem;
   letter-spacing: 0.25rem;
+  background: inherit;
 }
 .syllabusTitle {
   line-height: 1.875rem;
   letter-spacing: 0.25rem;
+  background: inherit;
 }
 
 @media (max-width: 1024px) {

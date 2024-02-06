@@ -44,13 +44,13 @@ export default async function ResourceMaterial({
 
       <div className={styles.button}>
         <button className={styles.syllabus}>
-          <div>
+          <div style={{ background: "transparent" }}>
             <SiBookstack className={styles.buttonIcons} />
           </div>
           <div className={styles.syllabusTitle}>Syllabus</div>
         </button>
         <button className={styles.materials}>
-          <div>
+          <div style={{ background: "transparent" }}>
             <MdOutlineLibraryBooks className={styles.buttonIcons} />
           </div>
           <div className={styles.materialTitle}>Support Materials</div>
