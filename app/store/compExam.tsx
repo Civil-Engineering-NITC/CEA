@@ -1,9 +1,4 @@
-import {
-  CompetitiveExam,
-  CompetitiveExamLink,
-  InterviewExp,
-  Resources,
-} from "@prisma/client";
+import { CompetitiveExam } from "@prisma/client";
 import { create } from "zustand";
 
 interface CompetitiveExamStore {

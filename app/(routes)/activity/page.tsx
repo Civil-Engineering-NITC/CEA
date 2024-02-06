@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import styles from "@/app/(routes)/activity/activity.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
@@ -6,24 +8,19 @@ import { PageTopHeading } from "@/components/PageTopHeading";
 import { Activity } from "@prisma/client";
 import { ActivityCard } from "@/components/ActivityCard";
 import Link from "next/link";
+import { useActivityStore } from "@/app/store/activity";
+import { Loader } from "@/components/assests/Loader";
 
-async function getData() {
-  const res = await fetch("http://localhost:3000/api/activity");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+export default function ActivityPage() {
+  const { activities, addActivities } = useActivityStore();
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+  useEffect(() => {
+    if (activities.length === 0) {
+      addActivities();
+      console.log("ADDED INTERVIEWS");
+    }
+  }, []);
 
-  // console.log(res);
-  return res.json();
-}
-
-export default async function ActivityPage() {
-  const info: Activity[] = await getData();
-  console.log("************* ", info);
   return (
     <div className={styles.container}>
       <PageTopHeading
@@ -36,11 +33,15 @@ export default async function ActivityPage() {
       </div>
 
       <div className={styles.cardContainer}>
-        {info.map((activity: Activity) => (
-          <Link href={`/activity/${activity.id}`} key={activity.id}>
-            <ActivityCard key={activity.id} {...activity} />
-          </Link>
-        ))}
+        {activities.length === 0 ? (
+          <Loader />
+        ) : (
+          activities.map((activity: Activity) => (
+            <Link href={`/activity/${activity.id}`} key={activity.id}>
+              <ActivityCard key={activity.id} {...activity} />
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );

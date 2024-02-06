@@ -14,7 +14,7 @@ import { PageTopHeading } from "@/components/PageTopHeading";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { useInterviewStore } from "@/app/store/interviews";
-import { Loader } from "@react-three/drei";
+import { Loader } from "@/components/assests/Loader";
 
 export default function InterviewExpPage() {
   const { interviews, addInterviews } = useInterviewStore();
