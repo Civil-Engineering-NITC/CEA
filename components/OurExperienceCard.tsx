@@ -4,6 +4,7 @@ import Image from "next/image";
 import boxImg from "../public/bg.jpg";
 import linkdin from "@/public/Linkdin.png";
 import github from "@/public/github.png";
+import { RiInstagramFill } from "react-icons/ri";
 
 export const OurExperienceCard: React.FC<any> = (data) => {
   return (
@@ -32,11 +33,15 @@ export const OurExperienceCard: React.FC<any> = (data) => {
         </div>
         <div className={styles.socialDiv}>
           <div className={styles.linkDiv}>
-            <Image src={linkdin} alt="" className={styles.circleImage} />
+            {/* <Image src={linkdin} alt="" className={styles.circleImage} /> */}
+            <RiInstagramFill
+              style={{ background: "transparent", color: "#afafaf" }}
+              size={25}
+            />
           </div>
-          <div className={styles.linkDiv}>
+          {/* <div className={styles.linkDiv}>
             <Image src={github} alt="" className={styles.circleImage} />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
