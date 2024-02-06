@@ -109,15 +109,18 @@
   list-style-type: none;
   font-size: 1.5rem;
   background: transparent;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
 }
-.linksContainer ul li {
-  margin-bottom: 1.5rem;
+.linksContainer ul a li {
+  /* margin-bottom: 1.5rem; */
   color: #a9a9a9;
   background: transparent;
 }
-.linksContainer ul li:last-child {
+/* .linksContainer ul a li:last-child {
   margin-bottom: 0;
-}
+} */
 .contactContainer {
   width: 383px;
   background: transparent;
