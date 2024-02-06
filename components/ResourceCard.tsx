@@ -25,9 +25,13 @@ export const ResourceCard: React.FC<ResourceCardProps> = ({ title }) => {
           <div className={styles.cardMainHeading}>
             <h1>{title}</h1>
             <h2>MATERIALS</h2>
-            <a href="">Previous Year Papers</a>
+            <a href="/resources">Previous Year Papers</a>
           </div>
-          <RightArrowButton text="Show More" redirectLink="" textDec="none" />
+          <RightArrowButton
+            text="Show More"
+            redirectLink="/resources"
+            textDec="none"
+          />
         </div>
       </div>
     </>
