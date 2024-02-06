@@ -33,7 +33,10 @@ export default async function ResourceMaterial({
         </div>
         <div className={styles.title}>
           <div className={styles.titleImage}>
-            <MdOutlineLibraryBooks className={styles.icons} />
+            <MdOutlineLibraryBooks
+              className={styles.icons}
+              style={{ backgroundColor: "inherit" }}
+            />
           </div>
           <div className={styles.titleContent}>{resource?.subTitle}</div>
         </div>
@@ -44,14 +47,20 @@ export default async function ResourceMaterial({
 
       <div className={styles.button}>
         <button className={styles.syllabus}>
-          <div>
-            <SiBookstack className={styles.buttonIcons} />
+          <div style={{ background: "inherit" }}>
+            <SiBookstack
+              className={styles.buttonIcons}
+              style={{ background: "inherit" }}
+            />
           </div>
           <div className={styles.syllabusTitle}>Syllabus</div>
         </button>
         <button className={styles.materials}>
-          <div>
-            <MdOutlineLibraryBooks className={styles.buttonIcons} />
+          <div style={{ background: "inherit" }}>
+            <MdOutlineLibraryBooks
+              className={styles.buttonIcons}
+              style={{ background: "inherit" }}
+            />
           </div>
           <div className={styles.materialTitle}>Support Materials</div>
         </button>

@@ -15,10 +15,13 @@
   line-height: 1.575rem;
   margin-top: 2.188rem;
   margin-bottom: 1.5rem;
+  background: transparent;
 }
 
 .division {
   max-width: 82rem;
+  position: relative;
+  background: transparent;
 }
 
 .content {
@@ -47,6 +50,7 @@
   color: #afafaf;
   margin-bottom: 5rem;
   gap: 1.5rem;
+  background: transparent;
 }
 
 .titleImage {
@@ -141,10 +145,12 @@
 .materialTitle {
   line-height: 1.875rem;
   letter-spacing: 0.25rem;
+  background-color: inherit;
 }
 .syllabusTitle {
   line-height: 1.875rem;
   letter-spacing: 0.25rem;
+  background-color: inherit;
 }
 
 @media (max-width: 1024px) {
@@ -258,4 +264,5 @@
 
 .titleContent {
   text-align: center;
+  background: transparent;
 }
