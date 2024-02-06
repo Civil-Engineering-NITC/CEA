@@ -5,12 +5,14 @@ import boxImg from "../public/bg.jpg";
 import linkdin from "@/public/Linkdin.png";
 import github from "@/public/github.png";
 import { RiInstagramFill } from "react-icons/ri";
+import { Activity, ActivityLink } from "@prisma/client";
+import { ExtendsHook } from "@prisma/client/runtime/library";
 
 export const OurExperienceCard: React.FC<any> = (data) => {
   return (
     <>
       <div className={styles.cardDiv}>
-        <h3>{}</h3>
+        <h3>{data.name}</h3>
         <div className={styles.cardBox}>
           {/* <Image
             src={boxImg}

@@ -16,6 +16,12 @@ import { CubeCanvas } from "../CubeCanvas";
 import arrow from "@/public/Arrow 1.png";
 
 export const HomePage = () => {
+  const scrollDown = () => {
+    window.scrollTo({
+      top: window.scrollY + window.innerHeight, // Scroll down by 100vh
+      behavior: "smooth", // Optional: Add smooth scrolling behavior
+    });
+  };
   return (
     <>
       <div className={styles.pageDiv}>
@@ -51,7 +57,7 @@ export const HomePage = () => {
             aspiring Civil Engineering Student
           </p>
           <div className={styles.buttonsDiv}>
-            <a href="" className={styles.mainDiv}>
+            <div className={styles.mainDiv} onClick={scrollDown}>
               <div className={styles.buttonDiv}>
                 Let’s Get Started
                 <div className={styles.arrowDiv}>
@@ -59,7 +65,7 @@ export const HomePage = () => {
                 </div>
               </div>
               <div className={styles.colorDiv}></div>
-            </a>
+            </div>
             <RightArrowButton
               text="Explore Teams"
               redirectLink=""
