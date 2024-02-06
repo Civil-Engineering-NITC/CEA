@@ -1,3 +1,5 @@
+"use client";
+
 import { ColouredText } from "./ColouredText";
 import styles from "./footer.module.css";
 import { MdArrowOutward } from "react-icons/md";
@@ -8,8 +10,16 @@ import Image from "next/image";
 import arrowImg from "@/public/footerArrow 1.png";
 import FooterBg from "./assests/FooterBg";
 import Link from "next/link";
+import axios from "axios";
 
 export const Footer = () => {
+  const checkEmail = async () => {
+    try {
+      const response = await axios.post("/api/emails");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className={styles.container}>
@@ -46,7 +56,7 @@ export const Footer = () => {
           <div className={styles.inputBtnContainer}>
             <input type="email" placeholder="Your Email" />
             <button className={styles.emailInput}>
-              <div className={styles.arrowDiv}>
+              <div className={styles.arrowDiv} onClick={checkEmail}>
                 <Image src={arrowImg} alt="" className={styles.arrowImg} />
               </div>
             </button>

@@ -16,6 +16,8 @@ export async function GET(req: Request) {
     console.log("[INTERVIEW_GET]", error);
     return new NextResponse("Internal error", { status: 500 });
   }
+
+  
 }
 
 export async function POST(req: Request) {
