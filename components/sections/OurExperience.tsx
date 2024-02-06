@@ -8,9 +8,9 @@ import { ColouredText } from "../ColouredText";
 import { Header } from "../Header";
 import axios from "axios";
 import { useActivityStore } from "@/app/store/activity";
-import { Loader } from "@react-three/drei";
 import { Activity } from "@prisma/client";
 import Link from "next/link";
+import { Loader } from "../assests/Loader";
 
 export const OurExperience = () => {
   const { twoActivities, addActivities } = useActivityStore();
@@ -18,7 +18,7 @@ export const OurExperience = () => {
   useEffect(() => {
     if (twoActivities.length == 0) {
       addActivities();
-      console.log("ADDED INTERVIEWS");
+      console.log("ADDED OUREXPERIENCE");
     }
   }, []);
 
