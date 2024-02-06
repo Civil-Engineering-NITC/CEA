@@ -26,7 +26,7 @@ input {
   border-bottom: 1px solid #afafaf;
   border-radius: 0.5rem;
   /* margin-bottom: 2rem; */
-  background: #303030;
+  background: transparent;
   height: 1.625rem;
   width: 100%;
   padding: 0.7rem;
@@ -61,5 +61,8 @@ polygon {
 }
 a{
   text-decoration: none;
+  background: transparent;
+}
+p,h1,h2,h3,label,form{
   background: transparent;
 }

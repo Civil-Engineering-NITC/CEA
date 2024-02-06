@@ -36,7 +36,7 @@ export default function InterviewExpPage() {
         />
 
         <div className={styles.buttonsDiv}>
-          <a href="" className={styles.mainDiv}>
+          <a href="/form" className={styles.mainDiv}>
             <div className={styles.buttonDiv}>
               Share Your Own Experience
               <div className={styles.arrowDiv}>
