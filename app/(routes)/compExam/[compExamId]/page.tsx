@@ -7,8 +7,22 @@ import { Icons } from "@/components/Icons";
 import { SiBookstack } from "react-icons/si";
 import prismadb from "@/lib/prismadb";
 import CompExam from "./../page";
+import { styled } from "styled-components";
 
-export const CompExamMaterial = () => {
+export default async function CompExamMaterial({
+  params,
+}: {
+  params: { compExamId: string };
+}) {
+  const compExam = await prismadb.competitiveExam.findUnique({
+    where: {
+      id: params.compExamId,
+    },
+    include: {
+      link: true,
+    },
+  });
+
   return (
     <div className={styles.container}>
       <PageTopHeading
@@ -18,33 +32,23 @@ export const CompExamMaterial = () => {
       />
 
       <div className={styles.division}>
-        <div className={styles.heading}>Competitive Exams.\CAT</div>
+        <div className={styles.heading}>
+          Competitive Exams.\{compExam?.name}
+        </div>
         <div className={styles.title}>
           <div
             className={styles.titleImage}
             style={{ backgroundColor: "green" }}
           >
-            <Icons type="" name="CAT EXAM" />
+            <Icons
+              type=""
+              name={compExam?.name ? compExam.name.toString() : ""}
+            />
           </div>
-          <div className={styles.titleContent}>Common Aptitude Test</div>
+          <div className={styles.titleContent}>{compExam?.title}</div>
         </div>
         <div className={styles.content}>
-          <div>
-            CAT is a national level MBA entrance exam for admission to 21 IIMs,
-            8 IITs, and 1000+ other b-schools in India. It is conducted once
-            every year by the IIMs in online CBT mode at 400+ test centers in
-            155 cities of India. This year, CAT 2023 exam is scheduled for Nov
-            26, 2023. Registration for CAT 2023 is closed by IIM Lucknow on Sep
-            21. Now, CAT 2023 admit card is to be issued at iimcat.ac.in on Nov
-            7 for the 3.3 lakh registered candidates. CAT is a national level
-            MBA entrance exam for admission to 21 IIMs, 8 IITs, and 1000+ other
-            b-schools in India. It is conducted once every year by the IIMs in
-            online CBT mode at 400+ test centers in 155 cities of India. This
-            year, CAT 2023 exam is scheduled for Nov 26, 2023. Registration for
-            CAT 2023 is closed by IIM Lucknow on Sep 21. Now, CAT 2023 admit
-            card is to be issued at iimcat.ac.in on Nov 7 for the 3.3 lakh
-            registered candidates.
-          </div>
+          <div>{compExam?.desc}</div>
           <div className={styles.button}>
             <button className={styles.syllabus}>
               <div style={{ backgroundColor: "inherit" }}>
@@ -69,4 +73,4 @@ export const CompExamMaterial = () => {
       </div>
     </div>
   );
-};
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./resource.module.css";
 import { Card } from "@/components/Card";
 import { SearchBar } from "./../../../components/SearchBar";
@@ -14,6 +14,7 @@ import { Loader } from "@/components/assests/Loader";
 
 export default function ResourcesPage() {
   const { resources, addResources } = useResourceStore();
+  const [displayResource, setDisplayResource] = useState(resources);
 
   useEffect(() => {
     if (resources.length == 0) {
@@ -34,7 +35,10 @@ export default function ResourcesPage() {
           <BigButton name="Core Materials" />
           <BigButton name="IT/CS Materials" />
         </div>
-        <SearchBar />
+        <SearchBar
+        // data={resources}
+        // onChange={(displayData: any) => setDisplayResource(displayData)}
+        />
       </div>
       <div className={styles.cardContainer}>
         {resources.length === 0 ? (
